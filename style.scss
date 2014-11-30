@@ -336,6 +336,7 @@ nav {
     .sidenav {display:none;}
     .entry {float:none;width:auto;background:transparent;padding:0;box-shadow:none;}
     #content {width:85%;margin:100px auto 50px; }
+    #main .post {float:none;}
 }
 @media (max-width: 1300px){
     .home-menu { position:absolute; }
