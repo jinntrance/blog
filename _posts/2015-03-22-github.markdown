@@ -4,7 +4,7 @@ title: "用GitHub建立博客并对访问加速"
 modified:
 categories: 
 description:
-tags: []
+tags: [Technical, Blog]
 image:
   feature:
   credit:

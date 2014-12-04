@@ -27,6 +27,8 @@ owner:
   tumblr:         
   # google plus id, include the '+', eg +mmistakes
   google_plus: +JosephJinChuanTáng
+  weibo: jinntrance
+  douban: jinntrance
 
 # Background image to be tiled on all pages
 background: 
@@ -40,9 +42,10 @@ mathjax_latest: false
 
 # Analytics and webmaster tools stuff goes here
 # can not access google service in China
-google_analytics:   
+google_analytics: "UA-39438576-1"
 google_verify:     
 google_fonts: 
+baidu_analytics: 
 
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify: 
