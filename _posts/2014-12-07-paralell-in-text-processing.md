@@ -10,11 +10,11 @@ date: 2014-12-07T23:19:10+0800
 
 但仅仅用awk和sed是不能并行，也就不能充分利用单台机子的CPU的，所以比如尴尬的文件如10G，处理起来就比较慢了。要是能利用单机的16CPU该是多好？
 
-##GNU Parallel
+## GNU Parallel
 
 接着我就发现了[GNU Parallel](http://www.gnu.org/software/parallel/)这货。
 
-###安装
+### 安装
 
 Mac装起来比较简单
 
@@ -22,7 +22,7 @@ Mac装起来比较简单
     
 就可以了，其他系统可以参照上面的链接的`Downloading GNU Parallel`部分。
 
-###使用
+### 使用
 
 使用可参照`parallel --help`，下面讲几个常用的。
     
@@ -35,7 +35,7 @@ Mac装起来比较简单
     `--pipe`就是丛stdin里读取并分割处理，
     `--no-notice`就是为了让parallel不唠叨。
     
-###例子
+### 例子
 
 现在给一个word count的例子吧
 
