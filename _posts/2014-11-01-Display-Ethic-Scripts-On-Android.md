@@ -11,7 +11,7 @@ date: 2014-11-01T23:01:10+0800
 - [知乎：如何在電腦或手機的系統/瀏覽器上同時正確顯示 Unicode 的多語種文字？](http://www.zhihu.com/question/25162041/answer/30223818)
 - [polyhedron微博: 有沒有顯示各種文字都能按該文字最常見的字體正常顯示的字體？](http://weibo.com/1180557177/BlLDihBBB?type=comment)
 
-正如知乎上“梁海”所说，Android也就使用的fallback方案。毕竟就算支持所有Unicode文字的字体存在，也不能保证每个字体的美观及后续维护。而且计算机上目前单字体文件也有字数上限65535$$(2^{16})$$。
+正如知乎上“梁海”所说，Android也就使用的fallback方案。毕竟就算支持所有Unicode文字的字体存在，也不能保证每个字体的美观及后续维护。而且计算机上目前单字体文件也有字数上限65535$(2^{16})$。
 
 言归正传，Android上首先会默认使用系统配置字体(`/system/etc/system_fonts.xml`)。当系统配置的字体无法解析一些字后就会使用fallback list(默认`/system/etc/fallback_fonts.xml`)中的字体，并且按照顺序依次地使用相应的字体解码显示。具体操作步骤如后：
 
