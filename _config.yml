@@ -9,7 +9,8 @@ name: Joseph Tang
 description: Live more seriously within
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://avatars3.githubusercontent.com/u/2414660?v=3&s=70
+#avatar: https://avatars3.githubusercontent.com/u/2414660?v=3&s=70
+avartar: http://www.josephjctang.com/avatar70.jpg
 
 #
 # Flags below are optional
@@ -33,8 +34,8 @@ footer-links:
   douban: jinntrance
 
 # Your disqus and duoshuo shortname, entering this will enable commenting on posts
-disqus: jinntrance
 duoshuo: jinntrance
+disqus: jinntrance
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: 
