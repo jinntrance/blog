@@ -20,7 +20,7 @@ date: 2014-11-01T23:01:10+0800
 
 1. [Root](http://www.shuame.com/root/) 并装上[RE文件管理器](http://www.wandoujia.com/apps/com.speedsoftware.rootexplorer) 
     
-2. 准备Android上使用的[字体](http://pan.baidu.com/s/1dDvkoKx)，下载解压，使用RE文件管理器将需要的字体（这个压缩包是包含近90个字体，30+ scripts，200+ languages，可参考此处找到[对应字体](http://www.babelstone.co.uk/Unicode/FontList.html)）拷贝至手机的`/system/fonts`下。并长按字体文件，弹出操作项后，将权限改成对所有人可读 ，同时所有者和群组都改成root。<img id="5D4DCB7CF3248606C58F9DAA206CA668" src="http://m1.img.srcdd.com/farm5/d/2014/1103/23/5D4DCB7CF3248606C58F9DAA206CA668_B500_900_500_888.jpeg" />
+2. 准备Android上使用的[字体](http://pan.baidu.com/s/1dDvkoKx)，下载解压，使用RE文件管理器将需要的字体（这个压缩包是包含近90个字体，30+ scripts，200+ languages，可参考此处找到[对应字体](http://www.babelstone.co.uk/Unicode/FontList.html)）拷贝至手机的`/system/fonts`下。并长按字体文件，弹出操作项后，将权限改成对所有人可读 ，同时所有者和群组都改成root。![img1]
 
 ## 字体配置修改
  
@@ -109,9 +109,8 @@ date: 2014-11-01T23:01:10+0800
 6. 最后测试一下手机能否正常显示相关的字吧
 
 > 國際音標tɕi̯ᴀ˥˥  維吾爾 ئۇيغۇرچە 藏བོད་སྐད།  緬မြန်  彝ꑳ  滿ᠰᠠᡳᠨ 蒙 ᠮᠤᠩᠭᠤᠯ 泰ไทย  梵संस्कृत  希臘ἄ Punjabi ਪੰਜਾਬੀ پنجابى Arabic العربية Telugu తెలుగు Sundanese ᮘᮞ ᮞᮥᮔ᮪ᮓ Oriya ଓଡ଼ିଆ Khmer ភាសាខ្មែរ Canadian Aboriginal Syllabics ᓀᐦᐃᔭᐍᐏᐣ Cherokee ᎠᏂᏴᏫᏯ Coptic ⲙⲛⲧⲣⲙⲛⲕⲏⲙⲉ Deseret 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐈𐑊𐑁𐐩𐐺𐐯𐐻 Ethiopic ኢትዮጵያ Old Persian cuneiform 𐎣𐎲𐎢𐎪𐎡𐎹 Balinese ᬩᬮᬶ᭞᭑᭞ᬚᬸᬮᬶ᭞᭑᭙᭘᭒᭟ Javanese ꧋ꦱꦸꦒꦼꦁꦫꦮꦸꦃꦮꦺꦴꦤ꧀ꦠꦼꦤ꧀ꦲꦶꦁꦮꦶꦏꦶꦥꦺꦝꦶꦪꦃꦗꦮꦶ꧉
-
-    
-<img id="D3215E9CEA642FEF0F4B55B5F42BD73A" src="http://m3.img.srcdd.com/farm5/d/2014/1103/23/D3215E9CEA642FEF0F4B55B5F42BD73A_B500_900_500_888.jpeg" />
+   
+![img2]
     
 ## 字体使用情况
 
@@ -119,3 +118,5 @@ date: 2014-11-01T23:01:10+0800
 * 藏文字体：[Yalasoo Tibetan Font Software Book Music](http://www.yalasoo.com/English/docs/yalasoo_en_font.html)
 * 苗语字体：[phjamr/MiaoUnicode · GitHub](https://github.com/phjamr/MiaoUnicode)
 
+[img1]:  {{site.baseurl}}/assets/2014-11-01-polyglots.1.jpg
+[img2]:  {{site.baseurl}}/assets/2014-11-01-polyglots.2.jpg
