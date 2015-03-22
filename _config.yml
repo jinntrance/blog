@@ -1,6 +1,8 @@
 title:            Joseph's Blog
 description:      "Live more seriously within."
+#to enaable disqus comments, add your username
 disqus_shortname:  jinntrance
+#to enaable duoshuo comments, add your username here
 duoshuo_shortname: 
 reading_time:     true
 words_per_minute: 200
@@ -41,10 +43,12 @@ jquery_lastest: false
 mathjax_latest: false
 
 # Analytics and webmaster tools stuff goes here
-# can not access google service in China
+# can not access google service in China,
+# Google Analytics ID
 google_analytics: "UA-39438576-1"
 google_verify:     
 google_fonts: 
+# add Baidu Analytics ID for tracking
 baidu_analytics: 
 
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
