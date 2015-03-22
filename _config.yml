@@ -37,6 +37,11 @@ background:
 
 #enable mathjax by default
 mathjax: true
+#if set true, mathjax will be loaded 
+#only when there are elements with class `mathjax_alt`
+mathjax_with_alt: true
+#when mathjax fails, display those alternative elements
+mathjax_alt_class: mathjax_alt
 
 # load external scripts
 jquery_lastest: false

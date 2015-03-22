@@ -1,3 +1,4 @@
+
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
@@ -11,16 +12,28 @@
     });
 </script>
 
+<script type="text/javascript">
+alts = document.getElementsByClassName('{{ site.mathjax_alt_class }}');
+latest_mathjax = '<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"><\/script>'
+local_mathjax = '<script src="http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>'
+{% if site.mathjax_with_alt %}
+if( 0 == alts.length) {
+  latest_mathjax = ''
+  local_mathjax = ''
+}
+{% endif %}
+</script>
+
 {% if site.mathjax_latest %}
-<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script>document.write(window.latest_mathjax)</script>
 {% endif %}
 
-<script>window.MathJax || document.write('<script src="http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')</script>
+<script>window.MathJax || document.write(window.local_mathjax)</script>
+
 <script type="text/javascript">
-if(undefined == MathJax){
-  var imgs = document.getElementsByClassName('mathjax_alt');
-  for (var i = 0, len = imgs.length; i < len; i++) {
-    imgs[i].style.display = 'inline'; 
+if( ! window.MathJax ){
+  for (var i = 0 ; i < alts.length; i++) {
+    alts[i].style.display = 'inline'; 
   }
 }
 </script>
