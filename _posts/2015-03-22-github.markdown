@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "用GitHub建立博客并对访问加速"
+title: "用GitHub及GitCafé建博并对内容访问加速"
 modified:
 categories: 
 description:
-tags: [Technical, Blog]
+tags: [Technical, Blog, MathJax]
 image:
   feature:
   credit:
@@ -13,3 +13,93 @@ comments:
 share:
 date: 2015-03-22T10:23:46+00:00
 ---
+
+### 建站与镜像
+
+现在大家都比较喜欢使用GitHub/GitCafé Pages建站。一者经济实惠。二者GitHub在国内访问简直慢成渣渣了。所以不少人也倾向于使用国内同类产品GitCafé做一个镜像。基本有国外CDN的GitHub是10ms的ping值，而国内Ping GitHub基本要200ms。大家也可以用如下两个网站实测一下。
+
+* [Super Ping] 
+* [站长工具]
+
+如果不知道如何使用GitHub Pages建立博客，不太熟悉git操作，不知道怎么镜像你的博客，或者不知道怎么嵌入完美显示公式的MathJax（码农作笔记，真少不了公式😂），可以参考：
+
+* [简明Github Pages与Hexo教程]
+* [Hexo上使用MathJax]
+* [将博客从GitHub迁移到GitCafe]
+* [同时使用GitHub与GitCafe托管博客]
+
+基本步骤也就是：
+
+1. 买个人域名。
+2. 个人域名分国内国外解析。
+3. 解决一些资源国内缓慢的问题。
+
+而其间几个关键的问题就是：
+
+* 将同一个域名，如何让国内、国外访问分别解析到GitCafé和GitHub上的Page？
+* Mathjax也是放在国外的，加载一样非常慢，可否优化？
+* 如果想把站点做成中英文的，评论管理，是否得同时使用“多说”和Disqus？
+* 站点统计，万恶的Google被墙后，国内只得使用百度等其他统计？
+
+### 域名解析
+
+之前其他人都喜欢使用[DNSPod]，我看了也挺不错的。但是如今域名解析已经不能设置“国内”、“国外”，却必须设置“电信”、“联通”、“移动”等了，设置完成发现有10多20条设置实在蛋疼。最后终于找到了[阿里DNS]，也就是曾经万网的服务。简简单单设置4条记录就可以了。
+
+{% highlight javascript %}
+国内 josephjctang.com.	600	IN	CNAME	jinntrance.gitcafe.io.
+国内 www.josephjctang.com.	600	IN	CNAME	jinntrance.gitcafe.io.
+国外 josephjctang.com.	600	IN	CNAME	jinntrance.github.io.
+国外 www.josephjctang.com.	600	IN	CNAME	jinntrance.github.io.
+{% endhighlight %}
+
+其中最好还是使用CNAME，这样可以有如GitHub [Customize domains] 中说的优势：
+
+* 可以使用CDN加速。如果用A记录，实测中GitHub都是访问的美国加州的两IP，而使用CNAME则基本上使用了GitHub在当地国家或附近的CDN。CNAME访问平均也就5ms左右，而使用A记录则平均在100ms左右。
+* 就是GitHub服务器IP改了也就不用改域名设置。现在GitCafé貌似没有CDN，现在还是使用CNAME，以后他家有CDN了也就直接加速了。
+* 因为防DoS实现得更好，页面可以加载更快（感觉就是CDN的优势吧）。
+
+域名配置成功后，大家可以看一下域名解析情况：
+
+{% highlight javascript %}
+dig www.josephjctang.com  +nostats +nocomments +nocmd
+{% endhighlight %}
+
+如果解析正常，则基本如后。那么你也可以使用上面的Ping工具看看实际效果。现在开个人站点真有秒开的感觉。
+
+{% highlight bash %}
+josephjctang.com.	600	IN	CNAME	jinntrance.gitcafe.io.
+jinntrance.gitcafe.io.	600	IN	A	207.226.141.135
+{% endhighlight %}
+
+### MathJax加速
+
+我实际测了一下，使用最原始的MathJax CDN配置，整个页面首次加载要6s左右，有缓存后加载在3-4s左右完成。我也博客的镜像如法炮制，在GitCafé上建了一个镜像，做成自己的Project Page，这样也就能使用自己的博客域名访问了。也同样达到了加速的目的。大家也可使用如下脚本使用加速后的MathJax。
+
+{% highlight javascript %}
+<script type="text/javascript" src="http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+{% endhighlight %}
+
+遇到的一个坑，也是GitCafé一个不完善的地方：如果Project名字有大写的话，Project GitCafé Page是访问不了的。
+
+
+### 评论及站点统计优化
+
+无疑，要想使用最快且最适合的评论管理插件，国内使用“多说”，国外使用Disqus。同理也需要拆分“百度统计”和Google Analytics。
+本博也就对模板稍做修改。让GitCafé 和GitHub 上各有一个`_config.yml` 。然后让域名解析访问GitCafé 的用户（也就是国内用户），加载“多说”和百度统计；让域名解析访问GitHub的用户使用Disqus和Google Analytics。
+当然，对于统计来说，大家也可以把百度和Google一起开。只需要在`_config.yml`中加上对应的ID即可。
+
+大家也可可以Fork [本博]，获取主题之外，修改`_config.yml` 中对应注释的`disqus_shortname`和`google_analytics` 完成优化。也可以下载模板 [analytics.html] 加载到你现有的博客中。
+
+
+[Super Ping]: http://www.super-ping.com/?ping=jinntrance.github.io&locale=en
+[站长工具]: http://ping.chinaz.com/
+[简明Github Pages与Hexo教程]: http://www.jianshu.com/p/05289a4bc8b2
+[Hexo上使用MathJax]: http://hijiangtao.github.io/2014/09/08/MathJaxinHexo/
+[将博客从GitHub迁移到GitCafe]: http://blog.devtang.com/blog/2014/06/02/use-gitcafe-to-host-blog/
+[同时使用GitHub与GitCafe托管博客]: https://ruby-china.org/topics/18084
+[DNSPod]: www.dnspod.cn
+[阿里DNS]: http://www.net.cn/core/domain/tclist
+[Customize domains]: https://help.github.com/articles/about-custom-domains-for-github-pages-sites/#subdomains
+[本博]: https://github.com/jinntrance/blog/
+[analytics.html]: https://github.com/jinntrance/blog/blob/gh-pages/_includes/analytics.html
