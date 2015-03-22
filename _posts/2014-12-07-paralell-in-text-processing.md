@@ -39,8 +39,8 @@ Mac装起来比较简单
 
 现在给一个word count的例子吧
 
-```
+{% highlight bash %}
 parallel <$FILE --no-notice -j 16 --pipe -q awk '{for(i=1;i<=NF;i++) words[$i]+=1}END{for(w in words) print w "\t" words[w]}' | awk '{words[$1]+=$2}END{for(w in words) print w "\t" words[w]}'
-```
+{% endhighlight %}
 
 但其实这个例子不太好。因为这个wc的瓶颈在未并行的第二个awk，而且使用pipeline，会导致前面并行的awk阻塞。而如果只是对每一行做一些文本处理，用parallel并行提速，自然最好不过了。

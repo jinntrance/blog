@@ -27,36 +27,36 @@ date: 2014-11-01T23:01:10+0800
    
 3. 可以直接使用RE文件管理器修改`/system/etc/fallback_fonts.xml`中的配置。如后添加所需字体的配置（这里添加了中国及南亚等字体，因为Android默认是支持显示阿拉伯语和梵文的，也就没有将对应的字体加到下面配置里）。并且需要置于DroidSansFallback.ttf的配置前，不然将不能正常显示排在DroidSansFallback.ttf之后的字体。
 {% highlight xml%}
-<family>
-    <fileset>
-    <file>NotoSansMyanmar-Regular.ttf</file>
-    </fileset>
-</family>
-<family>
-    <fileset>
-    <file>NotoSansMongolian-Regular.ttf</file>
-    </fileset>
-</family>
-<family>
-    <fileset>
-    <file>NotoSansYi-Regular.ttf</file>
-    </fileset>
-</family>
-<family>
-    <fileset>
-    <file>Qomolangma-UchenSarchung.ttf</file>
-    </fileset>
-</family>
-<family>
-    <fileset>
-    <file>NotoSansKhmer-Regular.ttf</file>
-    </fileset>
-</family>
-<family>
-    <fileset>
-    <file>MiaoUnicode-Regular.ttf</file>
-    </fileset>
-</family>
+    <family>
+        <fileset>
+        <file>NotoSansMyanmar-Regular.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+        <file>NotoSansMongolian-Regular.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+        <file>NotoSansYi-Regular.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+        <file>Qomolangma-UchenSarchung.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+        <file>NotoSansKhmer-Regular.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+        <file>MiaoUnicode-Regular.ttf</file>
+        </fileset>
+    </family>
 {% endhighlight %}
 4. 或者使用这个[配置文件](http://pan.baidu.com/s/1mgGAKzQ)，并拷贝merge到`/system/vendor/etc/fallback_fonts.xml`中。 其内容如后。 其中第一个family加了order=0（计算机中的1），意思就是最后的fallback list，先由`/system/etc/fallback_fonts.xml`顺序生成，然后将`/system/vendor/etc/fallback_fonts.xml`中所有的fonts， 从fallback list中的第1个位置插入。 order也可以改成其他数字，但要保证插入DroidSansFallback.ttf所在位置的之前。
 {% highlight xml%}
@@ -103,8 +103,8 @@ date: 2014-11-01T23:01:10+0800
 ## 使用与测试
 
 5. 安装相应输入法
-	- [触宝国际版](http://www.coolapk.com/apk/com.cootek.smartinputv5)    [TouchalPal X Keyboard](https://play.google.com/store/apps/details?id=com.cootek.smartinputv5)
-	- [Multiling O Keyboard](https://play.google.com/store/apps/details?id=kl.ime.oh)
+    - [触宝国际版](http://www.coolapk.com/apk/com.cootek.smartinputv5)    [TouchalPal X Keyboard](https://play.google.com/store/apps/details?id=com.cootek.smartinputv5)
+    - [Multiling O Keyboard](https://play.google.com/store/apps/details?id=kl.ime.oh)
     
 6. 最后测试一下手机能否正常显示相关的字吧
 
