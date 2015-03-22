@@ -17,7 +17,6 @@ date: 2015-03-22T10:23:46+00:00
 ### 建站与镜像
 
 现在大家都比较喜欢使用GitHub/GitCafé Pages建站。一者经济实惠。二者GitHub在国内访问简直慢成渣渣了。所以不少人也倾向于使用国内同类产品GitCafé做一个镜像。基本有国外CDN的GitHub是10ms的ping值，而国内Ping GitHub基本要200ms。大家也可以用如下两个网站实测一下。
-doubanclaim877317b1b1678a8d
 
 * [Super Ping] 
 * [站长工具]
