@@ -35,7 +35,7 @@ mathjax: true
 
 # load external scripts
 jquery_lastest: 
-mathjax_latest: true
+mathjax_latest: 
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   
