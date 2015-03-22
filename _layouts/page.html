@@ -43,7 +43,11 @@
         {% if page.share != false %}{% include social-share.html %}{% endif %}
       </footer>
     </div><!-- /.entry-content -->
-    {% if page.comments != false %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
+    {% if page.comments != false %}
+    <section id="disqus_thread">
+      <div class="ds-thread" data-thread-key="{{page.url}} data-title="{{page.titile}}" data-url="{{page.url}}"></div>
+    </section>
+    <!-- /#disqus_thread -->{% endif %}
   </article>
 </div><!-- /#main -->
 

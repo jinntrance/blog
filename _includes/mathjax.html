@@ -1,7 +1,5 @@
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-      jax: ["input/TeX","input/AsciiMath","output/HTML-CSS"],
-      extensions: ["tex2jax.js","asciimath2jax.js"],
       tex2jax: {
         inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
         displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
@@ -14,10 +12,10 @@
 </script>
 
 {% if site.mathjax_latest %}
-<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript"></script>
+<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 {% endif %}
 
-<script>window.MathJax || document.write('<script src="http://www.josephjctang.com/mathjax/MathJax.js"><\/script>')</script>
+<script>window.MathJax || document.write('<script src="http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')</script>
 <script type="text/javascript">
 if(undefined == MathJax){
   var imgs = document.getElementsByClassName('mathjax_alt');
