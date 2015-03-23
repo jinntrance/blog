@@ -1,4 +1,4 @@
-blog
+Joseph's Blog
 ====
 
-Personal blog
+Personal blog at http://www.josephjctang.com/blog/
