@@ -43,7 +43,7 @@ date: 2015-03-22T10:23:46+00:00
 
 ### 域名解析
 
-之前其他人都喜欢使用[DNSPod]，我看了也挺不错的。但是如今域名解析已经不能设置“国内”、“国外”，却必须设置“电信”、“联通”、“移动”等了，设置完成发现有10多20条设置实在蛋疼。最后终于找到了[阿里DNS]，也就是曾经万网的服务。简简单单设置4条记录就可以了。
+之前其他人都喜欢使用[DNSPod]，我看了也挺不错的。但是如今DNSPod域名解析已经不能设置“国内”、“国外”，却必须设置“电信”、“联通”、“移动”等了，设置完成发现有10多20条设置实在蛋疼。最后终于找到了[阿里DNS]，也就是曾经万网的服务。简简单单设置4条记录就可以了。
 
 {% highlight javascript %}
 国内 josephjctang.com.	600	IN	CNAME	jinntrance.gitcafe.io.
@@ -52,7 +52,7 @@ date: 2015-03-22T10:23:46+00:00
 国外 www.josephjctang.com.	600	IN	CNAME	jinntrance.github.io.
 {% endhighlight %}
 
-其中最好还是使用CNAME，这样可以有如GitHub [Customize domains] 中说的优势：
+其中最好还是使用CNAME，这样可以有如GitHub [Custom domains] 中说的优势：
 
 * 可以使用CDN加速。如果用A记录，实测中GitHub都是访问的美国加州的两IP，而使用CNAME则基本上使用了GitHub在当地国家或附近的CDN。CNAME访问平均也就5ms左右，而使用A记录则平均在100ms左右。
 * 就是GitHub服务器IP改了也就不用改域名设置。现在GitCafé貌似没有CDN，现在还是使用CNAME，以后他家有CDN了也就直接加速了。
@@ -73,7 +73,7 @@ jinntrance.gitcafe.io.	600	IN	A	207.226.141.135
 
 ### MathJax加速
 
-我实际测了一下，使用最原始的MathJax CDN配置，整个页面首次加载要6s左右，有缓存后加载在3-4s左右完成。我也博客的镜像如法炮制，在GitCafé上建了一个镜像，做成自己的Project Page，这样也就能使用自己的博客域名访问了。也同样达到了加速的目的。大家也可使用如下脚本使用加速后的MathJax。
+我实际测了一下，使用最原始的MathJax CDN配置，整个页面首次加载要6s左右，有缓存后加载在3-4s左右完成。我也像博客的镜像如法炮制，在GitCafé上建了一个镜像，做成自己的Project Page，这样也就能使用自己的博客域名访问了。也同样达到了加速的目的。大家也可使用如下脚本使用加速后的MathJax。
 
 {% highlight javascript %}
 <script type="text/javascript" src="http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -100,6 +100,6 @@ jinntrance.gitcafe.io.	600	IN	A	207.226.141.135
 [同时使用GitHub与GitCafe托管博客]: https://ruby-china.org/topics/18084
 [DNSPod]: www.dnspod.cn
 [阿里DNS]: http://www.net.cn/core/domain/tclist
-[Customize domains]: https://help.github.com/articles/about-custom-domains-for-github-pages-sites/#subdomains
+[Custom domains]: https://help.github.com/articles/about-custom-domains-for-github-pages-sites/#subdomains
 [本博]: https://github.com/jinntrance/blog/
 [analytics.html]: https://github.com/jinntrance/blog/blob/gh-pages/_includes/analytics.html
