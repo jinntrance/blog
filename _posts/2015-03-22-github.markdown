@@ -45,7 +45,7 @@ date: 2015-03-22T10:23:46+00:00
 
 之前其他人都喜欢使用[DNSPod]，我看了也挺不错的。但是如今DNSPod域名解析已经不能设置“国内”、“国外”，却必须设置“电信”、“联通”、“移动”等了，设置完成发现有10多20条设置实在蛋疼。最后终于找到了[阿里DNS]，也就是曾经万网的服务。简简单单设置4条记录就可以了。
 
-{% highlight javascript %}
+{% highlight bash %} 
 国内 josephjctang.com.	600	IN	CNAME	jinntrance.gitcafe.io.
 国内 www.josephjctang.com.	600	IN	CNAME	jinntrance.gitcafe.io.
 国外 josephjctang.com.	600	IN	CNAME	jinntrance.github.io.
@@ -60,7 +60,7 @@ date: 2015-03-22T10:23:46+00:00
 
 域名配置成功后，大家可以看一下域名解析情况：
 
-{% highlight javascript %}
+{% highlight bash %}
 dig www.josephjctang.com  +nostats +nocomments +nocmd
 {% endhighlight %}
 

@@ -15,7 +15,7 @@
 <script type="text/javascript">
 alts = document.getElementsByClassName('{{ site.mathjax_alt_class }}');
 latest_mathjax = '<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"><\/script>'
-local_mathjax = '<script src="http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>'
+local_mathjax = '<script src="http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"><\/script>'
 {% if site.mathjax_with_alt %}
 if( 0 == alts.length) {
   latest_mathjax = ''
