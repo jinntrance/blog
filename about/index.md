@@ -6,5 +6,5 @@ redirect_to:
 ---
 
 <script type="text/javascript">
-  window.location.href='http://www.josephjctang.com/#about
+  window.location.href='http://www.josephjctang.com/#about'
 </script>
