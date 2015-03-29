@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.content | strip_html | truncate: 110 }}{% endif %}">
 {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
 
 {% if site.owner.twitter %}<!-- Twitter Cards -->

@@ -8,7 +8,8 @@ reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-#url: http://www.josephjctang.com/
+#url: http://www.josephjctang.com/blog
+domain: http://www.josephjctang.com
 url: /blog
 baseurl: /blog
 
@@ -31,16 +32,22 @@ owner:
   google_plus: +JosephJinChuanTáng
   weibo: jinntrance
   douban: jinntrance
+  weibo_name: "癡人憐我半瘋癲"
+
+# wheather display the full post  on the index page 
+index_fullpost: false
+# disable duoshuo share by default  
+duoshuo_share: false  
 
 # Background image to be tiled on all pages
 background: 
 
-#enable mathjax by default
+# enable mathjax by default
 mathjax: true
-#if set true, mathjax will be loaded 
-#only when there are elements with class `mathjax_alt`
+# if set true, mathjax will be loaded 
+# only when there are elements with class `mathjax_alt`
 mathjax_with_alt: true
-#when mathjax fails, display those alternative elements
+# when mathjax fails, display those alternative elements
 mathjax_alt_class: mathjax_alt
 
 # load external scripts

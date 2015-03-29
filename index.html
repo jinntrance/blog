@@ -35,7 +35,14 @@ image:
     {% endif %}
   </header>
   <div class="entry-content">
-    {{ post.content }}
+    {% if site.index_fullpost != true %}
+    <div class="read-more-content"> <p>
+      {{ post.content | strip_html | truncate: 220 | replace: "  "," " }}
+      <a href="{{page.url}}">Continue reading</a>
+      </p></div>
+    {% else %}
+      {{ post.content }}
+    {% endif %}
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 {% endfor %}
