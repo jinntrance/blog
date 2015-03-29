@@ -51,7 +51,7 @@
     </div><!-- /.entry-content -->
     {% if page.comments != false %}
     <section id="disqus_thread">
-      <div class="ds-thread" data-thread-key="{{page.url}} data-title="{{page.titile}}" data-url="{{page.url}}"></div>
+      <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{site.domain}}{{site.url}}{{page.url}}"></div>
     </section>
     <!-- /#disqus_thread -->{% endif %}
     {% if site.related_posts.size %}{% include read-more.html %}{% endif %}
