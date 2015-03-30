@@ -35,7 +35,7 @@ layout: null
     			}
     		})
     		switch($('#search-ul li').size()){
-    			case 0 : window.location.href="{{site.url}}/posts/"
+    			case 0 : window.location.href="{{site.url}}/posts.html"
     			case 1 : $('#search-ul li a')[0].click();
     			default: 
     		}
