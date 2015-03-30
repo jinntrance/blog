@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: null
 ---
    function str_sim (a, b) {
     	if (!a || !b || a.length ==0 || b.length ==0 ) {
