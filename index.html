@@ -38,7 +38,7 @@ image:
     {% if site.index_fullpost != true %}
     <div class="read-more-content"> <p>
       {{ post.content | strip_html | truncate: 220 | replace: "  "," " }}
-      <a href="{{page.url}}">Continue reading</a>
+      <a href="{{ site.url }}{{ post.url }}" >Continue reading</a>
       </p></div>
     {% else %}
       {{ post.content }}
