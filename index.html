@@ -23,7 +23,7 @@ image:
       {% if site.reading_time %}
       <span class="entry-reading-time">
         <i class="fa fa-clock-o"></i>
-        {% assign readtime = post.content | number_of_words | divided_by:site.words_per_minute %}
+        {% assign readtime = post.content.size  | divided_by:site.chars_per_minute %}
         Reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}
       </span><!-- /.entry-reading-time -->
       {% endif %}
@@ -37,7 +37,7 @@ image:
   <div class="entry-content">
     {% if site.index_fullpost != true %}
     <div class="read-more-content"> <p>
-      {{ post.content | strip_html | truncate: site.abstract_words_num | markdownify | replace: "  "," " }}
+      {{ post.content | strip_html | truncate: site.abstract_chars_num | markdownify | replace: "  "," " }}
       <a href="{{ site.url }}{{ post.url }}" >Continue reading</a>
       </p></div>
     {% else %}
