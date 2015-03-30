@@ -1,0 +1,19 @@
+---
+layout: post-index
+title: Search
+description: "Search Page."
+comments: false
+---
+    <article>
+      <h2 id="search">Search results</h2>
+      <ul id="search-ul">
+        
+      </ul>
+    </article>
+    <script type="text/javascript">
+    	var today = "{{ page.date | date: "%d" }}"
+    	var feed_url = "{{ site.url }}/feed.json?date=" + today
+    	var home_url = "{{ site.url }}"
+    </script>
+    <script type="text/javascript" defer="defer" src="{{ site.url }}/assets/js/search.js">
+    </script>
