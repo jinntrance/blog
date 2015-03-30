@@ -37,7 +37,7 @@ image:
   <div class="entry-content">
     {% if site.index_fullpost != true %}
     <div class="read-more-content"> <p>
-      {{ post.content | strip_html | truncate: 220 | replace: "  "," " }}
+      {{ post.content | strip_html | truncate: site.abstract_words_num | markdownify | replace: "  "," " }}
       <a href="{{ site.url }}{{ post.url }}" >Continue reading</a>
       </p></div>
     {% else %}
