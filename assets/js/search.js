@@ -20,7 +20,7 @@ layout: null
     	return intersect / min;
     }
     $(function(){
-    	var today = "{{ site.time | date: "%d" }}"
+    	var today = "{{ site.time | date: "%Y%d" }}"
     	var feed_url = "{{ site.url }}/feed.json?date=" + today
     	var query_search = window.location.search.split('&').filter(function(arg) {
     		return arg.indexOf('q=') >= 0;
