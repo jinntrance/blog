@@ -80,7 +80,7 @@ jinntrance.gitcafe.io.	600	IN	A	207.226.141.135
 </script>
 {% endhighlight %}
 
-大家也可以看此博文[BM25]({% post_url 2014-08-19-bm25 | prepend: site.baseurl %})预览MathJax效果。
+大家也可以看此博文[BM25]({%site.baseurl%}{% post_url 2014-08-19-bm25 %})预览MathJax效果。
 
 遇到的一个坑，也是GitCafé一个不完善的地方：如果Project名字有大写的话，Project GitCafé Page是访问不了的。
 
