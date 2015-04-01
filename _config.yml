@@ -1,12 +1,12 @@
 title:            Joseph's Blog
-description:      "Live more seriously within."
+description:      "Le livre est l'ami de la solitude et moi."
 #to enaable disqus comments, add your username
 disqus_shortname:  jinntrance
 #to enaable duoshuo comments, add your username here
 duoshuo_shortname: 
 reading_time:     true
 words_per_minute: 200
-chars_per_minute: 800
+chars_per_minute: 600
 abstract_chars_num: 220  
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
