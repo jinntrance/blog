@@ -75,7 +75,7 @@ future:      true
 highlighter: pygments
 markdown:    kramdown
 gems:
-  - jekyll-sitemap
+#  - jekyll-sitemap
   - jekyll-mentions
   - jemoji
   - jekyll-redirect-from
