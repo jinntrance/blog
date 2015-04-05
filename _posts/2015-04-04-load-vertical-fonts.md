@@ -15,7 +15,7 @@ date: 2015-04-05T00:32:30+08:00
 
 ### font-face load 本机未装字体
 
-问题一就用css的font-face动态加载字体就可以了。 使用[font-face generator]，比如上传已有的如TTF字体，并生成对应的字体和CSS。
+问题一就用css的font-face动态加载Web fonts字体就可以了。 使用[font-face generator]，比如上传已有的如TTF字体，并生成对应的字体和CSS。
 
 - 生成的字体，而=仔细看了看，大小也是WOFF2 < WOFF < TTF = OET < SVG的。所以最好还是把WOFF2写在CSS 加载资源的最前面。
 - 生成的CSS，还不够全面，可以参考 [CSS Tricks] 里对font-face的详细阐述。
@@ -26,7 +26,8 @@ date: 2015-04-05T00:32:30+08:00
 @ font-face {
 font-family: 'Mongolian';
     src: url('../fonts/MongolianBaiti.eot');  /* IE9 Compat Modes */
-    src: url("../fonts/MongolianBaiti.eot?") format('embedded-opentype'), /* IE6-IE8 */    	     local('Mongolian Baiti'), local('Mongolian White'), 
+    src: url('../fonts/MongolianBaiti.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         local('Mongolian Baiti'), local('Mongolian White'), 
          /* load local fonts already installed*/
          url('../fonts/MongolianBaiti.woff2') format('woff2'),
          url('../fonts/MongolianBaiti.woff') format('woff'),
@@ -71,6 +72,7 @@ font-family: 'Mongolian';
 {:.lang-mn}
 
 正常显示后应该是这样的： ![demo]
+如果还是不能正常显示，那还是下载对应字体吧。比如我这儿的[蒙文字体]。
 
 这个[CSS]，我也加了中文的竖排样式，大家可以下载使用。
 大家也可以到`Mongolian White`的[官网](http://www.mongolfont.com/cn/font/mnglwhiteotf.html) 看看蒙文的优美显示。
@@ -81,3 +83,4 @@ font-family: 'Mongolian';
 [font-face generator]: https://everythingfonts.com/font-face
 [CSS Tricks]: https://css-tricks.com/snippets/css/using-font-face/
 [demo]: {{site.baseurl}}/assets/images/2015-04-04.mongolian.png
+[蒙文字体]: {{site.baseurl}}/assets/MongolianBaiti.ttf
