@@ -86,4 +86,4 @@ font-family: 'Mongolian';
 [font-face generator]: https://everythingfonts.com/font-face
 [CSS Tricks]: https://css-tricks.com/snippets/css/using-font-face/
 [demo]: {{site.baseurl}}/assets/images/2015-04-04.mongolian.png
-[蒙文字体]: {{site.baseurl}}/assets/MongolianBaiti.ttf
+[蒙文字体]: {{site.baseurl}}/assets/fonts/MongolianBaiti.ttf
