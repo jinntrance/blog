@@ -11,6 +11,8 @@ $font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragin
          url('../fonts/MongolianBaiti.woff') format('woff'),
          url('../fonts/MongolianBaiti.ttf') format('truetype'),
          url('../fonts/MongolianBaiti.svg#MongolianBaiti') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* vertical layout from left to right. For Traditional Mongolian, Manchu. */

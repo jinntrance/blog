@@ -26,13 +26,14 @@ date: 2015-04-05T00:32:30+08:00
 @ font-face {
 font-family: 'Mongolian';
     src: url('../fonts/MongolianBaiti.eot');  /* IE9 Compat Modes */
-    src: url('../fonts/MongolianBaiti.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         local('Mongolian Baiti'), local('Mongolian White'), 
+    src: url('../fonts/MongolianBaiti.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */    	     local('Mongolian Baiti'), local('Mongolian White'), 
          /* load local fonts already installed*/
          url('../fonts/MongolianBaiti.woff2') format('woff2'),
          url('../fonts/MongolianBaiti.woff') format('woff'),
          url('../fonts/MongolianBaiti.ttf') format('truetype'),
          url('../fonts/MongolianBaiti.svg#MongolianBaiti') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 {% endhighlight %}
 
@@ -83,4 +84,4 @@ font-family: 'Mongolian';
 [font-face generator]: https://everythingfonts.com/font-face
 [CSS Tricks]: https://css-tricks.com/snippets/css/using-font-face/
 [demo]: {{site.baseurl}}/assets/images/2015-04-04.mongolian.png
-[蒙文字体]: {{site.baseurl}}/assets/fonts/MongolianBaiti.ttf
+[蒙文字体]: {{site.baseurl}}/assets/MongolianBaiti.ttf
