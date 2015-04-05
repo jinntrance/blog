@@ -36,11 +36,10 @@ $font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragin
   -o-writing-mode: vertical-lr;
   -ms-writing-mode: tb-lr;
   writing-mode: tb-lr;
-  layout-flow:vertical-ideographic;
 }
 /* for Tibetan */
 .lang-bod,.lang-bo, [lang="bo"]{
-  font-family: "Qomolangma-Uchen-Sarchung", "Qomolangma-Uchen-Suring", Kokonor, Kailasa, "Tibetan Machine Uni", "Microsoft Himalaya", 'Tibetan', sans-serif;
+  font-family: "Qomolangma-Uchen Sarchung", '珠穆朗玛—乌金萨琼体', "Qomolangma-Uchen Suring", Kokonor, Kailasa, "Tibetan Machine Uni", "Microsoft Himalaya", 'Tibetan', sans-serif;
 }
 
 /* for Myanmar
@@ -55,5 +54,4 @@ $font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragin
   -o-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   writing-mode: tb-rl;
-  layout-flow:vertical-ideographic;
 }
