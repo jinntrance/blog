@@ -15,8 +15,21 @@ $font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragin
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'Tibetan';
+    src: url('../fonts/QomolangmaUchenSarchung.eot');  /* IE9 Compat Modes */
+    src: url('../fonts/QomolangmaUchenSarchung.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         local('Mongolian Baiti'), local('Mongolian White'), /* load local fonts already installed*/
+         url('../fonts/QomolangmaUchenSarchung.woff2') format('woff2'),
+         url('../fonts/QomolangmaUchenSarchung.woff') format('woff'),
+         url('../fonts/QomolangmaUchenSarchung.ttf') format('truetype'),
+         url('../fonts/QomolangmaUchenSarchung.svg#QomolangmaUchenSarchung') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* vertical layout from left to right. For Traditional Mongolian, Manchu. */
-.lang-mn {
+.lang-mn, .lang-mnc, .lang-sjo, [lang="mn-Mong"], [lang="mnc"], [lang="sjo"] {
   font-family: 'Mongolian Baiti', 'Mongolian White', 'Mongolian', sans-serif;
   -moz-writing-mode: vertical-lr;
   -webkit-writing-mode: vertical-lr;
@@ -24,6 +37,15 @@ $font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragin
   -ms-writing-mode: tb-lr;
   writing-mode: tb-lr;
   layout-flow:vertical-ideographic;
+}
+/* for Tibetan */
+.lang-bod,.lang-bo, [lang="bo"]{
+  font-family: "Qomolangma-Uchen-Sarchung", "Qomolangma-Uchen-Suring", Kokonor, Kailasa, "Tibetan Machine Uni", "Microsoft Himalaya", 'Tibetan', sans-serif;
+}
+
+/* for Myanmar
+.lang-my, [lang="my"] {
+  font-family: Padauk, Myanmar3, Parabaik, "MyMyanmar Unicode", Myanmar2, sans-serif;
 }
 
 /* vertical layout from right to left. For Chinese and Japanese. */
