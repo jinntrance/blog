@@ -25,13 +25,15 @@ date: 2015-04-05T00:32:30+08:00
 {% highlight css %}
 @ font-face {
 font-family: 'Mongolian';
-    src: url('../fonts/MongolianBaiti.eot');  /* IE9 Compat Modes */
-    src: url('../fonts/MongolianBaiti.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */    	     local('Mongolian Baiti'), local('Mongolian White'), 
-         /* load local fonts already installed*/
-         url('../fonts/MongolianBaiti.woff2') format('woff2'),
-         url('../fonts/MongolianBaiti.woff') format('woff'),
-         url('../fonts/MongolianBaiti.ttf') format('truetype'),
-         url('../fonts/MongolianBaiti.svg#MongolianBaiti') format('svg');
+    src: url('../fonts/MongolianBaiti.eot'); /* IE9 Compat Modes */
+    src: 
+     url('../fonts/MongolianBaiti.eot?#iefix') format('embedded-opentype'),/* IE6-IE8 */         
+     local('Mongolian Baiti'), 
+     local('Mongolian White'), /* load local fonts already installed*/
+     url('../fonts/MongolianBaiti.woff2') format('woff2'),
+     url('../fonts/MongolianBaiti.woff') format('woff'),
+     url('../fonts/MongolianBaiti.ttf') format('truetype'),
+     url('../fonts/MongolianBaiti.svg#MongolianBaiti') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -46,7 +48,7 @@ font-family: 'Mongolian';
 
 {% highlight css %}
 .lang-mn {
-  font-family: "Mongolian Baiti", "Mongolian White", Mongolian, sans-serif;
+  font-family: "Mongolian Baiti", "Mongolian White", 'Mongolian', sans-serif;
   -moz-writing-mode: vertical-lr;
   -webkit-writing-mode: vertical-lr;
   -o-writing-mode: vertical-lr;
@@ -73,7 +75,7 @@ font-family: 'Mongolian';
 {:.lang-mn}
 
 正常显示后应该是这样的： ![demo]
-如果还是不能正常显示，那还是下载对应字体吧。比如我这儿的[蒙文字体]。
+如果还是不能正常显示，那还是下载对应字体吧（比如我这儿的[蒙文字体]），或者更新浏览器到Google Chrome吧。
 
 这个[CSS]，我也加了中文的竖排样式，大家可以下载使用。
 大家也可以到`Mongolian White`的[官网](http://www.mongolfont.com/cn/font/mnglwhiteotf.html) 看看蒙文的优美显示。

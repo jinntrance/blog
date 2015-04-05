@@ -5,7 +5,7 @@ $font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragin
 @font-face {
 	font-family: 'Mongolian';
     src: url('../fonts/MongolianBaiti.eot');  /* IE9 Compat Modes */
-    src: url('../fonts/MongolianBaiti.eot') format('embedded-opentype'), /* IE6-IE8 */
+    src: url('../fonts/MongolianBaiti.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
          local('Mongolian Baiti'), local('Mongolian White'), /* load local fonts already installed*/
          url('../fonts/MongolianBaiti.woff2') format('woff2'),
          url('../fonts/MongolianBaiti.woff') format('woff'),
