@@ -14,6 +14,7 @@ abstract_chars_num: 220
 domain: http://www.josephjctang.com
 url: /blog/
 baseurl: /blog/
+apex_domain: josephjctang.com
 
 # Owner/author information
 owner:
