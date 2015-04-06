@@ -1,0 +1,34 @@
+
+$font-stack: "Helvetica Neue", Helvetica, Tahoma, Arial, "DejaVu Sans", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+
+
+@font-face {
+	font-family: 'Mongolian';
+    src: url('../fonts/MongolianBaiti.eot');  /* IE9 Compat Modes */
+    src: url("../fonts/MongolianBaiti.eot") format('embedded-opentype'), /* IE6-IE8 */
+         local('Mongolian Baiti'), local('Mongolian White'), /* load local fonts already installed*/
+         url('../fonts/MongolianBaiti.woff2') format('woff2'),
+         url('../fonts/MongolianBaiti.woff') format('woff'),
+         url('../fonts/MongolianBaiti.ttf') format('truetype'),
+         url('../fonts/MongolianBaiti.svg#MongolianBaiti') format('svg');
+}
+
+/* vertical layout from left to right. For Traditional Mongolian, Manchurin. */
+.lang-mn {
+  font-family: 'Mongolian Baiti', 'Mongolian White', Mongolian, sans-serif;
+  -moz-writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  -o-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: tb-lr;
+  layout-flow:vertical-ideographic;
+}
+/* vertical layout from right to left. For Chinese and Japanese. */
+.lang-zh, .lang-jp {
+  -moz-writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -o-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: tb-rl;
+  layout-flow:vertical-ideographic;
+}
