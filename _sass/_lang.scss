@@ -1,45 +1,42 @@
 
-$font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif !default;
+$lang-font-path: '../fonts'  !default;
 
-
-@font-face {
-	font-family: 'Mongolian';
-    src: url('../fonts/MongolianBaiti.eot');  /* IE9 Compat Modes */
-    src: url('../fonts/MongolianBaiti.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         local('Mongolian Baiti'), local('Mongolian White'), /* load local fonts already installed*/
-         url('../fonts/MongolianBaiti.woff2') format('woff2'),
-         url('../fonts/MongolianBaiti.woff') format('woff'),
-         url('../fonts/MongolianBaiti.ttf') format('truetype'),
-         url('../fonts/MongolianBaiti.svg#MongolianBaiti') format('svg');
-    font-weight: normal;
-    font-style: normal;
+@mixin fontface-tpl($fontname ) {
+  @font-face {        
+    font-family: '#{$fontname}';
+      src: url('#{$lang-font-path}/#{$fontname}.eot?'); 
+      src: url('#{$lang-font-path}/#{$fontname}.eot?#iefix') format('embedded-opentype'),
+           url('#{$lang-font-path}/#{$fontname}.woff2') format('woff2'),
+           url('#{$lang-font-path}/#{$fontname}.woff') format('woff'),
+           url('#{$lang-font-path}/#{$fontname}.ttf') format('truetype'),
+           url('#{$lang-font-path}/#{$fontname}.svg##{$fontname}') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
 }
 
-@font-face {
-  font-family: 'Tibetan';
-    src: url('../fonts/QomolangmaUchenSarchung.eot');  /* IE9 Compat Modes */
-    src: url('../fonts/QomolangmaUchenSarchung.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         local('Mongolian Baiti'), local('Mongolian White'), /* load local fonts already installed*/
-         url('../fonts/QomolangmaUchenSarchung.woff2') format('woff2'),
-         url('../fonts/QomolangmaUchenSarchung.woff') format('woff'),
-         url('../fonts/QomolangmaUchenSarchung.ttf') format('truetype'),
-         url('../fonts/QomolangmaUchenSarchung.svg#QomolangmaUchenSarchung') format('svg');
-    font-weight: normal;
-    font-style: normal;
+@mixin vertical-writing($wm) {
+  -moz-writing-mode: vertical-#{$wm};
+  -webkit-writing-mode: vertical-#{$wm};
+  -o-writing-mode: vertical-#{$wm};
+  -ms-writing-mode: tb-#{$wm};
+  writing-mode: vertical-#{$wm};
 }
+
+@include fontface-tpl('MongolianBaiti');
+@include fontface-tpl('QomolangmaUchenSarchung');
 
 /* vertical layout from left to right. For Traditional Mongolian, Manchu. */
 .lang-mn, .lang-mnc, .lang-sjo, [lang="mn-Mong"], [lang="mnc"], [lang="sjo"] {
-  font-family: 'Mongolian Baiti', 'Mongolian White', 'Mongolian', sans-serif;
-  -moz-writing-mode: vertical-lr;
-  -webkit-writing-mode: vertical-lr;
-  -o-writing-mode: vertical-lr;
-  -ms-writing-mode: tb-lr;
-  writing-mode: tb-lr;
+  font-family: 'Mongolian Baiti', 'Mongolian White', 'MongolianBaiti', #{$font-stack};
+  font-weight: normal !important;
+  @include vertical-writing('lr');
 }
 /* for Tibetan */
 .lang-bod,.lang-bo, [lang="bo"]{
-  font-family: "Qomolangma-Uchen Sarchung", '珠穆朗玛—乌金萨琼体', "Qomolangma-Uchen Suring", Kokonor, Kailasa, "Tibetan Machine Uni", "Microsoft Himalaya", 'Tibetan', sans-serif;
+  font-family: "Qomolangma-Uchen Sarchung", '珠穆朗玛—乌金萨琼体', "Qomolangma-Uchen Suring", Kokonor, Kailasa, "Tibetan Machine Uni", "Microsoft Himalaya", 'QomolangmaUchenSarchung', #{$font-stack};
+  font-weight: normal !important;
 }
 
 /* for Myanmar
@@ -49,9 +46,5 @@ $font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragin
 
 /* vertical layout from right to left. For Chinese and Japanese. */
 .lang-zh, .lang-jp {
-  -moz-writing-mode: vertical-rl;
-  -webkit-writing-mode: vertical-rl;
-  -o-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: tb-rl;
+  @include vertical-writing('rl');
 }
