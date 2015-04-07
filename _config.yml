@@ -8,7 +8,6 @@ reading_time:     true
 words_per_minute: 200
 chars_per_minute: 600
 abstract_chars_num: 220  
-# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
 #url: http://www.josephjctang.com/blog
 domain: http://www.josephjctang.com
@@ -76,7 +75,7 @@ future:      true
 highlighter: pygments
 markdown:    kramdown
 gems:
-#  - jekyll-sitemap
+  - jekyll-sitemap
   - jekyll-mentions
   - jemoji
   - jekyll-redirect-from
