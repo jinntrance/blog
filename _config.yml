@@ -34,8 +34,7 @@ owner:
   google_plus: +JosephJinChuanTáng
   weibo: jinntrance
   douban: jinntrance
-  weibo_name: "jinntrance"
-
+  weibo_name: jinntrance
 # wheather display the full post  on the index page 
 index_fullpost: false
 # disable duoshuo share by default  
