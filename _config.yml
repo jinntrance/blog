@@ -70,7 +70,7 @@ bing_verify:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Beijing
 future:      true
-#highlighter: pygments
+highlighter: pygments
 markdown:    kramdown
 gems:
   - jekyll-sitemap
@@ -94,8 +94,8 @@ kramdown:
   toc_levels: 1..6
   use_coderay: true
   input: GFM
-  syntax_highlighter: rouge
-  #syntax_highlighter: coderay
+  #syntax_highlighter: rouge
+  syntax_highlighter: coderay
 
   coderay:
     coderay_line_numbers: nil
