@@ -22,7 +22,7 @@ date: 2015-04-05T00:32:30+08:00
 
 暂时使用的是`Mongolian Baiti`，生成字体和CSS后稍加注释和修改如后：
 
-{% highlight css %}
+``` css
 @ font-face {
 font-family: 'Mongolian';
     src: url('../fonts/MongolianBaiti.eot'); /* IE9 Compat Modes */
@@ -37,7 +37,7 @@ font-family: 'Mongolian';
     font-weight: normal;
     font-style: normal;
 }
-{% endhighlight %}
+```
 
 
 本来也不想对IE做适配，这些字体占用这么多空间。不想[浏览器市场份额]里面一看，IE还有35+%的市场份额😂 
@@ -46,7 +46,7 @@ font-family: 'Mongolian';
 
 竖排不难，加上css的竖排就可以了：
 
-{% highlight css %}
+``` css
 .lang-mn {
   font-family: "Mongolian Baiti", "Mongolian White", 'Mongolian', sans-serif;
   -moz-writing-mode: vertical-lr;
@@ -56,7 +56,7 @@ font-family: 'Mongolian';
   writing-mode: tb-lr;
   layout-flow:vertical-ideographic;
 }
-{% endhighlight %}
+```
 
 后面有些中文的资料，也需要竖排，这也能用得着。
 
