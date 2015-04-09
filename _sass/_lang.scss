@@ -3,6 +3,14 @@ $font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragin
 $lang-font-path: '../fonts'  !default;
 
 @mixin fontface-tpl($fontname ) {
+  /* for IE */
+  @font-face {        
+    font-family: '#{$fontname}';
+    src: url('#{$lang-font-path}/#{$fontname}.eot');
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* for other browsers */
   @font-face {        
     font-family: '#{$fontname}';
     src: url('#{$lang-font-path}/#{$fontname}.eot?');
