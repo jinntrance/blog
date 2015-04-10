@@ -2,7 +2,7 @@
 $font-stack: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'DejaVu Sans', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif !default;
 $lang-font-path: '../fonts'  !default;
 
-@mixin fontface-tpl($fontname ) {
+@mixin fontface-tpl($fontname) {
   @font-face {        
     font-family: '#{$fontname}';
     src: url('#{$lang-font-path}/#{$fontname}.eot?');

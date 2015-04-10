@@ -11,8 +11,8 @@ abstract_chars_num: 220
 # When testing locally leave blank or use http://localhost:4000
 #url: http://www.josephjctang.com/blog
 domain: http://www.josephjctang.com
-url: /blog/
-baseurl: /blog/
+url: /blog
+baseurl: /blog
 apex_domain: josephjctang.com
 
 # Owner/author information
