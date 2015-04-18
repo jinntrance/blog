@@ -20,7 +20,7 @@ sitemap: false
 @import "site";
 @import "typography";
 @import "pygments";
-//@import "coderay";
+@import "coderay";
 @import "gist";
 @import "grid";
 @import "elements";
@@ -31,4 +31,18 @@ sitemap: false
 
 .mathjax_alt {
 	display: none;
+}
+
+.highlight code{
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+pre.highlight{
+  padding: 1em;
+  position: relative;
+  line-height: 1.5;
 }

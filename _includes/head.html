@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.content | strip_html | truncate: site.abstract_chars_num }}{% endif %}">
 {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
 
@@ -42,7 +43,9 @@
 <meta http-equiv="cleartype" content="on">
 
 <!-- Load Modernizr -->
-<script src="{{ site.url }}/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+<!--[if lt IE 9]>
+  <script src="{{ site.url }}/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+<![endif]-->
 
 <!-- Icons -->
 <!-- 16x16 -->

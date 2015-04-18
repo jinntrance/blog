@@ -5,7 +5,7 @@ $lang-font-path: '../fonts'  !default;
 @mixin fontface-tpl($fontname) {
   @font-face {        
     font-family: '#{$fontname}';
-    src: url('#{$lang-font-path}/#{$fontname}.eot?');
+    src: url('#{$lang-font-path}/#{$fontname}.eot');
     src: url('#{$lang-font-path}/#{$fontname}.eot?#iefix') format('embedded-opentype'),
       url('#{$lang-font-path}/#{$fontname}.woff2') format('woff2'),
       url('#{$lang-font-path}/#{$fontname}.woff') format('woff'),

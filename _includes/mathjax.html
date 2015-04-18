@@ -6,32 +6,48 @@
         displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
         processEscapes: true
       }
-      //,
-      //displayAlign: "left",
-      //displayIndent: "2em"
+      /* displayAlign: "left",
+      displayIndent: "2em" */
     });
 </script>
 
-<script type="text/javascript">
-alts = document.getElementsByClassName('{{ site.mathjax_alt_class }}');
-latest_mathjax = '<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"><\/script>'
-local_mathjax = '<script src="http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"><\/script>'
+<script>
+/* define 'getElementsByClassName' - isn't supported in IE web browser */
+if (!document.getElementsByClassName){
+  document.getElementsByClassName = 
+    function (className){ 
+        return this.querySelectorAll("." + className); 
+    }
+}
+/* IE does not support document.write */
+function insertJS(url){
+  if ( url && 0 < url.trim().length ) {
+    var s = document.createElement('script');
+    s.async = true;
+    s.defer = true;
+    s.src = url;
+    document.getElementsByTagName("head")[0].appendChild(s);
+  }
+}
+window.alts = document.getElementsByClassName('{{ site.mathjax_alt_class }}');
+window.latest_mathjax = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+window.local_mathjax = 'http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
 {% if site.mathjax_with_alt %}
-if( 0 == alts.length) {
-  latest_mathjax = ''
-  local_mathjax = ''
+if( window.alts && 0 == window.alts.length) {
+  window.latest_mathjax = '';
+  window.local_mathjax = '';
 }
 {% endif %}
-</script>
 
 {% if site.mathjax_latest %}
-  <script>document.write(window.latest_mathjax)</script>
+insertJS(window.latest_mathjax);
 {% endif %}
-
-<script>window.MathJax || document.write(window.local_mathjax)</script>
-
-<script type="text/javascript">
-if( ! window.MathJax ){
+</script>
+<script>
+window.MathJax || insertJS(window.local_mathjax);
+</script>
+<script>
+if( ! window.MathJax && window.alts){
   for (var i = 0 ; i < alts.length; i++) {
     alts[i].style.display = 'inline'; 
   }

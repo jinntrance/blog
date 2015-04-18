@@ -13,11 +13,11 @@ date: 2015-04-05T00:32:30+08:00
 * 文章中的蒙文、满文没有竖排。
 
 
-### font-face load 本机未装字体
+### font-face 加载本机未装字体
 
-问题一就用css的font-face动态加载Web fonts字体就可以了。 使用[font-face generator]，比如上传已有的如TTF字体，并生成对应的字体和CSS。
+问题一就用css的font-face动态加载Web fonts字体就可以了。 使用[FontSquirrel WebFont Generator]，并选择Basic，比如上传已有的如TTF字体，并生成对应的字体和CSS。尝试了好些其他font-face generators，但只有*FontSquirrel* 生成的eot文件IE才能使用。
 
-- 生成的字体，而=仔细看了看，大小也是WOFF2 < WOFF < TTF = OET < SVG的。所以最好还是把WOFF2写在CSS 加载资源的最前面。
+- 生成的字体，仔细看了看，大小也是WOFF2 < OET < WOFF < TTF < SVG的。所以最好还是把WOFF2写在CSS 加载资源的最前面。
 - 生成的CSS，还不够全面，可以参考 [CSS Tricks] 里对font-face的详细阐述。
 
 暂时使用的是`Mongolian Baiti`，生成字体和CSS后稍加注释和修改如后：
@@ -29,7 +29,7 @@ font-family: 'Mongolian';
     src: 
      url('../fonts/MongolianBaiti.eot?#iefix') format('embedded-opentype'),/* IE6-IE8 */         
      local('Mongolian Baiti'), 
-     local('Mongolian White'), /* load local fonts already installed*/
+     local('Mongolian White'), /* load local fonts already installed */
      url('../fonts/MongolianBaiti.woff2') format('woff2'),
      url('../fonts/MongolianBaiti.woff') format('woff'),
      url('../fonts/MongolianBaiti.ttf') format('truetype'),
@@ -64,19 +64,29 @@ font-family: 'Mongolian';
 
 大家也可以看看如下的字体是否是竖排，且满语、蒙语是否可见了。
 
-滿 `ᠮᠠᠨᠵᡠ ᡤᡳᠰᡠᠨ`{:.lang-mnc} 蒙 `ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌ `{:.lang-mn}
+滿 _ᠮᠠᠨᠵᡠ ᡤᡳᠰᡠᠨ_{:.lang-mnc} 蒙 _ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌_{:.lang-mn}
 
 正常显示后应该是这样的： ![demo]
-但是IE總是會出排版問題，只有把滿、蒙做成inline的code才OK。
+但是IE總是會出排版問題，只有把滿、蒙做成inline 或strong 的code才OK。
 如果还是不能正常显示，那还是下载对应字体吧（比如我这儿的[蒙文字体]），或者更新浏览器到Google Chrome吧。
 
 这个[CSS]，我也加了中文的竖排样式，大家可以下载使用。
 大家也可以到`Mongolian White`的[官网](http://www.mongolfont.com/cn/font/mnglwhiteotf.html) 看看蒙文的优美显示。
 
+### 任意网页使用
+
+现在整理和测试了蒙文、藏文的字体，为了让你的网页直接支持蒙文、藏文显示，可以直接直接用本博配置的css。
+
+- 在HTML的header中加入如下代码：
+{% highlight html %}
+<link href="http://www.josephjctang.com/blog/assets/css/lang.css" rel="stylesheet" type="text/css">
+{% endhighlight %}
+- 在你需要支持的字体段落加入对应字体的class。蒙文为`.lang-mn`，满语为`.lang-mnc`，藏语为`.lang-bo`。比如上文中的蒙文：`<em class="lang-mn"> ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌ </em>`{: .lang-mn .lang-en}
+
 
 [浏览器市场份额]: http://tongji.baidu.com/data/browser
 [CSS]: {{ site.baseurl }}/assets/css/lang.css
-[font-face generator]: https://everythingfonts.com/font-face
+[FontSquirrel WebFont Generator]: http://www.fontsquirrel.com/tools/webfont-generator
 [CSS Tricks]: https://css-tricks.com/snippets/css/using-font-face/
 [demo]: {{site.baseurl}}/assets/images/2015-04-04.mongolian.png
 [蒙文字体]: {{site.baseurl}}/assets/fonts/MongolianBaiti.ttf
