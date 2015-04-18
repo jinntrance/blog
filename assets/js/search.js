@@ -25,9 +25,12 @@ function str_sim (a, b) {
 $(function(){
 	var today = "{{ site.time | date: "%Y%d" }}"
 	var feed_url = "{{ site.url }}/feed.json?date=" + today
-	var query_search = window.location.search.split('&').filter(function(arg) {
-		return arg.indexOf('q=') >= 0;
-	})[0]
+	
+	var args = window.location.search.split('&')
+	var query_search = ''
+	for (var i = 0; i<args.length; i++) 
+		if(args[i].indexOf('q=') >= 0)
+			query_search = args[i];
 	if( query_search ) {
 	  var query = decodeURI(query_search.split('=')[1])
 	  $.getJSON(feed_url, function(posts) {

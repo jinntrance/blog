@@ -1,10 +1,10 @@
 <!--[if lt IE 9]>
-<script src="{{ site.url }}/assets/js/vendor/IE9.js"></script>
+<script src="{{ site.url }}/assets/js/vendor/IE9.js" async="true"></script>
+<script src="{{ site.url }}/assets/js/all_IE8.js" async="true"></script>
 <![endif]-->
-
-<script src="{{ site.url }}/assets/js/vendor/jquery-1.9.1.min.js"></script>
-<script src="{{ site.url }}/assets/js/scripts.min.js"></script>
-
+<!--[if gt IE 8]><!-->
+<script src="{{ site.url }}/assets/js/all.js" async="true"></script>
+<!--<![endif]-->
 
 {% if site.mathjax != false %}
 	{% include mathjax.html %}

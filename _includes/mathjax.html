@@ -41,26 +41,22 @@ function docWrite(url, callback){
   insertJS('', callback.toString() + ";callback();")
 }
 window.alts = document.getElementsByClassName('{{ site.mathjax_alt_class }}');
-window.latest_mathjax = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-window.local_mathjax = 'http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-{% if site.mathjax_with_alt %}
-if( window.alts && 0 == window.alts.length) {
-  window.latest_mathjax = '';
-  window.local_mathjax = '';
-}
-{% endif %}
-function callback(){
-  if( ! window.MathJax && window.alts){
-   for (var i = 0 ; i < alts.length; i++) {
-    alts[i].style.display = 'inline'; 
-   }
-  }
-};
-
-{% if site.mathjax_latest %}
-docWrite(window.latest_mathjax, callback);
-{% endif %}
 </script>
+{% assign mj_alts = content | split: site.mathjax_alt_class %}
+{% if site.mathjax_with_alt != true or (mj_alts.size > 1 and site.mathjax_alt_class) %}
+  <!-- testing sucessfully {{mj_alts.first}}-->
+  {% if site.mathjax_latest %}
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  {% else%} 
+  <script src="http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  {% endif %}
+{% endif %}
+
+
 <script>
-window.MathJax || docWrite(window.local_mathjax, callback);
+if( ! window.MathJax && window.alts){
+ for (var i = 0 ; i < alts.length; i++) {
+  alts[i].style.display = 'inline'; 
+ }
+};
 </script>

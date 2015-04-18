@@ -7,7 +7,7 @@ duoshuo_shortname:
 reading_time:     true
 words_per_minute: 200
 chars_per_minute: 600
-abstract_chars_num: 220  
+abstract_chars_num: 150  
 # When testing locally leave blank or use http://localhost:4000
 #url: http://www.josephjctang.com/blog
 domain: http://www.josephjctang.com
@@ -51,7 +51,6 @@ mathjax_with_alt: true
 mathjax_alt_class: mathjax_alt
 
 # load external scripts
-jquery_lastest: false
 mathjax_latest: false
 
 # Analytics and webmaster tools stuff goes here
@@ -105,11 +104,11 @@ kramdown:
     coderay_css: class
 
 compress_html:
-  clippings: all 
+  clippings: all
   comments: [["<!-- "," -->"],["/* ", " */"]]
-  endings: [] 
+  endings: []
   ignore:
-    envs: ['script']
+    envs: 
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
