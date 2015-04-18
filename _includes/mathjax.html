@@ -20,14 +20,25 @@ if (!document.getElementsByClassName){
     }
 }
 /* IE does not support document.write */
-function insertJS(url){
-  if ( url && 0 < url.trim().length ) {
-    var s = document.createElement('script');
+function insertJS(url, content){
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  var p = (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]);
+  if ( url && 0 < url.length ) {
     s.async = true;
-    s.defer = true;
     s.src = url;
-    document.getElementsByTagName("head")[0].appendChild(s);
+    p.appendChild(s);
+  }else if( content && 0 < content.length){
+    s.innerHTML= content;
+    p.appendChild(s);
   }
+}
+
+function docWrite(url, callback){
+  if(document.write){
+    document.write('<script type="text/javascript" src="'+url+'"><\/script>');
+  }else insertJS(url);
+  insertJS('', callback.toString() + ";callback();")
 }
 window.alts = document.getElementsByClassName('{{ site.mathjax_alt_class }}');
 window.latest_mathjax = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
@@ -38,18 +49,18 @@ if( window.alts && 0 == window.alts.length) {
   window.local_mathjax = '';
 }
 {% endif %}
+function callback(){
+  if( ! window.MathJax && window.alts){
+   for (var i = 0 ; i < alts.length; i++) {
+    alts[i].style.display = 'inline'; 
+   }
+  }
+};
 
 {% if site.mathjax_latest %}
-insertJS(window.latest_mathjax);
+docWrite(window.latest_mathjax, callback);
 {% endif %}
 </script>
 <script>
-window.MathJax || insertJS(window.local_mathjax);
-</script>
-<script>
-if( ! window.MathJax && window.alts){
-  for (var i = 0 ; i < alts.length; i++) {
-    alts[i].style.display = 'inline'; 
-  }
-}
+window.MathJax || docWrite(window.local_mathjax, callback);
 </script>
