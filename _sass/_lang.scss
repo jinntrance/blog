@@ -17,26 +17,37 @@ $lang-font-path: '../fonts'  !default;
 }
 
 @mixin vertical-writing($wm) {
+  -ms-writing-mode: tb-#{$wm};
   -moz-writing-mode: vertical-#{$wm};
   -webkit-writing-mode: vertical-#{$wm};
   -o-writing-mode: vertical-#{$wm};
-  -ms-writing-mode: tb-#{$wm};
+  -ms-writing-mode: vertical-#{$wm};
   writing-mode: vertical-#{$wm};
 }
 
+@mixin horizontal-lr() {
+  -ms-writing-mode: lr-tb;
+  -moz-writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb;
+  -o-writing-mode: horizontal-tb;
+  -ms-writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb;
+}
+
 @include fontface-tpl('MongolianBaiti');
+@include fontface-tpl('MongolianWhite');
 @include fontface-tpl('QomolangmaUchenSarchung');
 
 /* vertical layout from left to right. For Traditional Mongolian, Manchu. */
 .lang-mn, .lang-mnc, .lang-sjo, [lang="mn-Mong"], [lang="mnc"], [lang="sjo"] {
-  font-family: 'Mongolian Baiti', 'Mongolian White', 'MongolianBaiti', #{$font-stack};
-  font-weight: normal !important;
+  font-family: 'Mongolian Baiti', 'Mongolian White', 'MongolianBaiti', 'MongolianWhite', #{$font-stack};
+  font-size: 1.5em;
   @include vertical-writing('lr');
 }
 /* for Tibetan */
 .lang-bod,.lang-bo, [lang="bo"]{
   font-family: "Qomolangma-Uchen Sarchung", '珠穆朗玛—乌金萨琼体', "Qomolangma-Uchen Suring", Kokonor, Kailasa, "Tibetan Machine Uni", "Microsoft Himalaya", 'QomolangmaUchenSarchung', #{$font-stack};
-  font-weight: normal !important;
+  font-size: 1.5em;
 }
 
 /* for Myanmar
@@ -47,4 +58,10 @@ $lang-font-path: '../fonts'  !default;
 /* vertical layout from right to left. For Chinese and Japanese. */
 .lang-zh, .lang-jp {
   @include vertical-writing('rl');
+}
+
+/* rollback to default writing mode  */
+.lang-en {
+  @include horizontal-lr();
+  font-size: 1em;
 }
