@@ -36,18 +36,19 @@ $lang-font-path: '../fonts'  !default;
 
 @include fontface-tpl('MongolianBaiti');
 @include fontface-tpl('MongolianWhite');
+@include fontface-tpl('MongolianScript');
 @include fontface-tpl('QomolangmaUchenSarchung');
 
 /* vertical layout from left to right. For Traditional Mongolian, Manchu. */
 .lang-mn, .lang-mnc, .lang-sjo, [lang="mn-Mong"], [lang="mnc"], [lang="sjo"] {
-  font-family: 'Mongolian Baiti', 'Mongolian White', 'MongolianBaiti', 'MongolianWhite', #{$font-stack};
+  font-family: 'Mongolian Baiti', 'Mongolian White', 'MongolianBaiti', 'MongolianScript', 'MongolianWhite', #{$font-stack};
   font-size: 1.5em;
-  @include vertical-writing('lr');
+  @include vertical-writing('lr'); 
 }
 /* for Tibetan */
 .lang-bod,.lang-bo, [lang="bo"]{
   font-family: "Qomolangma-Uchen Sarchung", '珠穆朗玛—乌金萨琼体', "Qomolangma-Uchen Suring", Kokonor, Kailasa, "Tibetan Machine Uni", "Microsoft Himalaya", 'QomolangmaUchenSarchung', #{$font-stack};
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 /* for Myanmar
@@ -64,4 +65,8 @@ $lang-font-path: '../fonts'  !default;
 .lang-en {
   @include horizontal-lr();
   font-size: 1em;
+}
+
+.wm-hlr{
+  @include horizontal-lr();
 }

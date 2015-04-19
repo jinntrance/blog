@@ -25,11 +25,11 @@ date: 2015-04-05T00:32:30+08:00
 {% highlight css %}
 @ font-face {
 font-family: 'Mongolian';
-    src: url('../fonts/MongolianBaiti.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/MongolianBaiti.eot'); /*IE9 Compat Modes*/
     src: 
-     url('../fonts/MongolianBaiti.eot?#iefix') format('embedded-opentype'),/* IE6-IE8 */         
+     url('../fonts/MongolianBaiti.eot?#iefix') format('embedded-opentype'),/*IE6-IE8*/         
      local('Mongolian Baiti'), 
-     local('Mongolian White'), /* load local fonts already installed */
+     local('Mongolian White'), /*load local fonts already installed*/
      url('../fonts/MongolianBaiti.woff2') format('woff2'),
      url('../fonts/MongolianBaiti.woff') format('woff'),
      url('../fonts/MongolianBaiti.ttf') format('truetype'),
@@ -64,10 +64,11 @@ font-family: 'Mongolian';
 
 大家也可以看看如下的字体是否是竖排，且满语、蒙语是否可见了。
 
-滿 _ᠮᠠᠨᠵᡠ ᡤᡳᠰᡠᠨ_{:.lang-mnc} 蒙 _ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌_{:.lang-mn}
+滿 `ᠮᠠᠨᠵᡠ ᡤᡳᠰᡠᠨ`{:.lang-mnc} 蒙 `ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌`{:.lang-mn}
 
 正常显示后应该是这样的： ![demo]
-但是IE總是會出排版問題，只有把滿、蒙做成inline 或strong 的code才OK。
+不过因为Safari以及移动浏览器对竖排支持太差，可以将竖排改成横排：
+滿 _ᠮᠠᠨᠵᡠ ᡤᡳᠰᡠᠨ_{:.lang-mnc .wm-hlr} 蒙 _ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌_{:.lang-mn .wm-hlr}
 如果还是不能正常显示，那还是下载对应字体吧（比如我这儿的[蒙文字体]），或者更新浏览器到Google Chrome吧。
 
 这个[CSS]，我也加了中文的竖排样式，大家可以下载使用。
@@ -81,7 +82,7 @@ font-family: 'Mongolian';
 {% highlight html %}
 <link href="http://www.josephjctang.com/blog/assets/css/lang.css" rel="stylesheet" type="text/css">
 {% endhighlight %}
-- 在你需要支持的字体段落加入对应字体的class。蒙文为`.lang-mn`，满语为`.lang-mnc`，藏语为`.lang-bo`。比如上文中的蒙文：`<em class="lang-mn"> ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌ </em>`{: .lang-mn .lang-en}
+- 在你需要支持的字体段落加入对应字体的class。蒙文为`.lang-mn`，满语为`.lang-mnc`，藏语为`.lang-bo`。横排只需再加上class`.wm-hlr`[^wm]。比如上文中的蒙文：`<em class="lang-mn"> ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌ </em>`{: .lang-mn .wm-hlr .lang-en}
 
 
 [浏览器市场份额]: http://tongji.baidu.com/data/browser
@@ -90,3 +91,4 @@ font-family: 'Mongolian';
 [CSS Tricks]: https://css-tricks.com/snippets/css/using-font-face/
 [demo]: {{site.baseurl}}/assets/images/2015-04-04.mongolian.png
 [蒙文字体]: {{site.baseurl}}/assets/fonts/MongolianBaiti.ttf
+[^wm]: Writing Mode: Horizontal Left to Right
