@@ -27,8 +27,7 @@ share:
 - [15 Tips to Speed Up Your Website]
 - [PageSpeed Insights (by Google)] 这个很好用的Chrome Extension，也可以快速给我们优化建议。
 
-针对前面列的几个方面，SPDY本来可以将HTML 里面所有的资源打包传给客户端，也就没有很多合并的优化了。不过如今Nginx上的SPDY 还是beta阶段，而且
-作如下优化。
+针对前面列的几个方面，SPDY本来可以将HTML 里面所有的资源打包传给客户端，也就没有很多合并的优化了。不过如今Nginx上的SPDY 还是beta阶段，而且放在GitHub/GitCafe Pages上，也没办法要求他们加了。后面可先作如下优化。
 
 #### gzip 压缩
 GitHub Pages 默认支持gzip。GitCafe Pages 前几日也劳烦他家员工加上了[GitCafe Pages添加http gzip 支持]。加了的结果就是，原来的Profile 页面整个`142KB` 的css直接变成 `31.3KB`了，现在差不多手机2G 网络也能2-3s 开Profile页面，甚是欣慰。
@@ -81,6 +80,7 @@ _sass
 应用起来也非常简单，下载`compress.html`到`_layout`中，我就在`default.html`的头部添加：
 
 ```
+---
 ---
 layout: compress
 ```
