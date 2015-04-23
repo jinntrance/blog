@@ -8,7 +8,7 @@ tags: [Review]
 
 常尋時間管理之道，用GTD也好一段時間，而總覺着自己都忙着去使用工具了，而真正要做的事情卻沒做得好。 
  
-而如此應運而生的ZTD，着實解決了逼人如此的難題。時間管理之道，重點就是做事情，任何工具只是輔助，切莫妨礙了自己做事的正道。亦即，做好我們真正要做的，即面之所向，才是真正時間管理之道。另一個最大的收穫便是，做事情時，一定要clear all the distractions. 
+而如此應運而生的ZTD[^ZTD]，着實解決了逼人如此的難題。時間管理之道，重點就是做事情，任何工具只是輔助，切莫妨礙了自己做事的正道。亦即，做好我們真正要做的，即面之所向，才是真正時間管理之道。另一個最大的收穫便是，做事情時，一定要clear all the distractions. 
  
 她的整個步驟也是Collect、Process、Plan、Do、Organize、Review，這是做事情的基本流程。書中提到的Simple Trusted System、Symplify、set Routine、Find your passion，雖不是做事流程，但卻是不可或缺的部分： 
 
@@ -24,3 +24,5 @@ tags: [Review]
 3. Plan 第一 set BigRocks( 3 MITs will be better) with high priority,and do it early in the morning when you are full of energy 第二 Schedule the task 最後Complete the plan and Review。 
 4. Do . Choose BIgRocks. Then get zoned and clear all distractions(browser,IM,cellphone etc.) Before you do the task,set a clock. If there are any interruptions just put them into the Inbox. However,if the inerruptions is too urgent,do it right now and back to the task as soon as possible. 
 5. Organize&Review 整理，總結，思考，改進。兵堅持每天、每週都有review。在以後的計劃中，也要適當的設置得，超出自己能力一點點，這樣自己才能漸漸地進步。
+
+[^ZTD]:[Zen to Done](http://book.douban.com/subject/3296364/)
