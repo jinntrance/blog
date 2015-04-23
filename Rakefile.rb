@@ -8,7 +8,7 @@ public_dir      = "public"    # compiled site directory
 posts_dir       = "_posts"    # directory for blog files
 new_post_ext    = "md"  # default new post file extension when using the new_post task
 new_page_ext    = "md"  # default new page file extension when using the new_page task
-
+mathjax_footer  = "**Mathjax was not loaded successfully**{:.mathjax_alt} <script type='text/x-mathjax-config'> MathJax.Hub.Config({ config: ['TeX-MML-AM_HTMLorMML.js'], tex2jax: { inlineMath: [ ['$', '$'] ] }, asciimath2jax: { delimiters: [ ['`','`']] } }); </script> <script src='http://www.josephjctang.com/mathjax/MathJax.js'></script>"
 
 #############################
 # Create a new Post or Page #
@@ -16,7 +16,7 @@ new_page_ext    = "md"  # default new page file extension when using the new_pag
 
 # usage rake new_post
 desc "Create a new post in #{posts_dir}"
-task :new_post, :title do |t, args|
+task :new_post, :title , :mathjax do |t, args|
   if args.title
     title = args.title
   else
@@ -40,7 +40,12 @@ task :new_post, :title do |t, args|
     post.puts "  creditlink: "
     post.puts "comments: "
     post.puts "share: "
+    post.puts ""
     post.puts "---"
+    if args.mathjax == "mathjax"
+      post.puts mathjax_footer
+    end
+    post.puts ""
   end
 end
 
