@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "China's future"
+title: "中国社会的未来"
 modified: 2014-03-07 01:49:00 +0800
 tags: [Review, Economics]
 
