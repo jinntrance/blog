@@ -76,9 +76,14 @@ x 落在(a, b) 区间内的概率为：
 
 >  \`bbb E [f]= int p(x)f(x)dx. \`
 
+*conditional expectation* \` bbb E_x[f|y] = sum_x p(x|y)f(x) \`The *variance* of f(x) is defined by
+ \` var[f] = bbb E[(f(x)− bbb E[f(x)])^2] = bbb E[f(x)^2] − bbb E[f(x)]^2\`
+ 
+> covariance expresses the extent to which *x* and *y* vary together
 
 
-
+- 单一变量 \`cov[x, y] = bbb E_(x,y) [{x − bbb E[x]} {y − bbb E[y]}] = E\_(x,y) [xy] − E[x]E[y] \`
+- 向量 \`cov[vec x, vec y] = E\_(x,y){x − E[x]}{y^T − E[y^T]}= E\_(x,y)[xy^T] − E[x]E[y^T].\`
 
 
 **Mathjax was not loaded successfully**{:.mathjax_alt}
