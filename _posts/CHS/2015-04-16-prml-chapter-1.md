@@ -48,7 +48,7 @@ y( x, vec w) = sum_(j=0)^M w_j x^j = w_0 +w_1x+w_2x^2 +...+w_Mx^M
 假定在不同的盒子B 中挑不同的水果F:
 
 - **p(B)** We call this the *prior probability* because it is the probability available before we observe the identity of the fruit.
-- **p(B|F)** we shall call the *posterior probability* because it is the probability obtained after we have observed F .
+- **p(B\|F)** we shall call the *posterior probability* because it is the probability obtained after we have observed F .
 
 
 ### Probability densities
