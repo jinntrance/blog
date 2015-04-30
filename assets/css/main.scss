@@ -46,3 +46,52 @@ pre.highlight{
   position: relative;
   line-height: 1.5;
 }
+
+#headers {
+  background-color: white;
+  box-shadow: 0 0 0 0,0 6px 12px rgba(0,0,0,0.1);
+  position: fixed;
+  right: 0.5em;
+  top: 50%;
+  width: 16em;
+  overflow: break-word;
+  margin-top: -2.5em;
+}
+
+#headers a {
+  width: 14em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#headers ul {
+  list-style: none;
+  padding-left: 1em;
+  line-height: 1.3em;
+}
+
+#headers .h1 {
+  padding-left: 0;
+}
+
+#headers .h2 {
+  padding-left: 0.5em;
+}
+
+#headers .h3 {
+  padding-left: 1em;
+}
+
+#headers .h4 {
+  padding-left: 1.5em;
+}
+
+#headers .h5 {
+  padding-left: 2em;
+}
+
+#headers .h6 {
+  padding-left: 2.5em;
+}
+
