@@ -53,9 +53,17 @@ pre.highlight{
   position: fixed;
   right: 0.5em;
   top: 50%;
-  width: 16em;
+  max-width: 16em;
   overflow: break-word;
   margin-top: -2.5em;
+  padding-right: 0.7em;
+}
+
+@media (max-width: 600px){
+  #headers {
+    top: auto;
+    bottom: 0;
+  }
 }
 
 #headers a {
@@ -67,7 +75,7 @@ pre.highlight{
 
 #headers ul {
   list-style: none;
-  padding-left: 1em;
+  padding-left: 0;
   line-height: 1.3em;
 }
 
