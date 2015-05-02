@@ -33,7 +33,7 @@ sitemap: false
 	display: none;
 }
 
-.highlight code{
+code.highlight, .highlight code{
  white-space: pre-wrap;       /* css-3 */
  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
  white-space: -pre-wrap;      /* Opera 4-6 */
@@ -53,32 +53,55 @@ pre.highlight{
   position: fixed;
   right: 0.5em;
   top: 50%;
-  max-width: 20%;
-  min-width: 15%;
+  max-width: 11em;
+  min-width: 5em;
   margin-top: -2.5em;
-  padding-right: 0.7em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 5px;
 }
 
-@media (max-width: 600px){
-  #headers {
-    top: auto;
-    bottom: 0;
+.dl-menuopen {
+  padding: 0.7em;
+}
+
+#dl-headers button{
+  position: fixed;
+  right: 1em;
+  top: 50%;
+  margin-top: -2.5em;
+}
+
+@media (min-width: 601px){
+  #dl-headers button.dl-btn{
+    display: none;
+  }
+  ul#headers {
+    padding: 0.7em;
   }
 }
 
-#headers aa {
-  width: 14em;
+@media (max-width: 600px){ 
+  ul#headers {
+    display: none;
+    top: auto;
+    bottom: 0;
+  } 
+}
+#headers li span {
+  max-width: 10em;
+  min-width: 4em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #headers li.on{
   background-color: #e8e8e8;
 }
 
-#headers ul {
+#headers{
   list-style: none;
   padding-left: 0;
   line-height: 1.3em;

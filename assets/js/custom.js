@@ -5,10 +5,16 @@
     a.attr('data-id',h.id);
     a.attr('href', '#' + h.id);
     a.attr('class', h.nodeName.toLowerCase());
-    a.html(h.textContent)
+    a.html( '<span>' + h.textContent)
     return $('<li>').append(a)[0].outerHTML;
   }).toArray().join("");
-  $('body').append($('<div id="headers">').html($('<ul>').append(headers)));
+  var menu = $('<div id="dl-headers" class=""><button class="dl-btn btn btn-success">Contents</button></div>');
+  $('body').append(menu.append($('<ul class="dl-headers" id="headers">').append(headers)));
+  if($('#dl-headers .dl-btn').is(':visible')) {
+    $('#dl-headers .dl-btn').on('click',function(){
+      $('ul#headers').slideToggle();
+    })
+  }
   $('#headers a').click(function (e){
     e.preventDefault();
     console.info("scrollTo #" + $(this).attr('data-id'));
@@ -62,9 +68,9 @@
           if( 0 == index ) index = 1;
           $('#headers li').eq(index-1).addClass('on');
           if(nowTop >= footerTop) {
-              $('#headers').hide();
+              $('#dl-headers').hide();
           } else {
-              $('#headers').show();
+              $('#dl-headers').show();
           }
       });
   });
