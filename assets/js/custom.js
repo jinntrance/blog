@@ -1,6 +1,6 @@
  $(function(){
   $('.entry-content a').attr('target','_blank'); 
-  var headers = $('.entry-content :header').map(function (idx, h){
+  var headers = $('#post .entry-content :header').map(function (idx, h){
     var a = $('<a href="#">');
     a.attr('data-id',h.id);
     a.attr('href', '#' + h.id);
@@ -9,8 +9,64 @@
     return $('<li>').append(a)[0].outerHTML;
   }).toArray().join("");
   $('body').append($('<div id="headers">').html($('<ul>').append(headers)));
-  $('#headers a').click(function (){
+  $('#headers a').click(function (e){
+    e.preventDefault();
     console.info("scrollTo #" + $(this).attr('data-id'));
-    //$('#'+$(this).attr('data-id')).scrollTo(600);
-  })
- })
+    var selector = '#'+$(this).attr('data-id');
+    var top = $(selector).offset().top;
+    $('body, html').animate({ scrollTop: top - 25 }, 500, 'swing');
+  });
+
+  /*Thanks to http://beiyuu.com/js/post.js*/
+  var waitForFinalEvent = (function () {
+            var timers = {};
+            return function (callback, ms, uniqueId) {
+                if (!uniqueId) {
+                    uniqueId = "Don't call this twice without a uniqueId";
+                }
+                if (timers[uniqueId]) {
+                    clearTimeout (timers[uniqueId]);
+                }
+                timers[uniqueId] = setTimeout(callback, ms);
+            };
+    })();
+  var scrollTop = [];
+  $.each($('#headers li a'),function(index,item){
+      var selector = $(item).attr('data-id') ? '#'+$(item).attr('data-id') : 'h1'
+      var top = $(selector).offset().top;
+      scrollTop.push(top);
+  });
+
+  var footerTop = $('.entry-meta').offset().top;
+
+  var headersTop = $('#headers').offset().top;
+  var headersLeft = $('#headers').offset().left;
+
+  $(window).scroll(function(){
+      waitForFinalEvent(function(){
+          var nowTop = $(window).scrollTop();
+          var length = scrollTop.length;
+          var index;
+
+          if(nowTop+60 > scrollTop[length-1]){
+              index = length;
+          }else{
+              for(var i=0;i<length;i++){
+                  if(nowTop+60 <= scrollTop[i]){
+                      index = i;
+                      break;
+                  }
+              }
+          }
+          $('#headers li').removeClass('on');
+          if( 0 == index ) index = 1;
+          $('#headers li').eq(index-1).addClass('on');
+          if(nowTop >= footerTop) {
+              $('#headers').hide();
+          } else {
+              $('#headers').show();
+          }
+      });
+  });
+
+});
