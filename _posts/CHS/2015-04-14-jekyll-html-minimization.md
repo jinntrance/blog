@@ -48,8 +48,8 @@ _sass
 ```
 ---
 ---
-@ import "page";
-@ import "lang";
+{{'@'}}import "page";
+{{'@'}}import "lang";
 ```
 {:.highlight}
 
@@ -63,10 +63,10 @@ _sass
 ```
 ---
 ---
-{ % include_relative jquery.min.js %}
-{ % include_relative jquery.easing.min.js %}
-{ % include_relative bootstrap.min.js %}
-{ % include_relative grayscale.min.js %}
+{{'{%'}} include_relative jquery.min.js %}
+{{'{%'}} include_relative jquery.easing.min.js %}
+{{'{%'}} include_relative bootstrap.min.js %}'
+{{'{%'}} include_relative grayscale.min.js %}'
 ```
 {:.highlight}
 
@@ -100,7 +100,7 @@ HTML tag 的结束符endings配置需要慎用`all`，比如`<p></p><a></a>`去�
 比如我找了一下600px（也有使用768px）以下基本也就是移动设备的屏幕了。
 
 ~~~ css
-@ media (max-width: 600px){
+{{'@'}}media (max-width: 600px){
  .intro {
   background: url(/img/intro-bg-600.jpg) no-repeat bottom center scroll;
  }

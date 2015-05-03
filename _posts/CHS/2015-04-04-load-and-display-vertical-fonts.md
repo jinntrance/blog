@@ -24,7 +24,7 @@ date: 2015-04-05T00:32:30+08:00
 暂时使用的是`Mongolian Baiti`，生成字体和CSS后稍加注释和修改如后：
 
 {% highlight css %}
-@ font-face {
+{{'@'}}font-face {
 font-family: 'Mongolian';
     src: url('../fonts/MongolianBaiti.eot'); /*IE9 Compat Modes*/
     src: 
