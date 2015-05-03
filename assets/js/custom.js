@@ -43,7 +43,10 @@
       scrollTop.push(top);
   });
 
-  var footerTop = $('.entry-meta').offset().top;
+  var footerTop = 0;
+  var footer = $('.entry-meta').offset()
+  if( footer )
+    footerTop = footer.top;
   
   $(window).scroll(function(){
       waitForFinalEvent(function(){
