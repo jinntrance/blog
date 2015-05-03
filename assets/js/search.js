@@ -1,9 +1,6 @@
 ---
 layout: null
 ---
-var today = "{{ page.date | date: "%d" }}"
-var feed_url = "{{ site.url }}/feed.json?date=" + today
-var home_url = "{{ site.url }}"
 function str_sim (a, b) {
 	if (!a || !b || a.length ==0 || b.length ==0 ) {
 		return 0.0
@@ -48,8 +45,12 @@ $(function(){
                     window.location.href="{{site.url}}/posts.html"
                 }, 1500)
 			case 1 : 
+                $('#no-search-results').hide()
+                $('#search-results').show()
                 $('#search-ul li a')[0].click();
 			default: 
+                $('#no-search-results').hide()
+                $('#search-results').show()
 		}
 	})
 	}
