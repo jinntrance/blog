@@ -9,7 +9,7 @@
     return $('<li>').append(a)[0].outerHTML;
   }).toArray().join("");
   var menu = $('<div id="dl-headers" class=""><button class="dl-btn btn btn-success">Contents</button></div>');
-  $('#post').parents('body').append(menu.append($('<ul class="dl-headers" id="headers">').append(headers)));
+  $('body#post').append(menu.append($('<ul class="dl-headers" id="headers">').append(headers)));
   if($('#dl-headers .dl-btn').is(':visible')) {
     $('#dl-headers .dl-btn').on('click',function(){
       $('ul#headers').slideToggle();
@@ -44,10 +44,7 @@
   });
 
   var footerTop = $('.entry-meta').offset().top;
-
-  var headersTop = $('#headers').offset().top;
-  var headersLeft = $('#headers').offset().left;
-
+  
   $(window).scroll(function(){
       waitForFinalEvent(function(){
           var nowTop = $(window).scrollTop();
