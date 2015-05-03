@@ -9,7 +9,7 @@
     return $('<li>').append(a)[0].outerHTML;
   }).toArray().join("");
   var menu = $('<div id="dl-headers" class=""><button class="dl-btn btn btn-success">Contents</button></div>');
-  $('body').append(menu.append($('<ul class="dl-headers" id="headers">').append(headers)));
+  $('#post').parents('body').append(menu.append($('<ul class="dl-headers" id="headers">').append(headers)));
   if($('#dl-headers .dl-btn').is(':visible')) {
     $('#dl-headers .dl-btn').on('click',function(){
       $('ul#headers').slideToggle();
