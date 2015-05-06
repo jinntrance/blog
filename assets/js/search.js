@@ -44,15 +44,17 @@ $(function(){
                 setTimeout(function(){
                     window.location.href="{{site.url}}/posts.html"
                 }, 1500)
+                break;
 			case 1 : 
                 $('#no-search-results').hide()
                 $('#search-results').show()
                 $('#search-ul li a')[0].click();
+                break;
 			default: 
                 $('#no-search-results').hide()
                 $('#search-results').show()
 		}
 	})
-	}
+	}else window.location.href="{{site.url}}/posts.html";
 
 })
