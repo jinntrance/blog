@@ -74,25 +74,6 @@ pre.highlight{
   margin-top: -2.5em;
 }
 
-@media (min-width: 601px){
-  #dl-headers button.dl-btn{
-    display: none;
-  }
-  ul#headers {
-    padding: 0.7em;
-  }
-}
-
-@media (max-width: 600px){ 
-  ul#headers {
-    display: none;
-    top: auto;
-    bottom: 0;
-  } 
-  #dl-headers button{
-    right: 0; 
-  }
-}
 #headers li span {
   max-width: 10em;
   min-width: 4em;
@@ -135,3 +116,26 @@ pre.highlight{
   padding-left: 2.5em;
 }
 
+@media (min-width: 601px){
+  #dl-headers button.dl-btn{
+    display: none;
+  }
+  ul#headers {
+    padding: 0.7em;
+  }
+  #headers{
+    min-width: 15%;
+    max-width: 20%;
+  }
+}
+
+@media (max-width: 600px){ 
+  ul#headers {
+    display: none;
+    top: auto;
+    bottom: 0;
+  } 
+  #dl-headers button{
+    right: 0; 
+  }
+}

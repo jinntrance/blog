@@ -8,7 +8,7 @@ public_dir      = "public"    # compiled site directory
 posts_dir       = "_posts"    # directory for blog files
 new_post_ext    = "md"  # default new post file extension when using the new_post task
 new_page_ext    = "md"  # default new page file extension when using the new_page task
-mathjax_footer  = "**Mathjax was not loaded successfully**{:.mathjax_alt} <script type='text/x-mathjax-config'> MathJax.Hub.Config({ config: ['TeX-MML-AM_HTMLorMML.js'], tex2jax: { inlineMath: [ ['$', '$'] ] }, asciimath2jax: { delimiters: [ ['`','`']] } }); </script> <script src='http://www.josephjctang.com/mathjax/MathJax.js'></script>"
+mathjax_footer  = "**Mathjax was not loaded successfully**{:.mathjax_alt} <script type='text/x-mathjax-config'> MathJax.Hub.Config({ config: ['TeX-MML-AM_HTMLorMML.js'], tex2jax: { inlineMath: [ ['$', '$'] ] }, asciimath2jax: { delimiters: [ ['`','`']] } }); </script> <script src='http://www.josephjctang.com/mathjax/MathJax.js' async="async"></script>"
 
 #############################
 # Create a new Post or Page #

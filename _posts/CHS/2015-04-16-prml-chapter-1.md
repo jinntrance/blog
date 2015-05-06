@@ -37,6 +37,7 @@ y( x, vec w) = sum_(j=0)^M w_j x^j = w_0 +w_1x+w_2x^2 +...+w_Mx^M
 ## Probability Theory
 
 推论后得出两条规则:
+
 > sum rule \`p(X) = sum_Y p(X, Y )\`
 
 > product rule \`p(X,Y) = p(Y | X) p(X) = p(X | Y) p(Y) \`
@@ -86,19 +87,8 @@ x 落在(a, b) 区间内的概率为：
 - 向量 \`cov[vec x, vec y] = E\_(x,y){x − E[x]}{y^T − E[y^T]}= E\_(x,y)[xy^T] − E[x]E[y^T].\`
 
 
-**Mathjax was not loaded successfully**{:.mathjax_alt}
 
 [^RMS]: Root Mean Square Error
 
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        config: ["TeX-MML-AM_HTMLorMML.js"],      
-        tex2jax: {
-          inlineMath: [ ['$', '$'] ]
-        },  
-        asciimath2jax: {
-          delimiters: [ ['`','`']]
-        }
-      }); 
-</script>
-<script src="http://www.josephjctang.com/mathjax/MathJax.js"></script>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ config: ["TeX-MML-AM_HTMLorMML.js"], tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$'] ], processEscapes: true }, asciimath2jax: { delimiters: [ ['`','`']] }, displayAlign: "center`", displayIndent: "2em" }); </script>
+<script src="http://www.josephjctang.com/mathjax/MathJax.js" async="async"></script>
