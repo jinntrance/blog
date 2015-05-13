@@ -16,13 +16,15 @@ mathjax_footer  = "**Mathjax was not loaded successfully**{:.mathjax_alt} <scrip
 
 # usage rake new_post
 desc "Create a new post in #{posts_dir}"
-task :new_post, :title , :mathjax do |t, args|
+task :new_post, :title do |t, args|
   if args.title
     title = args.title
   else
     title = get_stdin("Enter a title for your post: ")
   end
-  filename = "#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
+  cat  = get_stdin("Enter a category for your post: ")
+  mathjax  = get_stdin("Whether to use mathjax in this post: ")
+  filename = "#{posts_dir}/#{cat}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
@@ -42,7 +44,7 @@ task :new_post, :title , :mathjax do |t, args|
     post.puts "share: "
     post.puts ""
     post.puts "---"
-    if args.mathjax == "mathjax"
+    if args.mathjax 
       post.puts mathjax_footer
     end
     post.puts ""
