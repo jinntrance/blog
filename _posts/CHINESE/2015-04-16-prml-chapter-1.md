@@ -86,7 +86,11 @@ x 落在(a, b) 区间内的概率为：
 - 单一变量 \`cov[x, y] = bbb E_(x,y) [{x − bbb E[x]} {y − bbb E[y]}] = E\_(x,y) [xy] − E[x]E[y] \`
 - 向量 \`cov[vec x, vec y] = E\_(x,y){x − E[x]}{y^T − E[y^T]}= E\_(x,y)[xy^T] − E[x]E[y^T].\`
 
+### Bayesian probabilities
 
+since \`p(w|D) = (p(D|w)p(w))/(p(D))\`
+
+>The quantity __p(D|w)__ on the right-hand side of Bayes’ theorem is evaluated for the observed data set D and can be viewed as a function of the parameter vector \`vec w\`, in which case it is called the _likelihood function_. It expresses how probable the observed data set is for different settings of the parameter vector \`vec w\`
 
 [^RMS]: Root Mean Square Error
 
