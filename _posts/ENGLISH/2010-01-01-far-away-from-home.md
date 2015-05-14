@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The furthest distance 咫尺天涯
-categories: [CHS, ENG]
+categories: [CHINESE, ENGLISH]
 tags: [life]
 date: 2010-01-01T22:20:00+0800
 
