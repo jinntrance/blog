@@ -8,7 +8,7 @@ tags: [Reading]
 
 Tonight some friends and I talked about reading in our spare time. 
 
-What a pity when I realised that it has been a long time since I last read a book in a comfortable afternoon, drinking Longjin Tea under the warm sun.
+What a pity when I realised that it has been a long time since I last read a book in a comfortable afternoon, drinking a cup of Longjin Tea under the warm sun.
 
 I ever enjoyed reading very much, but as I graduated and then work overwhelmingly, I have less and less time to do some reading. What's worse, I'm nearly losing the habit of reading in my spare time. That is, previously I would unconsciously pick up a book to read when I had nothing to do, but now I would prefer to other things unawarely.  
 
