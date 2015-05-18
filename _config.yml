@@ -71,11 +71,11 @@ timezone:    Asia/Beijing
 future:      true
 highlighter: pygments
 markdown:    kramdown
-gems:
-  - jekyll-sitemap
-  - jekyll-mentions
-  - jemoji
-  - jekyll-redirect-from
+#gems:
+#  - jekyll-sitemap
+#  - jekyll-mentions
+#  - jemoji
+#  - jekyll-redirect-from
 
 sass:
   style: compressed
