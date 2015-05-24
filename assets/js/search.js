@@ -55,7 +55,7 @@ $(function(){
                 $('#search-results').show()
 		}
 	}).fail(function(){
-    window.location.href="{{site.url}}/search.html?q="+query_search 
+    window.location.href="{{site.url}}/search.html?"+query_search 
   })
 	}else window.location.href="{{site.url}}/posts.html";
 
