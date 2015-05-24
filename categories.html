@@ -1,0 +1,26 @@
+---
+layout: post-index
+title: Categories Archive
+description: "An archive of posts sorted by category."
+comments: false
+---
+
+
+<ul class="entry-meta inline-list">
+  {% for item in site.categories %}
+  	<li><a href="#{{ item | first }}" class="tag"><span class="term">{{ item | first }}</span> <span class="count">{{ item | last | size}}</span></a></li>
+  {% endfor %}
+</ul>
+
+{% for item in site.categories %}
+	<article>
+	<h2 id="{{ item | first }}" class="tag-heading">{{ item | first | upcase }}</h2>
+		<ul>
+      {% for post in item[1] %}
+      {% if post.title != null %}
+      <li class="entry-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+		</ul>
+	</article><!-- /.hentry -->
+{% endfor %}
