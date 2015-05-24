@@ -6,7 +6,7 @@ tags: [Jekyll, Optimisation]
 
 ---
 
-之前建博客的时候已经[使用GitHub 和GitCafe ]({{site.url}}{%post_url CHINESE/2015-03-22-github %}) 对国内外访问加速了。但是自己的[个人主页](http://www.{{site.apex_domain}})在手机只开2G的情况下居然需要10+s才能打开，着实让人头疼。
+之前建博客的时候已经[使用GitHub 和GitCafe ]({{site.url}}{%post_url 2015-03-22-github %}) 对国内外访问加速了。但是自己的[个人主页](http://www.{{site.apex_domain}})在手机只开2G的情况下居然需要10+s才能打开，着实让人头疼。
 
 ### 优化方案
 
