@@ -25,7 +25,7 @@ share:
 針對這幾大毛病，自己也得各個突破。這是一場曠日持久的戰鬥。*Your Worst Enemy is Yourself*
 
 
-[honest]: {{ site.baseurl }}{%  post_url CHINESE/2015-05-03-be-honest-to-yourself %}
+[honest]: {{ site.url }}{%  post_url CHINESE/2015-05-03-be-honest-to-yourself %}
 
 
 [^PRML]: _Pattern Recognition and Machine Learning_

@@ -32,5 +32,5 @@ doit.im的每一次进步，都将给所有用户带来巨大的福音。
 
 
 [review]: https://r.doit.im/
-[2012-08-17-gtd-review.png]: {{site.baseurl}}/assets/posts/images/2012-08-17-gtd-review.png
+[2012-08-17-gtd-review.png]: {{site.url}}/assets/posts/images/2012-08-17-gtd-review.png
 [Weekly Review_ Key to GTD and achieving goals]: http://zenhabits.net/weekly-review-key-to-gtd-and-achieving/

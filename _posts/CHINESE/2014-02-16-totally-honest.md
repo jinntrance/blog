@@ -27,5 +27,5 @@ date: 2014-02-16T17:56:56+0800
 
 **Mathjax was not loaded successfully**{:.mathjax_alt}
 
-[honest1]: {{site.baseurl}}/assets/posts/images/2014-02-16-honest1.png
-[honest2]: {{site.baseurl}}/assets/posts/images/2014-02-16-honest2.png
+[honest1]: {{site.url}}/assets/posts/images/2014-02-16-honest1.png
+[honest2]: {{site.url}}/assets/posts/images/2014-02-16-honest2.png

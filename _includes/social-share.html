@@ -1,14 +1,14 @@
 <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
-     <li class="weibo"><a href="http://service.weibo.com/share/share.php?url={{ site.domain }}{{ site.url }}{{ page.url }}&amp;title=//@{{site.owner.weibo_name}} :【{{page.title}}】{{page.content | strip_html | truncate: 100 | remove: '#' }}" title="Share on Weibo" target="_blank"><span class="count"><i class="fa fa-weibo"></i> Forward</span></a></li>
-    <li class="douban"><a href="http://www.douban.com/share/service?href={{ site.domain }}{{ site.url }}{{ page.url }}&amp;name={{page.title}}" title="Share on Douban" target="_blank"><span class="count"><i class="fa fa-book"></i> 推荐到豆瓣</span></a></li>
-    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.domain }}{{ site.url }}{{ page.url }}" title="Share on Facebook" target="_blank"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-    <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ site.domain }}{{ site.url }}{{ page.url }}" title="Share on Twitter" target="_blank"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-    <li class="googleplus"><a href="https://plus.google.com/share?url={{ site.domain }}{{ site.url }}{{ page.url }}" title="Share on Google Plus" target="_blank"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+     <li class="weibo"><a href="http://service.weibo.com/share/share.php?url={{ site.url }}{{ page.url }}&amp;title=//@{{site.owner.weibo_name}} :【{{page.title}}】{{page.content | strip_html | truncate: 100 | remove: '#' }}" title="Share on Weibo" target="_blank"><span class="count"><i class="fa fa-weibo"></i> Forward</span></a></li>
+    <li class="douban"><a href="http://www.douban.com/share/service?href={{ site.url }}{{ page.url }}&amp;name={{page.title}}" title="Share on Douban" target="_blank"><span class="count"><i class="fa fa-book"></i> 推荐到豆瓣</span></a></li>
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" target="_blank"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" title="Share on Twitter" target="_blank"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google Plus" target="_blank"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
   </ul>
 </div><!-- /.social-share -->
 {% if site.duoshuo_share %}
-<div class="ds-share" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-images="{{'favicon.png' | prepend: site.baseurl | prepend: site.url }}" data-content="{{ page.content | truncate: 100 | strip_html }}" data-url="{{ site.domain }}{{page.url | prepend: site.url}}">
+<div class="ds-share" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-images="{{'favicon.png' | prepend: site.url }}" data-content="{{ page.content | truncate: 100 | strip_html }}" data-url="{{page.url | prepend: site.url}}">
     <div class="ds-share-aside-right">
       <div class="ds-share-aside-inner">
       </div>

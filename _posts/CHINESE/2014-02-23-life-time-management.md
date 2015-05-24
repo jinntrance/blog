@@ -15,4 +15,4 @@ date: 2014-02-23T22:34:53+0800
 ![life][]  
 
 
-[life]: {{site.baseurl}}/assets/posts/images/2014-02-23-life-时间管理.md.1.png
+[life]: {{site.url}}/assets/posts/images/2014-02-23-life-时间管理.md.1.png

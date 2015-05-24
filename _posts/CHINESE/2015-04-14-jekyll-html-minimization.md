@@ -6,7 +6,7 @@ tags: [Jekyll, Optimisation]
 
 ---
 
-之前建博客的时候已经[使用GitHub 和GitCafe ]({{site.baseurl}}{%post_url CHINESE/2015-03-22-github %}) 对国内外访问加速了。但是自己的[个人主页]({{site.domain}})在手机只开2G的情况下居然需要10+s才能打开，着实让人头疼。
+之前建博客的时候已经[使用GitHub 和GitCafe ]({{site.url}}{%post_url CHINESE/2015-03-22-github %}) 对国内外访问加速了。但是自己的[个人主页](http://www.{{site.apex_domain}})在手机只开2G的情况下居然需要10+s才能打开，着实让人头疼。
 
 ### 优化方案
 
@@ -121,6 +121,6 @@ HTML tag 的结束符endings配置需要慎用`all`，比如`<p></p><a></a>`去�
 [PageSpeed Insights (by Google)]: https://chrome.google.com/webstore/detail/pagespeed-insights-by-goo/gplegfbjlmmehdoakndmohflojccocli
 [GitCafe Pages添加http gzip 支持]: https://gitcafe.com/GitCafe/Help/tickets/820
 [YUI Compressor]: http://yui.github.io/yuicompressor/
-[main.css]: {{site.baseurl}}/assets/css/main.css
-[all.js]: {{site.baseurl}}/assets/js/all.js
+[main.css]: {{site.url}}/assets/css/main.css
+[all.js]: {{site.url}}/assets/js/all.js
 [loadCSS]:https://github.com/filamentgroup/loadCSS

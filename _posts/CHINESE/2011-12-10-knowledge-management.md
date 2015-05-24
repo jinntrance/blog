@@ -15,5 +15,5 @@ Google搜索有不少使用技巧，掌握了能让自己搜索效率大大提�
 
 
 [Knowledge_management]: https://en.wikipedia.org/wiki/Knowledge_management
-[MindMap]: {{site.baseurl}}/assets/posts/images/2011-12-10-knowledge-management.jpeg
+[MindMap]: {{site.url}}/assets/posts/images/2011-12-10-knowledge-management.jpeg
 [Google Hacks]: http://inject.blogbus.com/logs/128065289.html

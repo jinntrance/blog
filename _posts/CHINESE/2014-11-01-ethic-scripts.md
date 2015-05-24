@@ -119,5 +119,5 @@ date: 2014-11-01T23:01:10+0800
 * 藏文字体：[Yalasoo Tibetan Font Software Book Music](http://www.yalasoo.com/English/docs/yalasoo_en_font.html)
 * 苗语字体：[phjamr/MiaoUnicode · GitHub](https://github.com/phjamr/MiaoUnicode)
 
-[img1]:  {{site.baseurl}}/assets/posts/images/2014-11-01-polyglots.1.jpg
-[img2]:  {{site.baseurl}}/assets/posts/images/2014-11-01-polyglots.2.jpg
+[img1]:  {{site.url}}/assets/posts/images/2014-11-01-polyglots.1.jpg
+[img2]:  {{site.url}}/assets/posts/images/2014-11-01-polyglots.2.jpg

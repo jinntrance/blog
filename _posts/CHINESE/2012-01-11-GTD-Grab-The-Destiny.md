@@ -61,8 +61,8 @@ PS：写完了才加的题目，盗用一下下老贝的话，不扼住命运的
 [Link 1]: http://gtd001.taobao.com/
 [doit.im]: https://i.doit.im/
 [Link 2]: http://www.toodledo.com/info/gtd.php
-[gtd1]: {{site.baseurl}}/assets/posts/images/2012-01-11-gtd1.gif
-[gtd2]: {{site.baseurl}}/assets/posts/images/2012-01-11-gtd2.jpeg
+[gtd1]: {{site.url}}/assets/posts/images/2012-01-11-gtd1.gif
+[gtd2]: {{site.url}}/assets/posts/images/2012-01-11-gtd2.jpeg
 [Link 3]: http://www.mifengtd.cn/
 [Link 4]: http://book.douban.com/subject/3558629/
 [Zen to done]: http://book.douban.com/subject/3296364/

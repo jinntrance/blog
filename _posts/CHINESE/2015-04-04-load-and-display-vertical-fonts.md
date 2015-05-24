@@ -8,7 +8,7 @@ date: 2015-04-05T00:32:30+08:00
 
 ### 遗留问题
 
-最近突然想到，之前发的一篇博文[显示小语种字体]({{ site.baseurl }}{% post_url CHINESE/2014-11-01-ethic-scripts %})，还有未竟之事：
+最近突然想到，之前发的一篇博文[显示小语种字体]({{ site.url }}{% post_url CHINESE/2014-11-01-ethic-scripts %})，还有未竟之事：
 
 * 要是读者电脑里没有装相应字体，岂不都看不到这些字了？
 * 文章中的蒙文、满文没有竖排。
@@ -81,15 +81,15 @@ font-family: 'Mongolian';
 
 - 在HTML的header中加入如下代码：
 {% highlight html %}
-<link href="http://www.josephjctang.com/blog/assets/css/lang.css" rel="stylesheet" type="text/css">
+<link href="{{site.url}}/assets/css/lang.css" rel="stylesheet" type="text/css">
 {% endhighlight %}
 - 在你需要支持的字体段落加入对应字体的class。蒙文为`.lang-mn`，满语为`.lang-mnc`，藏语为`.lang-bo`。横排只需再加上class`.wm-hlr`[^wm]。比如上文中的蒙文：`<em class="lang-mn"> ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌ </em>`{: .lang-mn .wm-hlr .lang-en}
 
 
 [浏览器市场份额]: http://tongji.baidu.com/data/browser
-[CSS]: {{ site.baseurl }}/assets/css/lang.css
+[CSS]: {{ site.url }}/assets/css/lang.css
 [FontSquirrel WebFont Generator]: http://www.fontsquirrel.com/tools/webfont-generator
 [CSS Tricks]: https://css-tricks.com/snippets/css/using-font-face/
-[demo]: {{site.baseurl}}/assets/posts/images/2015-04-04.mongolian.png
-[蒙文字体]: {{site.baseurl}}/assets/fonts/MongolianBaiti.ttf
+[demo]: {{site.url}}/assets/posts/images/2015-04-04.mongolian.png
+[蒙文字体]: {{site.url}}/assets/fonts/MongolianBaiti.ttf
 [^wm]: Writing Mode: Horizontal Left to Right
