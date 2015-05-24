@@ -42,6 +42,7 @@ background:
 
 # enable mathjax by default
 mathjax: true
+mathjax_prefix: http://mathjax.josephjctang.com
 # if set true, mathjax will be loaded 
 # only when there are elements with class `mathjax_alt`
 mathjax_with_alt: true

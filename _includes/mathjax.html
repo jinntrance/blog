@@ -52,7 +52,7 @@ window.alts = document.getElementsByClassName('{{ site.mathjax_alt_class }}');
   {% if site.mathjax_latest %}
   <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
   {% else%} 
-  <script src="http://www.josephjctang.com/mathjax/MathJax.js"></script>
+  <script src="{{site.mathjax_prefix}}/MathJax.js"></script>
   {% endif %}
 {% endif %}
 

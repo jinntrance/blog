@@ -20,7 +20,7 @@ function str_sim (a, b) {
 	return intersect / min;
 }
 $(function(){
-	var today = "{{ site.time | date: "%Y%d" }}"
+	var today = "{{ site.time | date: "%Y%m%d" }}"
 	var feed_url = "{{ site.url }}/feed.json?date=" + today
 	
 	var args = window.location.search.split('&')
@@ -54,7 +54,9 @@ $(function(){
                 $('#no-search-results').hide()
                 $('#search-results').show()
 		}
-	})
+	}).fail(function(){
+    window.location.href="{{site.url}}/search.html?q="+query_search 
+  })
 	}else window.location.href="{{site.url}}/posts.html";
 
 })
