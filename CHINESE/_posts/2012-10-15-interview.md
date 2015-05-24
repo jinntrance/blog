@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 成都Google笔试【10.15日电子科大】
-tags: [Google, life]
+tags: [GOOGLE, LIFE]
 date: 2012-10-15T22:07:21+0800
 
 ---

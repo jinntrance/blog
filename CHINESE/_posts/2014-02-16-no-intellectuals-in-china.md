@@ -2,7 +2,7 @@
 layout: post
 title: "知识分子的消失"
 modified: 2014-02-16 15:37:39 +0800
-tags: [Intellectuals,知识分子, Review]
+tags: [INTELLECTUALS,知识分子, REVIEW]
 
 ---
 《[忍不住的“关怀”]》作者从民主人士领袖、知名媒体人、著名学者三个侧面跟我们讲述了，留在大陆的知识分子是如何消失的。

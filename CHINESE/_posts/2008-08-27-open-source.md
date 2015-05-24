@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 支持国软，支持开源！
-tags: [life, TECHNICAL]
+tags: [LIFE, TECHNICAL]
 date: 2008-08-27T21:54:00+0800
 
 ---

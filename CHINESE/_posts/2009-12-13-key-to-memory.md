@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 记忆的窍门
-tags: [reading]
+tags: [READING]
 date: 2009-12-13T10:30:00+0800
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: body and soul
-tags: [life, perserverance, thought]
+tags: [LIFE, PERSERVERANCE, THOUGHT]
 date: 2013-07-01T20:15:00+0800
 
 ---

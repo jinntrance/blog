@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 说喜欢，都太过沉重。
-tags: [love, life]
+tags: [LOVE, LIFE]
 date: 2011-10-28T22:39:00+0800
 
 ---

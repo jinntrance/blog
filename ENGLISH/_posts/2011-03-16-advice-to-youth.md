@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Advice to Youth, by Mark Twain
-tags: [literature, Notes]
+tags: [LITERATURE, NOTES]
 date: 2011-03-16T10:32:00+0800
 
 ---

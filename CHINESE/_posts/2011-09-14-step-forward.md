@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 什么让我这几年收获不少，成长颇多？
-tags: [life]
+tags: [LIFE]
 date: 2011-09-14T22:41:00+0800
 
 ---

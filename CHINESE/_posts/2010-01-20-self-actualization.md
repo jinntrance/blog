@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 何以修身
-tags: [thought, life]
+tags: [THOUGHT, LIFE]
 date: 2010-01-20T22:21:00+0800
 
 ---

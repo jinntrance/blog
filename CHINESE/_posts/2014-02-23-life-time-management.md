@@ -1,7 +1,7 @@
 ---
 layout: post
 title: life-时间管理
-tags: [life, 时间管理, Management]
+tags: [LIFE, 时间管理, MANAGEMENT]
 date: 2014-02-23T22:34:53+0800
 
 ---

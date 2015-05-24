@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 今春種下一顆蘿莉，來年,就能收穫一株御姐
-tags: [life]
+tags: [LIFE]
 date: 2012-03-18T01:16:03+0800
 
 ---

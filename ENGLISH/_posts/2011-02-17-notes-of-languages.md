@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Notes of "a kaleidoscopic view of the world's languages"
-tags: [Notes]
+tags: [NOTES]
 date: 2011-02-17T13:01:00+0800
 
 ---

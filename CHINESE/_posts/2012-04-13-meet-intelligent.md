@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 见贤思齐
-tags: [life, thought]
+tags: [LIFE, THOUGHT]
 date: 2012-04-13T18:52:55+0800
 
 ---

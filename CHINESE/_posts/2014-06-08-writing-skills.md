@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 写作的意义
-tags: [life, thought, writing]
+tags: [LIFE, THOUGHT, WRITING]
 date: 2014-06-08T22:50:33+0800
 
 ---

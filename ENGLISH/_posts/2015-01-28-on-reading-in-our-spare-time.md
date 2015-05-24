@@ -2,7 +2,7 @@
 layout: post
 title: "On Reading in Our Spare Time"
 modified: 2015-01-28 01:11:09 +0800
-tags: [Reading]
+tags: [READING]
 
 ---
 

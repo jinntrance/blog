@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 說好的呢
-tags: [life, thought]
+tags: [LIFE, THOUGHT]
 date: 2013-02-04T01:04:55+0800
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: philosophy in Kunfu Panda
-tags: [reading, Notes]
+tags: [READING, NOTES]
 date: 2010-02-12T23:57:00+0800
 
 ---

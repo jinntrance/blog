@@ -1,7 +1,7 @@
 ---
 layout: post
 title: words of love
-tags: [literature]
+tags: [LITERATURE]
 date: 2009-10-11T22:17:00+0800
 
 ---

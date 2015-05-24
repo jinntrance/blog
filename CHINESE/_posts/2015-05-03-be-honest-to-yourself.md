@@ -2,7 +2,7 @@
 layout: post
 title: "谦逊与坦诚"
 modified: 2015-05-03 16:16:45 +0800
-tags: [life, thought]
+tags: [LIFE, THOUGHT]
 image:
   feature: 
   credit: 

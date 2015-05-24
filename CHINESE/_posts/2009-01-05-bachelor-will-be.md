@@ -1,7 +1,7 @@
 ---
 layout: post
 title: bachelor will-be or anything else
-tags: [life]
+tags: [LIFE]
 date: 2009-01-05T22:02:00+0800
 
 ---

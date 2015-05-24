@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 近日閒緒
-tags: [life, 自省]
+tags: [LIFE, 自省]
 date: 2012-09-26T02:39:55+0800
 
 ---

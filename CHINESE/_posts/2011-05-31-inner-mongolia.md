@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 内蒙游行小感
-tags: [politics]
+tags: [POLITICS]
 date: 2011-05-31T20:49:00+0800
 
 ---

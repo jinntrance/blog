@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 【kindle上“多看”安装失败后，另类安装方法】
-tags: [kindle, Technical]
+tags: [KINDLE, TECHNICAL]
 date: 2012-05-29T00:40:20+0800
 
 ---

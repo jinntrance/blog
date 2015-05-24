@@ -2,7 +2,7 @@
 layout: post
 title: "Be Your Better Self"
 modified: 2015-05-21 22:43:00 +0800
-tags: [life]
+tags: [LIFE]
 image:
   feature: 
   credit: 

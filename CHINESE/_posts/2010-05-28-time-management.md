@@ -1,7 +1,7 @@
 ---
 layout: post
 title: time management
-tags: [Management]
+tags: [MANAGEMENT]
 date: 2010-05-28T08:52:00+0800
 
 ---

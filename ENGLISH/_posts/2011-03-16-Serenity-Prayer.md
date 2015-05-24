@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Serenity Prayer,by theologian Reinhold Niebuhr
-tags: [literature, Notes]
+tags: [LITERATURE, NOTES]
 date: 2011-03-16T10:37:00+0800
 
 ---

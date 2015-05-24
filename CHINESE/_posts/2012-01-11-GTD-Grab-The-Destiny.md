@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GTD:Grab The Destiny
-tags: [life, GTD, Management]
+tags: [LIFE, GTD, MANAGEMENT]
 date: 2012-01-11T10:41:21+0800
 
 ---

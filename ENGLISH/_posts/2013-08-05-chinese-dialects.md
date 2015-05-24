@@ -2,7 +2,7 @@
 layout: post
 title: "Chinese Dialects"
 modified: 2013-08-05 10:57:33 +0800
-tags: [Language, Chinese]
+tags: [LANGUAGE, CHINESE]
 
 ---
 

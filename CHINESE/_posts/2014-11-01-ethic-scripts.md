@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 如何让Android显示及输入各小语种如藏蒙满维缅？
-tags: [小语种, Android, 字体, Technical]
+tags: [小语种, ANDROID, 字体, TECHNICAL]
 date: 2014-11-01T23:01:10+0800
 
 ---

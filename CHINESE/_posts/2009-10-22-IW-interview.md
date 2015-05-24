@@ -1,7 +1,7 @@
 ---
 layout: post
 title: IW 笔试....
-tags: [life]
+tags: [LIFE]
 date: 2009-10-22T22:19:00+0800
 
 ---

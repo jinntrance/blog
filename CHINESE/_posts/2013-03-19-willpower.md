@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Willpower
-tags: [life, willpower]
+tags: [LIFE, WILLPOWER]
 date: 2013-03-19T01:39:56+0800
 
 ---

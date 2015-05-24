@@ -1,7 +1,7 @@
 ---
 layout: post
 title: hasty是一种病
-tags: [life, thought]
+tags: [LIFE, THOUGHT]
 date: 2013-05-10T01:09:15+0800
 
 ---

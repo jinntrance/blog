@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 英语学习讲座后感
-tags: [life, thought]
+tags: [LIFE, THOUGHT]
 date: 2011-06-15T09:22:00+0800
 
 ---

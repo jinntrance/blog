@@ -1,7 +1,7 @@
 ---
 layout: post
 title: kindle之多看webster词典修成记
-tags: [kindle, linux]
+tags: [KINDLE, LINUX]
 date: 2012-01-06T19:02:27+0800
 
 ---

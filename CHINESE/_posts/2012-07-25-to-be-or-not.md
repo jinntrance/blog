@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在世
-tags: [life, thought]
+tags: [LIFE, THOUGHT]
 date: 2012-07-25T02:14:56+0800
 
 ---

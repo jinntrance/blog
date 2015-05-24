@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 闲谈几句
-tags: [thought, life]
+tags: [THOUGHT, LIFE]
 date: 2012-12-18T00:54:22+0800
 
 ---

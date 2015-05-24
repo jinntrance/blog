@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CSS竖排及显示小语种蒙满"
-tags: [Font, font-face, CSS, Mongolian]
+tags: [FONT, FONT-FACE, CSS, MONGOLIAN]
 date: 2015-04-05T00:32:30+08:00
 
 ---

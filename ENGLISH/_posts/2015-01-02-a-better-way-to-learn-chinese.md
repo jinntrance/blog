@@ -2,7 +2,7 @@
 layout: post
 title: "A better way to learn Chinese"
 modified: 2015-01-02 00:43:08 +0800
-tags: [Language, Chinese]
+tags: [LANGUAGE, CHINESE]
 
 ---
 

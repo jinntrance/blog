@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 堵住我们的，是思维给我们建立的那堵墙
-tags: [thought, life]
+tags: [THOUGHT, LIFE]
 date: 2011-11-14T22:38:00+0800
 
 ---

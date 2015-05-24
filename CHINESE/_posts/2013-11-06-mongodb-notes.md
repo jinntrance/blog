@@ -1,7 +1,7 @@
 ---
 layout: post
 title: group by hour in mongodb按小时聚集
-tags: [Technical]
+tags: [TECHNICAL]
 date: 2013-11-06T22:17:49+0800
 
 ---

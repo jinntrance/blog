@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 鸡肋，弃之。
-tags: [life]
+tags: [LIFE]
 date: 2012-02-29T23:35:30+0800
 
 ---

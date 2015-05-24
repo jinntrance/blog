@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 讀書訪友
-tags: [life]
+tags: [LIFE]
 date: 2012-01-25T23:27:08+0800
 
 ---

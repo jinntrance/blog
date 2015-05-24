@@ -2,7 +2,7 @@
 layout: post
 title: "Why Hasn't Democracy Come to China Yet"
 modified: 2013-08-12 03:08:44 +0800
-tags: [Democracy, Politics, China]
+tags: [DEMOCRACY, POLITICS, CHINA]
 
 ---
 

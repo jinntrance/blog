@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 嫑让知识从身边溜走：管理自己的知识--学习、保存、分享
-tags: [ascending, reading]
+tags: [ASCENDING, READING]
 date: 2011-12-10T00:07:00+0800
 
 ---

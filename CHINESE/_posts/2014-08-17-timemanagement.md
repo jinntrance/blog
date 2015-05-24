@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 你可以到达，你理想还不及的地方。
-tags: [时间管理, life, thought, Managment]
+tags: [时间管理, LIFE, THOUGHT, MANAGMENT]
 date: 2014-08-18T02:22:35+0800
 
 ---

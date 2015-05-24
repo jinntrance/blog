@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spark笔记
-tags: [Technical, 数据挖掘, Spark, Scala]
+tags: [TECHNICAL, 数据挖掘, SPARK, SCALA]
 date: 2014-06-18T17:30:34+0800
 
 ---

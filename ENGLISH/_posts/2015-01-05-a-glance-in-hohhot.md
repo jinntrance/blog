@@ -2,7 +2,7 @@
 layout: post
 title: "A Glance in Hohhot"
 modified: 2015-01-05 23:42:21 +0800
-tags: [Language, Culture]
+tags: [LANGUAGE, CULTURE]
 
 ---
 

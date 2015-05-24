@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 既往不念
-tags: [life, love]
+tags: [LIFE, LOVE]
 date: 2012-01-24T23:26:30+0800
 
 ---

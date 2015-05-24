@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GTD中的review——也谈doit.im review
-tags: [GTD, 时间管理, doit.im]
+tags: [GTD, 时间管理, DOIT.IM]
 date: 2012-08-17T00:34:27+0800
 
 ---

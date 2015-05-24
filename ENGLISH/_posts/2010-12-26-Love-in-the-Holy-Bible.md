@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Love in the Holy Bible.
-tags: [love, ]
+tags: [LOVE, ]
 date: 2010-12-26T15:14:00+0800
 
 ---

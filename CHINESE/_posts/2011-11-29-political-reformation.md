@@ -2,7 +2,7 @@
 layout: post
 title: "政治体制改革，是为本"
 modified: 2011-11-29 19:48:05 +0800
-tags: [Review]
+tags: [REVIEW]
 
 ---
 

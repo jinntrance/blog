@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 從惡如崩
-tags: [life, plan]
+tags: [LIFE, PLAN]
 date: 2014-01-04T02:34:51+0800
 
 ---

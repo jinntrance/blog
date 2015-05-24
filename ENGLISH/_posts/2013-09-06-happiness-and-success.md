@@ -2,7 +2,7 @@
 layout: post
 title: "Happiness and Success"
 modified: 2013-09-06 01:01:12 +0800
-tags: [Thought]
+tags: [THOUGHT]
 
 ---
 

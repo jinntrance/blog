@@ -2,7 +2,7 @@
 layout: post
 title: The furthest distance 咫尺天涯
 categories: [CHINESE, ENGLISH]
-tags: [life]
+tags: [LIFE]
 date: 2010-01-01T22:20:00+0800
 
 ---

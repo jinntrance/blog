@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 是自己的，拳打脚踢都不会走；不是自己的，再强求也得不来。
-tags: [love, life]
+tags: [LOVE, LIFE]
 date: 2010-03-12T22:24:00+0800
 
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: similarity of Chinese lovers' promise and English lovers'
 categories: [CHINESE, ENGLISH]
-tags: [literature]
+tags: [LITERATURE]
 date: 2011-04-03T10:59:00+0800
 
 ---

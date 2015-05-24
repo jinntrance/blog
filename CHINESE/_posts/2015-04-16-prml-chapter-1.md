@@ -2,7 +2,7 @@
 layout: post
 title: "PRML Chapter 1"
 modified: 2015-04-16 19:50:34 +0800
-tags: [DM, ML, Machine Learning, 机器学习, Technical]
+tags: [DM, ML, MACHINE LEARNING, 机器学习, TECHNICAL]
 
 ---
 

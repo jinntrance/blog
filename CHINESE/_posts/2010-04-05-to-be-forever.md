@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 执手偕老..
-tags: [life]
+tags: [LIFE]
 date: 2010-04-05T22:25:00+0800
 
 ---

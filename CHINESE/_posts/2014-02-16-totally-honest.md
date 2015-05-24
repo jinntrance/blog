@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 誠意之“今與老妻敦倫一次”
-tags: [时间管理, life, 总结]
+tags: [时间管理, LIFE, 总结]
 date: 2014-02-16T17:56:56+0800
 
 ---

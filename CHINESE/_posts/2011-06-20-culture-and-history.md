@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 历史中文化的根
-tags: [reading, Review]
+tags: [READING, REVIEW]
 date: 2011-06-20T09:27:00+0800
 
 ---

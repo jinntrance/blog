@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 闲绪
-tags: [时间管理, Management]
+tags: [时间管理, MANAGEMENT]
 date: 2013-09-07T10:00:00+0800
 
 ---

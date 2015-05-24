@@ -1,7 +1,7 @@
 ---
 layout: post
 title: français ,mon amour(Le Petit Prince)
-tags: [life, Notes]
+tags: [LIFE, NOTES]
 date: 2009-03-23T22:13:00+0800
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 昔时阙段，读之欣然。
-tags: [life, love]
+tags: [LIFE, LOVE]
 date: 2012-01-12T17:42:22+0800
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: moved teda,moved 4ever
-tags: [life]
+tags: [LIFE]
 date: 2009-05-18T22:14:00+0800
 
 ---

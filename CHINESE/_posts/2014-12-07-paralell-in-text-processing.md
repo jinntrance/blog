@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux或Mac下的并行(parallel)文本处理
-tags: [Mac, Linux, parallel, Technical]
+tags: [MAC, LINUX, PARALLEL, TECHNICAL]
 date: 2014-12-07T23:19:10+0800
 
 ---
