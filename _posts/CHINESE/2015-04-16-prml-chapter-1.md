@@ -20,9 +20,9 @@ y( x, vec w) = sum_(j=0)^M w_j x^j = w_0 +w_1x+w_2x^2 +...+w_Mx^M
 待优化的 error function 为 \` E(vec w)= 1/2 sum_(n=1)^N[y(x_n, vec w) - t_n]^2 \`
 其中 $t_n$ 为 实际值 target，y为预测值。不难看出$E(\vec w)$ 越小，预测值跟实际值就越接近。
 
-实际上常用的RMS[^RMS] 可以表示为 \` E_(RMS) = sqrt ((2E(vec w))/N) \`
+实际上常用的RMS[^RMSE] 可以表示为 \` E_(RMSE) = sqrt ((2E(vec w))/N) \`
 
-所以这样RMS 越小，也就拟合得越好。可是在迭代过程中，实际上M 越大也就会对拟合得越好，可是这样就越容易过拟合。所以我们加入修正项，防止M 变得过大而过拟合。得到新的 error function 
+所以这样RMSE 越小，也就拟合得越好。可是在迭代过程中，实际上M 越大也就会对拟合得越好，可是这样就越容易过拟合。所以我们加入修正项，限制\`vec w\` 维度变得过大，也防止M 变得过大而过拟合。得到新的 error function 
 
 \`
  hat E (vec w) = E(vec w) + lamda/2 ||vec w||^2 
@@ -90,9 +90,20 @@ x 落在(a, b) 区间内的概率为：
 
 since \`p(w|D) = (p(D|w)p(w))/(p(D))\`
 
->The quantity __p(D|w)__ on the right-hand side of Bayes’ theorem is evaluated for the observed data set D and can be viewed as a function of the parameter vector \`vec w\`, in which case it is called the _likelihood function_. It expresses how probable the observed data set is for different settings of the parameter vector \`vec w\`
+> The quantity `p(D|w)` on the right-hand side of Bayes’ theorem is evaluated for the observed data set D and can be viewed as a function of the parameter vector \`vec w\`, in which case it is called the __likelihood function__. It expresses how probable the observed data set is for different settings of the parameter vector \`vec w\`
 
-[^RMS]: Root Mean Square Error
+
+> A widely used frequentist estimator is maximum likelihood, in which w is set to the value that maximizes the likelihood function `p(D|w)`
+
+
+### The Gaussian distribution 
+
+
+Gaussian distribution
+: \` N(x|mu, delta^2 ) =  1 / sqrt(2 pi delta^2)  e^(-(x-mu)^2 / (2 delta^2))\`
+: μ, called the mean, and σ<sup>2</sup>, called the vari- ance. β = 1/σ<sup>2</sup>, is called the precision
+
+[^RMSE]: Root Mean Square Error
 
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ config: ["TeX-MML-AM_HTMLorMML.js"], tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$'] ], processEscapes: true }, asciimath2jax: { delimiters: [ ['`','`']] }, displayAlign: "center`", displayIndent: "2em" }); </script>
 <script src="http://www.josephjctang.com/mathjax/MathJax.js" async="async"></script>

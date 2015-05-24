@@ -22,7 +22,7 @@ task :new_post, :title do |t, args|
   else
     title = get_stdin("Enter a title for your post: ")
   end
-  cat  = get_stdin("Enter a category for your post: ")
+  cat  = get_stdin("Enter a category for your post(CHINESE/ENGLISH): ")
   mathjax  = get_stdin("Whether to use mathjax in this post: ")
   filename = "#{posts_dir}/#{cat}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
   if File.exist?(filename)
