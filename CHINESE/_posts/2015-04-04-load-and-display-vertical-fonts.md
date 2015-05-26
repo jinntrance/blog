@@ -78,10 +78,13 @@ font-family: 'Mongolian';
 ### 任意网页使用
 
 现在整理和测试了蒙文、藏文的字体，为了让你的网页直接支持蒙文、藏文显示，可以直接直接用本博配置的css。
+{% comment %}
+TODO change the css href to support cross-domain fonts
+{% endcomment %}
 
 - 在HTML的header中加入如下代码：
 {% highlight html %}
-<link href="{{site.url}}/assets/css/lang.css" rel="stylesheet" type="text/css">
+<link href="http://www.josephjctang.com/blog/assets/css/lang.css" rel="stylesheet" type="text/css">
 {% endhighlight %}
 - 在你需要支持的字体段落加入对应字体的class。蒙文为`.lang-mn`，满语为`.lang-mnc`，藏语为`.lang-bo`。横排只需再加上class`.wm-hlr`[^wm]。比如上文中的蒙文：`<em class="lang-mn"> ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌ </em>`{: .lang-mn .wm-hlr .lang-en}
 
