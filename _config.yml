@@ -60,6 +60,8 @@ google_verify:
 google_fonts: 
 # add Baidu Analytics ID for tracking
 baidu_analytics: 11224c4b3c0923fa6de6e431325fe387
+#baidu_push to make Baidu notified
+baidu_push: "http://data.zz.baidu.com/urls?site=josephjctang.com&token=q75fN10vbLmfLVFg"
 
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify: 

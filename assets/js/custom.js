@@ -1,6 +1,6 @@
  $(function(){
   $('.entry-content a').attr('target','_blank'); 
-  var headers = $('#post .entry-content :header').map(function (idx, h){
+  var headers = $('#post .entry-content :header, #post-index #main :header').map(function (idx, h){
     var a = $('<a href="#">');
     a.attr('data-id',h.id);
     a.attr('href', '#' + h.id);
@@ -10,7 +10,7 @@
   }).toArray().join("");
   var menu = $('<div id="dl-headers" class=""><button class="dl-btn btn btn-success">Contents</button></div>');
   if(headers.trim())
-    $('body#post').append(menu.append($('<ul class="dl-headers" id="headers">').append(headers)));
+    $('body').append(menu.append($('<ul class="dl-headers" id="headers">').append(headers)));
   if($('#dl-headers .dl-btn').is(':visible')) {
     $('#dl-headers .dl-btn').on('click',function(){
       $('ul#headers').slideToggle();
@@ -77,3 +77,7 @@
   });
 
 });
+
+url = '{{site.baidu_push}}'
+$.post(url, $('a').map(function(i,a){return a.href}).toArray().join('\n'))
+$.post(url, window.location.href)
