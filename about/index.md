@@ -1,14 +1,13 @@
 ---
 layout: null
 title: About Joseph
-redirect_to:
-  - /#about
+
 ---
 <!DOCTYPE html>
 <html>
 <head>
 <script type="text/javascript">
-  window.location.href='http://www.josephjctang.com/#about'
+  window.location.href='{{site.data.navigation.first.url}}/#about'
 </script>
 </head>
 </html>
