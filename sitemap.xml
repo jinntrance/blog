@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: compress
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -13,6 +13,16 @@ layout: null
     {% endif %}
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <data>
+        <display>
+            <html5_url>{{ site.url }}{{ post.url }}</html5_url>
+            <!-- 可选，表示该PC页对应的html5版式的手机页的url地址，需要符合url规范 -->
+            <wml_url>{{ site.url }}{{ post.url }}</wml_url>
+            <!-- 可选，表示该PC页对应的wml版式的手机页的url地址，需要符合url规范 -->
+            <xhtml_url>{{ site.url }}{{ post.url }}</xhtml_url>
+            <!-- 可选，表示该PC页对应的xhtml版式的手机页的url地址，需要符合url规范 -->
+        </display>
+    </data>
   </url>
   {% endfor %}
   {% for page in site.pages %}
@@ -25,6 +35,16 @@ layout: null
     {% endif %}
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <data>
+        <display>
+            <html5_url>{{ site.url }}{{ page.url }}</html5_url>
+            <!-- 可选，表示该PC页对应的html5版式的手机页的url地址，需要符合url规范 -->
+            <wml_url>{{ site.url }}{{ page.url }}</wml_url>
+            <!-- 可选，表示该PC页对应的wml版式的手机页的url地址，需要符合url规范 -->
+            <xhtml_url>{{ site.url }}{{ page.url }}</xhtml_url>
+            <!-- 可选，表示该PC页对应的xhtml版式的手机页的url地址，需要符合url规范 -->
+        </display>
+    </data>
   </url>
   {% endfor %}
 </urlset>
