@@ -1,6 +1,6 @@
  $(function(){
   $('.entry-content a').attr('target','_blank'); 
-  var headers = $('#post .entry-content :header, #post-index #main :header').map(function (idx, h){
+  var headers = $('#post .entry-content :header').map(function (idx, h){
     var a = $('<a href="#">');
     a.attr('data-id',h.id);
     a.attr('href', '#' + h.id);
