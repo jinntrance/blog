@@ -78,6 +78,3 @@
 
 });
 
-url = '{{site.baidu_push}}'
-$.post(url, $('a').map(function(i,a){return a.href}).toArray().join('\n'))
-$.post(url, window.location.href)
