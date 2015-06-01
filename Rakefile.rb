@@ -8,7 +8,7 @@ public_dir      = "public"    # compiled site directory
 posts_dir       = "_posts"    # directory for blog files
 new_post_ext    = "md"  # default new post file extension when using the new_post task
 new_page_ext    = "md"  # default new page file extension when using the new_page task
-mathjax_footer  = "**Mathjax was not loaded successfully**{:.mathjax_alt} <script type='text/x-mathjax-config'> MathJax.Hub.Config({ config: ['TeX-MML-AM_HTMLorMML.js'], tex2jax: { inlineMath: [ ['$', '$'] ] }, asciimath2jax: { delimiters: [ ['`','`']] } }); </script> <script src='http://mathjax.josephjctang.com/MathJax.js' async='async'></script>"
+mathjax_footer  = "**Mathjax was not loaded successfully**{:.mathjax_alt} \n<script type='text/x-mathjax-config'> MathJax.Hub.Config({ config: ['TeX-MML-AM_HTMLorMML.js'], tex2jax: { inlineMath: [ ['$', '$'] ] }, asciimath2jax: { delimiters: [ ['`','`']] } }); </script> <script src='http://mathjax.josephjctang.com/MathJax.js' async='async'></script>"
 
 #############################
 # Create a new Post or Page #
@@ -24,7 +24,7 @@ task :new_post, :title do |t, args|
   end
   cat  = get_stdin("Enter a category for your post(CHINESE/ENGLISH): ")
   mathjax  = get_stdin("Whether to use mathjax in this post: ")
-  filename = "#{posts_dir}/#{cat}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
+  filename = "#{cat}/#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
@@ -43,8 +43,8 @@ task :new_post, :title do |t, args|
     post.puts "comments: "
     post.puts "share: "
     post.puts ""
-    post.puts "---"
-    if args.mathjax 
+    post.puts "---\n\n"
+    if args.mathjax or mathjax
       post.puts mathjax_footer
     end
     post.puts ""
