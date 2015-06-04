@@ -31,6 +31,12 @@ y( x, vec w) = sum_(j=0)^M w_j x^j = w_0 +w_1x+w_2x^2 +...+w_Mx^M
 其中
 \` ||vec w||^2 = vec w^T vec w = sum_(i=0)^M w_i^2\`
 
+> Regularisation Term 中：
+>
+- \` L0= lamda * size(vec w) = lamda M\`
+- \` L1 = lamda sum_1^M |w_i| \`
+- \` L2 = lamda sum_1^M w_i^2\`
+
 如此，我们便能找到合适的$\vec w$ ，最后让我们的拟合曲线在训练集合和测试集合上表现都比较好。
 
 
@@ -106,4 +112,4 @@ Gaussian distribution
 [^RMSE]: Root Mean Square Error
 
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ config: ["TeX-MML-AM_HTMLorMML.js"], tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$'] ], processEscapes: true }, asciimath2jax: { delimiters: [ ['`','`']] }, displayAlign: "center`", displayIndent: "2em" }); </script>
-<script src="http://www.josephjctang.com/mathjax/MathJax.js" async="async"></script>
+<script src="http://mathjax.josephjctang.com/MathJax.js" async="async"></script>
