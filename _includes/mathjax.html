@@ -48,7 +48,6 @@ window.alts = document.getElementsByClassName('{{ site.mathjax_alt_class }}');
 </script>
 {% assign mj_alts = content | split: site.mathjax_alt_class %}
 {% if site.mathjax_with_alt != true or (mj_alts.size > 1 and site.mathjax_alt_class) %}
-  <!-- testing sucessfully {{mj_alts.first}} -->
   {% if site.mathjax_latest %}
   <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
   {% else%} 
