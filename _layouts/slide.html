@@ -1,0 +1,96 @@
+---
+layout: null
+---
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    {% include head.html %}
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/reveal.css">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="{{ site.url }}/assets/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '{{ site.url }}/assets/css/print/pdf.css' : '{{ site.url }}/assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="{{ site.url }}/assets/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body id="presentation">
+
+{% include browser-upgrade.html %}
+<div id="main" role="main" class="reveal">
+  <div id="content">
+    {{content }}
+  </div>
+  <div id="slides" class="slides">
+    
+  </div>
+</div><!-- /#main -->
+ 
+<script src="{{ site.url }}/assets/js/vendor/jquery-1.9.1.min.js"></script>
+  <script src="{{ site.url }}/assets/lib/js/head.min.js"></script>
+  <script src="{{ site.url }}/assets/js/reveal.js"></script>
+<script type="text/javascript">
+  $('.hide').remove();
+  var idx=0;
+  var max=$('.new_page').size();
+  $('#content').children().each(function(i,value){
+  var curr = $(this)
+  if(curr.hasClass('new_page')){
+    idx = idx+1;
+  }
+  if($('#page'+idx).size()<1)
+        $('#slides').append('<section class="slide" id="page' + idx + '"></section>');
+  $('#page'+idx).append(curr);
+  });
+  $('#slides').children('section').children().wrap('<section></section>');
+</script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        math: {
+        mathjax: 'http://mathjax.josephjctang.com/MathJax.js',
+        config: 'TeX-MML-AM_HTMLorMML',  // See http://docs.mathjax.org/en/latest/config-files.html
+        tex2jax: { inlineMath: [ ['$', '$'] ] }, 
+        asciimath2jax: { delimiters: [ ['`','`']] }
+        },
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '{{ site.url }}/assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '{{ site.url }}/assets/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '{{ site.url }}/assets/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '{{ site.url }}/assets/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '{{ site.url }}/assets/plugin/zoom-js/zoom.js', async: true },
+          { src: '{{ site.url }}/assets/plugin/notes/notes.js', async: true },
+          // MathJax
+          { src: '{{ site.url }}/assets/plugin/math/math.js', async: true } 
+        ]
+      });
+
+    </script>
+
+</body>
+</html>
