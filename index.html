@@ -32,7 +32,7 @@ image:
       <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" class="permalink" rel="bookmark" title="{{ post.title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
     {% else %}
       <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a>
-        {% if post.prz_url %}<a href="{{post.prz_url}}"> <span class="float-right"> <i class="fa fa-play"> </i> <sub>ppt</sub></span><a> {% endif %}
+        {% if post.prz_url %}<a href="{{ site.url }}{{ post.prz_url }}"> <span class="float-right"> <i class="fa fa-play"> </i> <sub>ppt</sub></span><a> {% endif %}
       </h1>
     {% endif %}
   </header>
