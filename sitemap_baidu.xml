@@ -13,6 +13,12 @@ layout: compress
     {% endif %}
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <data>
+        <display>
+            <title>{{post.title}}</title>
+            <tag>{{post.tags | join: " "}}</tag>
+        </display>
+    </data>
   </url>
   {% endfor %}
   {% for page in site.pages %}
@@ -25,6 +31,11 @@ layout: compress
     {% endif %}
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <data>
+        <display>
+            <title>{{page.title}}</title>
+        </display>
+    </data>
   </url>
   {% endfor %}
 </urlset>
