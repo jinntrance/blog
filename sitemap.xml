@@ -16,6 +16,7 @@ layout: compress
   </url>
   {% endfor %}
   {% for page in site.pages %}
+  {% if page.layout != null %}
   <url>
     <loc>{{ site.url }}{{ page.url }}</loc>
     {% if page.date != null %}
@@ -26,5 +27,6 @@ layout: compress
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  {% endif %}
   {% endfor %}
 </urlset>
