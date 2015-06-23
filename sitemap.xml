@@ -24,7 +24,7 @@ layout: compress
     {% elsif page.lastmod != null %}
     <lastmod>{{ page.lastmod | date_to_xmlschema }}</lastmod>
     {% endif %}
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   {% endif %}
