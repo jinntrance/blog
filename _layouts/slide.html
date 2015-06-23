@@ -40,9 +40,9 @@ layout: compress
   </div>
 </div><!-- /#main -->
  
-<script src="{{ site.url }}/assets/js/vendor/jquery-1.9.1.min.js"></script>
-<script src="{{ site.url }}/assets/lib/js/head.min.js"></script>
-<script src="{{ site.url }}/assets/js/reveal.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/vendor/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/lib/js/head.min.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/reveal.js"></script>
 <script type="text/javascript">
   $('.hide').remove();
   $("p:contains('layout: post')").remove();
@@ -61,7 +61,7 @@ layout: compress
   $('#slides').children('section').children().wrap('<section></section>');
 </script>
 
-    <script>
+    <script type="text/javascript">
 
       /* Full list of configuration options available at: */
       /* https://github.com/hakimel/reveal.js#configuration */
@@ -74,10 +74,8 @@ layout: compress
         transition: 'slide', /* none/fade/slide/convex/concave/zoom */
 
         math: {
-        mathjax: 'http://mathjax.josephjctang.com/MathJax.js',
-        config: 'TeX-MML-AM_HTMLorMML',
-        tex2jax: { inlineMath: [ ['$', '$'] ] }, 
-        asciimath2jax: { delimiters: [ ['`','`']] }
+          config: 'TeX-MML-AM_HTMLorMML',
+          asciimath2jax: { delimiters: [ ['`','`'], ['$', '$'] ] }
         },
         /* Optional reveal.js plugins */
         dependencies: [

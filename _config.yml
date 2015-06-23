@@ -42,15 +42,13 @@ background:
 
 # enable mathjax by default
 mathjax: true
-mathjax_prefix: http://mathjax.josephjctang.com
+#mathjax_js: "http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+mathjax_js: "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"
 # if set true, mathjax will be loaded 
 # only when there are elements with class `mathjax_alt`
 mathjax_with_alt: true
 # when mathjax fails, display those alternative elements
 mathjax_alt_class: mathjax_alt
-
-# load external scripts
-mathjax_latest: false
 
 # Analytics and webmaster tools stuff goes here
 # can not access google service in China,

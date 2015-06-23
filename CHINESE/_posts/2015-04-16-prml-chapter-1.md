@@ -107,9 +107,19 @@ since \`p(w|D) = (p(D|w)p(w))/(p(D))\`
 
 Gaussian distribution
 : \` N(x|mu, delta^2 ) =  1 / sqrt(2 pi delta^2)  e^(-(x-mu)^2 / (2 delta^2))\`
-: μ, called the mean, and σ<sup>2</sup>, called the vari- ance. β = 1/σ<sup>2</sup>, is called the precision
+: μ, called the mean, and σ<sup>2</sup>, called the vari- ance. β = 1/σ<sup>2</sup>, is called the precision.
+
+此外，高斯分布满足(p25)：
+
+- \`int_(- oo)^(oo) N(x| mu, delta^2) dx = 1\`
+- \`E[x] = int_(- oo)^(oo) N(x| mu, delta^2) x dx = mu\`
+- \`E[x^2] = int_(- oo)^(oo) N(x| mu, delta^2) x^2 dx = mu^2 + delta^2\`
+- \`var[x] = E[x^2] - E[x]^2 = delta ^2\`
 
 [^RMSE]: Root Mean Square Error
 
-<script type="text/x-mathjax-config"> MathJax.Hub.Config({ config: ["TeX-MML-AM_HTMLorMML.js"], tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$'] ], processEscapes: true }, asciimath2jax: { delimiters: [ ['`','`']] }, displayAlign: "center`", displayIndent: "2em" }); </script>
-<script src="http://mathjax.josephjctang.com/MathJax.js" async="async"></script>
+*MathJax was not loaded successfully.*{:.mathjax_alt}
+{% comment %}
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ asciimath2jax: { delimiters: [ ['`','`'],['$', '$']] }}); </script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML" async="async"></script>
+{% endcomment %}
