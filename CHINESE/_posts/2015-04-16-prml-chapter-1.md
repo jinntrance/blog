@@ -105,16 +105,26 @@ since \`p(w|D) = (p(D|w)p(w))/(p(D))\`
 ### The Gaussian distribution 
 
 
-Gaussian distribution
-: \` N(x|mu, delta^2 ) =  1 / sqrt(2 pi delta^2)  e^(-(x-mu)^2 / (2 delta^2))\`
-: μ, called the mean, and σ<sup>2</sup>, called the vari- ance. β = 1/σ<sup>2</sup>, is called the precision.
+Normal/Gaussian distribution
+: \` cc N(x|mu, delta^2 ) =  1 / sqrt(2 pi delta^2)  e^(-(x-mu)^2 / (2 delta^2))\`
+: μ, called the mean, and σ<sup>2</sup>, called the variance. β = 1/σ<sup>2</sup>, is called the precision.
 
 此外，高斯分布满足(p25)：
 
-- \`int_(- oo)^(oo) N(x| mu, delta^2) dx = 1\`
-- \`E[x] = int_(- oo)^(oo) N(x| mu, delta^2) x dx = mu\`
-- \`E[x^2] = int_(- oo)^(oo) N(x| mu, delta^2) x^2 dx = mu^2 + delta^2\`
+- \`int_(- oo)^(oo) cc N(x| mu, delta^2) dx = 1\`
+- \`E[x] = int_(- oo)^(oo) cc N(x| mu, delta^2) x dx = mu\`
+- \`E[x^2] = int_(- oo)^(oo) cc N(x| mu, delta^2) x^2 dx = mu^2 + delta^2\`
 - \`var[x] = E[x^2] - E[x]^2 = delta ^2\`
+
+设对于D 维变量\`vec x\` 有：
+\` cc N(x|mu, Sigma ) =  1 / ((2 pi)^(D/2) Sigma^(1/2))  e^(-0.5 * (vec x- vec mu)^T Sigma^-1  (vec x - vec mu))\`
+where the D-dimensional vector μ is called the mean, the D × D matrix Σ is called the covariance, and |Σ| denotes the [determinant](http://www.mathsisfun.com/algebra/matrix-determinant.html) of Σ.
+
+likelihood function for the Gaussian: 
+\`
+p(bb x | mu, delta ^2) = prod _(n=1)^N cc N (x_n | mu, delta ^2)
+\`
+
 
 [^RMSE]: Root Mean Square Error
 
