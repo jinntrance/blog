@@ -48,6 +48,16 @@ S(t) = 1/(1+e^-t)
         那么位置p 的 \`DCG_p = rel_1 + sum\_ (i=2)^p rel_i/log_2(i) \` ，
         或者高相关的 \`DCG_p = sum_(i=1)^p (rel_i - 1)/log_2(i+1) \`
         - NDCG： 假设 ideal ranking 的情况下DCG 为1，那么其他ranking 的DCG 除上ideal ranking 的DCG值即为该ranking 下的NDCG 值。
+        
+HMC:
+
+https://en.wikipedia.org/wiki/Hidden_Markov_model
+        
+MCMC: 
+
+https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo
+        
+## 
 
 [Softmax function]: http://en.wikipedia.org/wiki/Softmax_function
 [Sigmoid function]: http://en.wikipedia.org/wiki/Sigmoid_function
