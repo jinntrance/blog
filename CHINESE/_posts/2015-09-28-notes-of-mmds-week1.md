@@ -3,12 +3,6 @@ layout: post
 title: "MMDS 笔记 week1/2"
 modified: 2015-09-28 22:46:29 +0800
 tags: [MMDS,ML]
-image:
-  feature: 
-  credit: 
-  creditlink: 
-comments: 
-share: 
 
 ---
 
@@ -149,6 +143,5 @@ end
 <script type='text/x-mathjax-config'> MathJax.Hub.Config({ asciimath2jax: { delimiters: [['`','`']] }, tex2jax: {inlineMath: [['$', '$']], displayMath: [['$$', '$$']], processEscapes: true}}); </script>
 <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML' async='async'></script>
 {% endcomment %}
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.3/jsxgraphcore.js"></script>
 
 
