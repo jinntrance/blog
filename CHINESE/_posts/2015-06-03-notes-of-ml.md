@@ -49,6 +49,12 @@ S(t) = 1/(1+e^-t)
         或者高相关的 \`DCG_p = sum_(i=1)^p (rel_i - 1)/log_2(i+1) \`
         - NDCG： 假设 ideal ranking 的情况下DCG 为1，那么其他ranking 的DCG 除上ideal ranking 的DCG值即为该ranking 下的NDCG 值。
         
+分类效果评估：
+
+\`F1 = (2\*recall*pr\ecision)/(recall + pr\ecision)\`
+
+AUC(Area Under Curve): 就是recall 作为横座标，precision 作为纵坐标时曲线下的面积。
+        
 HMC:
 
 https://en.wikipedia.org/wiki/Hidden_Markov_model
