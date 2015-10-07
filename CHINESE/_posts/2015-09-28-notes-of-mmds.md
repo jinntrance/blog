@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MMDS 笔记"
+title: "MMDS 笔记 week1/2"
 modified: 2015-09-28 22:46:29 +0800
 tags: [MMDS,ML]
 image:
@@ -12,7 +12,7 @@ share:
 
 ---
 
-[Mining Massive Datasets](https://www.coursera.org/course/mmds) 里面印裔和另东欧还是南欧的俩小伙儿销魂的口音让自己之前没能坚持下去。这次重新开课，再也不能放过这个机会了。
+[Mining Massive Datasets](https://www.coursera.org/course/mmds) 里面俩小伙儿销魂的口音和白发大叔口语中的长难句让自己之前没能坚持下去。这次重新开课，再也不能放过这个机会了。
 
 ## PageRank
 
@@ -140,6 +140,7 @@ end
 1. 跟SON algorithm 类似，不过按照r 随机采样后， 阀值变得更低，为了减少在样本中不频繁但全局频繁的false negatives ，如 \` t = (threshold)/(1.25r)\` 。最后频繁项集合为L 
 2. 找到L 的negative border NB。（假设有negative border 中的元素 N，那么\`N !in L\` ，且N 的所有直接子集属于L。比如{A,B,C} 的直接子集为：{A,B} {B,C} {A,C}） 
 3. 在pass 2中，L和NB 都当作频繁项来找全局频繁项。如果NB 中不存在频繁项，那最后结果很Okay，终止 。如果NB 还存在频繁项，那么从新采样直到终止。
+
 
 [LSH应用]: http://www.strongczq.com/2012/04/locality-sensitive-hashinglsh%E4%B9%8B%E9%9A%8F%E6%9C%BA%E6%8A%95%E5%BD%B1%E6%B3%95.html
 
