@@ -76,8 +76,15 @@ lambda_2 = min_x ((vec x ^T * M * vec x)/(vec x ^T * vec x))
 
 则 \` lambda_2 = min_x (sum\_((i,j) in E) (x_i - y_i)^2)/(sum_i x_i^2) \`
 
+对于已经在组A 内的所有节点，假设其$x_i =-1$，如果j 节点划分到A 组，那么$x_j = -1$，不者$x_j = 1$ 。那么$\lambda_2$ 的物理意义就在于，而如果要找最佳的分割，使得跟A 内部链接比较稠密的点都划分到A 内部。
 
+Spectral Clustering Algorithms 步骤
 
+- Pre-processing: 计算 Laplacian Matrix $L$
+- Decomposition 
+    - 计算特征值和特征向量$\vec \lambda$，基于特征向量矩阵 $X$，
+    - 把点映射到低纬上计算$\lambda_{2} = \vec \lambda[2]$，以及$X$ 对应的第二列值$X[:,2]$
+- Grouping 基于上一步结果$X[:,2]$ 排序（排序过程中记录下行号，即对应的节点ID ），将点分到2或多组。
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
