@@ -53,6 +53,32 @@ log(F) = sum\_((u,v) in E) log(p(u,v)) + sum\_((u,v) !in E) log(1-1- e^(-vec F_u
 
 其中$N(u)$ 代表u 节点的邻居节点。然后通过梯度下降可求。梯度下降求解过程中，优化点就是先针对全局节点计算F 值的和，然后u 的非邻居节点的F值加和值就等于全部减去u 邻居节点的F 值和。因为非邻居节点数量太大，不必每次梯度下降迭代时都遍历全部非邻居节点。
 
+### Laplacian & Spectral Graph Partition
+
+用对角矩阵D($a_{ii}=d_i$) 表示每个节点的度；邻接矩阵（Adjacency Matrix）用A  表示：
+
+- n* n matrix- $A=[a\_{ij}]$, $a_{ij}=1$ if edge between node i and j
+如果一个图G 里面所有节点的度都为$d$ 那么我们叫他d-regular graph；则这种图的特征值和特征向量为$d, \vec e$，因为$A * \vec e = d * \vec e$
+
+那么\`L = D-A\` 就是Laplacian Matrix；则LM 的特征值和特征向量为$\lambda_1 = 0, \vec e$, 对于对称矩阵M， 定义
+
+\`
+lambda_2 = min_x ((vec x ^T * M * vec x)/(vec x ^T * vec x))
+\`
+
+则对于LM 有：
+
+\`vec x ^T * L * vec x = vec x ^T * D * vec x - vec x ^T * A * vec x\`
+\`= sum_i D_(ii) * x_i^2 - sum\_((i,j) in E)  2 x_i x_j\` 
+\` = sum\_((i,j) in E) (x_i - y_i)^2\`
+
+且需要满足 $\vec x$ 是单位向量即 $\sum_i x_i^2 = 1$；且$\vec x$ 跟LM 的特征向量$\vec e$垂直即 $\sum_i x_i * 1 = 0$
+
+则 \` lambda_2 = min_x (sum\_((i,j) in E) (x_i - y_i)^2)/(sum_i x_i^2) \`
+
+
+
+
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
 <script type='text/x-mathjax-config'> MathJax.Hub.Config({ asciimath2jax: { delimiters: [['`','`']] }, tex2jax: {inlineMath: [['$', '$']], displayMath: [['$$', '$$']], processEscapes: true}}); </script>
