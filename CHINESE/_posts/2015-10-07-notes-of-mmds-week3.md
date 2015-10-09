@@ -86,6 +86,54 @@ Spectral Clustering Algorithms 步骤
     - 把点映射到低纬上计算$\lambda_{2} = \vec \lambda[2]$，以及$X$ 对应的第二列值$X[:,2]$
 - Grouping 基于上一步结果$X[:,2]$ 排序（排序过程中记录下行号，即对应的节点ID ），将点分到2或多组。
 
+
+### Data Streams
+
+如果使用滑动窗口计算整数平均时，可优化的点就是，之前长度为N 的滑动窗口平均为m，新来元素j，应该替换的元素为i ，则\`m = (j-i)/N + m\`
+
+**DMGI Algorithm**
+0/1 数据流窗口计数，最优方案是使用Buckets，每个bucket 记录一段数据流：
+
+- 该bucket 记录的0/1 串结束timestamp（可以用这个）
+- 该bucekt 包含的1 的数量（必须是2的指数）
+
+更新过程：
+
+- 数据流进入$0$，现有bucket 不变化。
+- 数据流进入$1$，对于有三个相同size n (n为2 的指数(1,2,4,8))的buckets，合并最早的两个n 的bucekts为一个size 为2n 的bucket并更新end time 为最新bucket的end time；依次合并直到没有3个相同size 的buckets。
+- 通过end timestamp 确定最早的buckets 是否已经超出sliding window 范围
+
+**Bloom Filter**
+
+
+- 设置一个BF ，为array of bits(default to be 1)
+- 几个hash 函数可以把一串0/1 流hash 成一个整数i
+- 将BF 中第i 个bit 设置成1
+
+新来一个数据流y，按照同样的方式计算$BF_y$，如果$BF_y$ 中有1 的位置BF 对应位置全为1，则该数据流出现过。如果$BF_y$中有1 的位置，BF 中有一个0，则y 未出现过。
+
+#### Finding Distinct Elements
+
+**Flajolet-Martin Approach**
+
+- 将n 个元素使用h() 将其hash 到 $log_2^n$ 个bits 上，相当于二进制
+- 对于每一个元素a，设置r(a) 为h(a) 这个二进制数 中连续的trailing zeros(数字末尾连续的0 ) 的个数
+- 设置R为最大的r(a)
+- 估计$2^R$ 即为最大结果
+
+**Moments**
+
+n个不同元素中出现的数据流中，$m_i$ 为表是i 元素出现的次数。\`sum m_i ^k\` 表示$k^{th} moment$，那么second moment(又叫surprise number) 就是元素频次的平方和。
+
+**AMS method**
+
+随机时间t选定元素a，则t时刻及以后到现在a出现的频次为k，那么定义$X=n\* (2*k-1)$ 则
+
+\`E(X) = 1/n sum n\*(2*k-1) = sum(2\*k-1) = sum k^2\`
+
+就跟surprise number一致了，而且这种定义就可以处理流式计算。所以单$X$ 就可以代表surprise number 了，单可以取多次平均。
+
+
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
 <script type='text/x-mathjax-config'> MathJax.Hub.Config({ asciimath2jax: { delimiters: [['`','`']] }, tex2jax: {inlineMath: [['$', '$']], displayMath: [['$$', '$$']], processEscapes: true}}); </script>
