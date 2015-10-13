@@ -28,11 +28,11 @@ share:
 
 要生成网络时，任意两个节点$u, v$ 连接的概率：
 
-\`P(u, v) = 1- prod_(c in M_m nn M_v) (1-p_c)\`
+\`P(u, v) = 1- prod_(c in M_u nn M_v) (1-p_c)\`
 
 ### BigCLAM
 
-假设节点u 与社区A 的membership 关系用$F\_{uA}$ 表示，u 跟所有社区的关系可以用$\vec F_u$ 表示。那么社区A 中任意两个节点连接的概率为\`P\_A (u,v) = 1- e^(-F\_(uA) * F_(vA))\`，那么在所有社区中，此两者节点节点连接的概率就为 
+假设节点u 与社区A 的membership 关系用$F\_{uA}$ 表示，u 跟所有社区的关系可以用$\vec F_u$ 表示。那么社区A 中任意两个节点连接的概率为\`P\_A (u,v) = 1- e^(-F\_(uA) * F_(vA))\` （使用e 将这个概率控制在0-1之间），那么在所有社区中，此两者节点节点连接的概率就为 
 
 \`P(u,v) = 1- prod_c (1-P_c(u,v)) = 1- e^(-vec F_u * vec F_v^T)\`
 
@@ -47,8 +47,8 @@ BigClam 就是通过包含现有点V 和边E 的网络图$G(V,E)$，来找出上
 
 考虑到相乘会放大误差且增加计算量，可对上式求log，得到log-likelihood \`arg max_F log(F)\`
 
-\`
-log(F) = sum\_((u,v) in E) log(p(u,v)) + sum\_((u,v) !in E) log(1-1- e^(-vec F_u * vec F_v^T)) = sum\_(v in N(u)) log(1- e^(-vec F_u * vec F_v^T)) + sum_(v !in v in N(u)) (-vec F_u * vec F_v^T) 
+\`log(F) = sum\_((u,v) in E) log(p(u,v)) + sum\_((u,v) !in E) log(1-1+ e^(-vec F_u * vec F_v^T))\`
+\` = sum\_(v in N(u)) log(1- e^(-vec F_u * vec F_v^T)) + sum_(v !in v in N(u)) (-vec F_u * vec F_v^T) 
 \`
 
 其中$N(u)$ 代表u 节点的邻居节点。然后通过梯度下降可求。梯度下降求解过程中，优化点就是先针对全局节点计算F 值的和，然后u 的非邻居节点的F值加和值就等于全部减去u 邻居节点的F 值和。因为非邻居节点数量太大，不必每次梯度下降迭代时都遍历全部非邻居节点。
@@ -82,9 +82,9 @@ Spectral Clustering Algorithms 步骤
 
 - Pre-processing: 计算 Laplacian Matrix $L$
 - Decomposition 
-    - 计算特征值和特征向量$\vec \lambda$，基于特征向量矩阵 $X$，
+    - 计算特征值和特征向量$\vec \lambda$，及特征向量矩阵 $X$，
     - 把点映射到低纬上计算$\lambda_{2} = \vec \lambda[2]$，以及$X$ 对应的第二列值$X[:,2]$
-- Grouping 基于上一步结果$X[:,2]$ 排序（排序过程中记录下行号，即对应的节点ID ），将点分到2或多组。
+- Grouping 基于上一步结果$X[:,2]$ 排序（排序过程中记录下行号，即对应的节点ID ），然后使用threshold 将排序后的点分到2或多组。
 
 
 ### Data Streams
@@ -100,38 +100,46 @@ Spectral Clustering Algorithms 步骤
 更新过程：
 
 - 数据流进入$0$，现有bucket 不变化。
-- 数据流进入$1$，对于有三个相同size n (n为2 的指数(1,2,4,8))的buckets，合并最早的两个n 的bucekts为一个size 为2n 的bucket并更新end time 为最新bucket的end time；依次合并直到没有3个相同size 的buckets。
+- 数据流进入$1$，对于有三个相同size n (n为2 的指数函数值(1,2,4,8))的buckets，合并最早的两个size 为n 的buckets为一个size 为2n 的bucket并更新end time 为最新bucket的end time；依次合并直到没有3个相同size 的buckets。
 - 通过end timestamp 确定最早的buckets 是否已经超出sliding window 范围
 
 **Bloom Filter**
 
 
-- 设置一个BF ，为array of bits(default to be 1)
-- 几个hash 函数可以把一串0/1 流hash 成一个整数i
+- 设置一个长度为t的BF ，为array of bits(default to be 0)
+- 几个hash 函数可以把一串0/1 流hash 成一个自然数i(i<n)
 - 将BF 中第i 个bit 设置成1
 
 新来一个数据流y，按照同样的方式计算$BF_y$，如果$BF_y$ 中有1 的位置BF 对应位置全为1，则该数据流出现过。如果$BF_y$中有1 的位置，BF 中有一个0，则y 未出现过。
+
+假设d 个飞镖投t 个靶，那么单个靶被命中的概率是\`1/t\`,那么所有飞靶都未命中的概率为\`(1-1/t)^d = (1+1/(-t))^((-t)*(-d/t)) ~= e^(-d/t)\`
+
+对于t长度的BF，n长度的元素，h个hash function，那么1 的density 为\`1-e^(-(n\*h)/t)\`, false positive 为 \`(1-e^(-(n*h)/t))^h\` 通常也会非常低
 
 #### Finding Distinct Elements
 
 **Flajolet-Martin Approach**
 
-- 将n 个元素使用h() 将其hash 到 $log_2^n$ 个bits 上，相当于二进制
+估计数据流中
+
+- 将n 个元素使用h() 将其hash 到 $log_2 n$ 个bits 上，相当于二进制
 - 对于每一个元素a，设置r(a) 为h(a) 这个二进制数 中连续的trailing zeros(数字末尾连续的0 ) 的个数
 - 设置R为最大的r(a)
-- 估计$2^R$ 即为最大结果
+- 估计$2^R$ 即为最大distinct elements 数结果
 
 **Moments**
 
-n个不同元素中出现的数据流中，$m_i$ 为表是i 元素出现的次数。\`sum m_i ^k\` 表示$k^{th} moment$，那么second moment(又叫surprise number) 就是元素频次的平方和。
+n个不同元素中出现的数据流中，$m_i$ 为表是i 元素出现的次数。k次方和\`sum m_i ^k\` 表示$k^{th} moment$。
+
+那么second moment(又叫surprise number) 就是元素频次的平方和，且可表示数据流中元素出现频次是否比较平均还是差异很大。
 
 **AMS method**
 
-随机时间t选定元素a，则t时刻及以后到现在a出现的频次为k，那么定义$X=n\* (2*k-1)$ 则
+随机时间t选定元素a，则t时刻及以后到现在a出现的频次为k，那么surprise number 可为 $X=n\* (2*k-1)$ 因为其期望：
 
 \`E(X) = 1/n sum n\*(2*k-1) = sum(2\*k-1) = sum k^2\`
 
-就跟surprise number一致了，而且这种定义就可以处理流式计算。所以单$X$ 就可以代表surprise number 了，单可以取多次平均。
+就跟surprise number一致了，而且这种定义就可以处理流式计算。所以单$X$ 就可以代表surprise number 了，但可以取多次平均。
 
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
