@@ -45,8 +45,8 @@ S(t) = 1/(1+e^-t)
     - Normalized Discounted Cumulative Gain 
         - 假设n 个documents 中单个文档的rating 是$r_i$ 则对于Cumulative Gain(CG) \`CG = sum_(i=1)^n r_i\`
         - 而Discounted CG 有 \`DCG = r_1 + sum\_ (i=2)^n r_i/log_2(i)\` ，
-        那么位置p 的 \`DCG_p = rel_1 + sum\_ (i=2)^p rel_i/log_2(i) \` ，
-        或者高相关的 \`DCG_p = sum_(i=1)^p (rel_i - 1)/log_2(i+1) \`
+        那么位置p 的 \`DCG_p = rel_1 + sum\_ (i=2)^p (rel)\_i/log_2(i) \` 。
+        或者高相关的 \`DCG_p = sum_(i=1)^p (2^(rel_i) - 1)/log_2(i+1) \`， 其中\`rel_i in [0,1]\` 
         - NDCG： 假设 ideal ranking 的情况下DCG 为1，那么其他ranking 的DCG 除上ideal ranking 的DCG值即为该ranking 下的NDCG 值。
         
 分类效果评估：
@@ -62,7 +62,9 @@ https://en.wikipedia.org/wiki/Hidden_Markov_model
 MCMC: 
 
 https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo
-        
+
+**正定矩阵**       
+:设M是n阶方阵，如果对任何非零向量$\vec z$，都有$\vec z^T M \vecz> 0$，就称M 为正定矩阵。
 ## 
 
 [Softmax function]: http://en.wikipedia.org/wiki/Softmax_function
