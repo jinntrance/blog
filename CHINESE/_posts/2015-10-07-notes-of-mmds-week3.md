@@ -201,6 +201,15 @@ PCA 降维，实际上就是利用SVD，使得原来\`A  ~~ U Sigma V^T \` 其�
 
 在CF 中使用SVD，$U, V, \Sigma $ 则可分别解释为：用户对某些特征的权重、Item 在这些特征上的权重、该特征整体上的权重。PCA降维，则是在$Sigma $里选择重要的特征抛弃不重要的特征进行降维。
 
+SVD 奇异值分解可得上式子，而如果使用特征值分解则可得\`B = X Lambda X^T\`，而其中A 需要为对称矩阵，同时X 也为单位正交矩阵（$XX^T=I$），$\Sigma$ 也为对角矩阵且每一个值代表一个特征值。
+
+推导可得：
+
+\`AA^T = U Sigma Sigma^T U^T,\`
+\`A^T A = V Sigma Sigma^T V^T\`
+
+所以以上两者的特征值就对应$\Lambda$ 中的值，及$\lambda_i = \sigma_{i}^2$。
+
 #### CUR
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
