@@ -199,7 +199,7 @@ PCA 降维，实际上就是利用SVD，使得原来\`A  ~~ U Sigma V^T \` 其�
 
 三者是唯一的；且$U,V$ 称作 column orthonormal(意即$U^T U =I = V^TV$) ；而$\Sigma$ 是diagonal(对角矩阵) 且值都为正数且从左上角到右下角由大到小的顺序排列。
 
-在CF 中使用SVD，$U, V, \Sigma $ 则可分别解释为：用户对某些特征的权重、Item 在这些特征上的权重、该特征整体上的权重。PCA降维，则是在$Sigma $里选择重要的特征抛弃不重要的特征进行降维。
+在CF 中使用SVD，$U, V, \Sigma $ 则可分别解释为：用户对某些特征的权重、Item 在这些特征上的权重、该特征整体上的权重。PCA降维，则是在$\Sigma $里选择重要的特征抛弃不重要的特征进行降维。
 
 SVD 奇异值分解可得上式子，而如果使用特征值分解则可得\`B = X Lambda X^T\`，而其中A 需要为对称矩阵，同时X 也为单位正交矩阵（$XX^T=I$），$\Sigma$ 也为对角矩阵且每一个值代表一个特征值。
 
@@ -210,7 +210,22 @@ SVD 奇异值分解可得上式子，而如果使用特征值分解则可得\`B 
 
 所以以上两者的特征值就对应$\Lambda$ 中的值，及$\lambda_i = \sigma_{i}^2$。
 
+**Latent factors** 
+除了SVD ， 我们可以把评分当作：每个属性的特征矩阵P，与用户在这几个属性上的偏好矩阵Q，两者的乘积PQ。通过SVD 初始化$P=U, Q = \Sigma V$，然后再通过梯度下降的方法求解。
+
 #### CUR
+除了使用SVD 分解，还可以使用CUR(C 代表Columns，R 代表rows)进行分解。具体步骤如下：
+
+- 按照采样列数c 采样原始矩阵A（ m * n ），得到C（m * c）
+    * 对于$x=1:n$ 计算A 中每一列的分布\`P(x) = (sum_i A(i,x)^2) / (sum_(i,j) A(i,j)^2) \`
+    * 对于$i=1:c, j=1:n$ ,基于分布 $P(x)$，计算选取列并得到C，其中\`C( :, i) = (A( :,j))/sqrt(c P(j))\`
+- 同样的方式，对行进行采样得到R(c*n)
+- 命$W = intersection\ of\ C\ and\ R$ ，则$U = W^+$ （W 的[广义逆](https://en.wikipedia.org/wiki/Generalized_inverse) 即满足$WW^+ W = W$，则$W^+$ 则为W 的广义逆）。如对W 进行SVD后$W=XZY^T$ 那么 $W^T = Y Z^+ X^T$
+
+如此 \`A ~~ CUR\` 即可求得
+
+
+
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
