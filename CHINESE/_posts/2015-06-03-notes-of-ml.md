@@ -65,10 +65,21 @@ https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo
 
 **正定矩阵**       
 :设M是n阶方阵，如果对任何非零向量$\vec z$，都有$\vec z^T M \vecz> 0$，就称M 为正定矩阵。
+
+LBFGS: [理解L-BFGS算法] 和[Numerical Optimization: Understanding L-BFGS] 这两个介绍得很详细。但是[Weighted Frobenius Norm] 还需要去了解http://mathworld.wolfram.com/FrobeniusNorm.html
+
+$$
+\mathbf{H}^{-1}\_{n+1} = (I - \rho_n y_n s_n^T) \mathbf{H}^{-1}_n (I - \rho_n s_n y_n^T) + \rho_n s_n s_n^T
+$$
+
 ## 
 
 [Softmax function]: http://en.wikipedia.org/wiki/Softmax_function
 [Sigmoid function]: http://en.wikipedia.org/wiki/Sigmoid_function
+[理解L-BFGS算法]: http://mlworks.cn/posts/introduction-to-l-bfgs/
+[Numerical Optimization: Understanding L-BFGS]: http://aria42.com/blog/2014/12/understanding-lbfgs/
+
+
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ asciimath2jax: { delimiters: [ ['`','`'],['$', '$']] }}); </script>
