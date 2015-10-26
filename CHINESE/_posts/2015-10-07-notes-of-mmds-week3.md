@@ -220,7 +220,7 @@ SVD 奇异值分解可得上式子，而如果使用特征值分解则可得\`B 
     * 对于$x=1:n$ 计算A 中每一列的分布\`P(x) = (sum_i A(i,x)^2) / (sum_(i,j) A(i,j)^2) \`
     * 对于$i=1:c, j=1:n$ ,基于分布 $P(x)$，计算选取列并得到C，其中\`C( :, i) = (A( :,j))/sqrt(c P(j))\`
 - 同样的方式，对行进行采样得到R(c*n)
-- 命$W = intersection\ of\ C\ and\ R$ ，则$U = W^+$ （W 的[广义逆](https://en.wikipedia.org/wiki/Generalized_inverse) 即满足$WW^+ W = W$，则$W^+$ 则为W 的广义逆）。如对W 进行SVD后$W=XZY^T$ 那么 $W^T = Y Z^+ X^T$
+- 命$W = intersection\ of\ C\ and\ R$ ，则$U = W^+$ （W 的[广义逆](https://en.wikipedia.org/wiki/Generalized_inverse) 即满足$WW^+ W = W$，则$W^+$ 则为W 的广义逆）。如对W 进行SVD后$W=XZY^T$ 那么 $W^+ = Y Z^+ X^T$
 
 如此 \`A ~~ CUR\` 即可求得
 
