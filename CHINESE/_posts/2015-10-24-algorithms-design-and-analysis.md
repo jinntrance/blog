@@ -12,7 +12,7 @@ share:
 
 ---
 
-Coursera 上的[Algorithms: Design and Analysis, Part 1](https://www.coursera.org/course/algo) 课程笔记
+重学Coursera 上的[Algorithms: Design and Analysis, Part 1](https://www.coursera.org/course/algo) 以期巩固Algorithms 相关知识。如后为课程笔记。
 
 ## Week 1
 
