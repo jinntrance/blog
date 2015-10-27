@@ -72,6 +72,27 @@ CURE 算法步骤：
 3. 把RPs 向centroid 移动固定的比例（比如移动把距离缩小为原来的80%）
 4. 重新扫描全部数据集，离新的点p 最近的RP 所在的cluster，就是p 需要分配过去的cluster 
 
+## Computational Advertising
+
+这里主要讲的是online  allocation 的问题，即把广告分配给哪个advertiser 的二分图的perfect matching 的问题。而且这个是需要Online algorithm 做的。
+
+**Competitive ratio**
+
+> For input I, suppose greedy produces matching $M\_{greedy}$ while an optimal matching is $M\_{opt}$, 
+> Competitive ratio = \`min\_{forall  I} (|M\_{greedy}| / |M_{opt}|)\`
+
+可以证明，贪心算法的Competitive ratio 最小是0.5 ，简单一些可用反证法证明。
+
+- 假设$M\_{opt}$ 中的广告为A，广告主为S（大小与A相等）。$A\_g$ 可以表示已经分配的广告，$S_g$ 表示对应的收到广告的广告主。那么$A_r=A - A_g$ 表示未能分配的广告,$S_r=S - S_g$ 表示未分配到广告的广告主。
+- 假设$|A_r| \gt |A_g|$
+- 因为$A_r$ 都无法分配到$S_r$ 中的任何一个广告主，所以$M\_{opt}$ 中 其都应该分配给$S_g$ 中
+- 而$|S_g| = |A_g| \lt |A_r|$ ，矛盾，假设不成立。
+- 故而$|A_r| \le |A_g|$，则CR 就应该>=0.5
+
+计算广告中，早期使用CPM 收费，Overture 2000年首创使用CPC 收费，而AdWords 2002年首创使用eCPC(bid*CTR) 排序。但问题是，广告位有限，广告主预算也有限，每次query 都会竞价，而每次CTR 也不一样，如何来权衡这些呢？
+
+BALANCE Algorithm：每次选取预算最充足的广告主。其\`CR=1-1/e\`
+
 
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
