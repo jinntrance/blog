@@ -71,10 +71,11 @@ timezone:    Asia/Beijing
 future:      true
 highlighter: pygments
 markdown:    kramdown
-#gems:
+gems: [jekyll-paginate]
 #  - jekyll-sitemap
 #  - jekyll-mentions
 #  - jemoji
+#  - jekyll-paginate
 #  - jekyll-redirect-from
 
 sass:
@@ -91,7 +92,7 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: true
+  enable_coderay: true
   input: GFM
   #syntax_highlighter: rouge
   syntax_highlighter: coderay
