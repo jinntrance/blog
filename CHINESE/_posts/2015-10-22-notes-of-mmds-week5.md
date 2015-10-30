@@ -84,15 +84,89 @@ CURE 算法步骤：
 可以证明，贪心算法的Competitive ratio 最小是0.5 ，简单一些可用反证法证明。
 
 - 假设$M\_{opt}$ 中的广告为A，广告主为S（大小与A相等）。$A\_g$ 可以表示已经分配的广告，$S_g$ 表示对应的收到广告的广告主。那么$A_r=A - A_g$ 表示未能分配的广告,$S_r=S - S_g$ 表示未分配到广告的广告主。
-- 假设$|A_r| \gt |A_g|$
+- 假设 $\|A_r\| \gt \|A_g\|$
 - 因为$A_r$ 都无法分配到$S_r$ 中的任何一个广告主，所以$M\_{opt}$ 中 其都应该分配给$S_g$ 中
-- 而$|S_g| = |A_g| \lt |A_r|$ ，矛盾，假设不成立。
-- 故而$|A_r| \le |A_g|$，则CR 就应该>=0.5
+- 而$\|S_g\| = \|A_g\| \lt \|A_r\|$ ，矛盾，假设不成立。
+- 故而$\|A_r\| \le \|A_g\|$，则CR 就应该>=0.5
 
 计算广告中，早期使用CPM 收费，Overture 2000年首创使用CPC 收费，而AdWords 2002年首创使用eCPC(bid*CTR) 排序。但问题是，广告位有限，广告主预算也有限，每次query 都会竞价，而每次CTR 也不一样，如何来权衡这些呢？
 
-BALANCE Algorithm：每次选取预算最充足的广告主。其\`CR=1-1/e\`
+BALANCE Algorithm：每次选取预算最充足的广告主。其\`CR=1-1/e\` (the last lecture in week 5 TODO)
 
+## SVM
+
+SVM 也就是找到最佳的分隔线、面L。使得离L 最近的点离H 的距离（margin $\gamma$ ）最大。若L 为$\vec w * \vec x + b = 0$，那么点A 到L 的距离就可以表示为 $\vec w * A + b$
+
+那么，数学化SVM 的基本思想表示可以为：
+
+\`
+max_(w,gamma) gamma = s.t. forall i,y_i (vec w * vec x_i + b) >= gamma
+\`
+
+上式中，不难发现如果直接把$\vec w$ 变大，$\gamma$ 也会随之增大；但实际上这个是不变的。所以应该归一化$\vec w$，可使用\`||w|| = sqrt (sum_(j=1)^d (vec w^j)^2)\`进行归一（其中d 代表维度数量）。 通过求解可得\`gamma = 1 / (||vec w||)\`，那么问题就转化为：
+
+\`min_w 1/2 ||w||^2 , s.t. forall i,y_i (vec w * vec x_i + b) >= 1 \`
+
+上面这种情况，还是所有数据都是可分的。如果不是，就需要引入Regulization Term 了。
+
+\`min\_(w,b) 1/2 ||w||^2 + C sum_(i=1)^n       xi_i, s.t. forall i,y_i  (w x_i + b) >= 1- xi_i\`其中$\xi_i$ 惩罚项，如果i 被分对，则$\xi_i = 0$ 否则$\xi_i=\gamma + distance(x_i, L)$ 。其中上式为Hinge Loss，跟Android Ng 的ML课程讲的[SVM]({{ site.url }}{% post_url 2015-08-09-ml-notes %}#svm) 提到的也就比较一致了。 更确切的SVM 的目标函数应为：
+\`f(w,b) = 1/2 sum\_(j=1)^d (vec w^j)2 +  C sum\_(i=1)^n max{0,1 - y\_i(sum_(j=1)^d vec w^j vec x_i^j +b)\`
+然后用[(B)GD 或 SGD](({{ site.url }}{% post_url 2015-08-09-ml-notes %}#large-scale-ml)) 即可求解$w,b$
+## Decision Tree
+先说Information Gain的概念：
+> IG(Y | X) : We must transmit Y over a binary link. How many bits on average would it save us if both ends of the line knew X?
+DT 建树时有两个问题需要考虑：- 如何最最佳的分裂节点？IG最大的
+- 何时停止分裂？IG小于某个阀值，或叶子节点数量达到下限数量了。
+- 叶子节点值怎么得？分类分题，就是多数的分类；回归问题：可求平均；或用线性回归再针对叶子上的样本拟合一下。
+
+Entropy, \`H(X) = - sum_(j=1)^m p_j log p_j\` 其实反映了X 中各元素相互转换所需要的信息量。
+
+> What’s the smallest possible number of bits, on average, per symbol, needed to transmit a stream of symbols drawn from X’s distribution?
+
+所以，大信息熵意味中X 中元素分布越分散越均匀；小信息熵代表X 中元素分布越集中。
+
+SVM 和DT 对比
+
+**SVM**
+- Classification: Usually only 2 classes
+- Real valued features: (no categorical ones)
+- Tens/hundreds of thousands of features
+- Very sparse features
+- Simple decision boundary. No issues with overfitting
+  
+Example applications
+
+- Text classification
+- Spam detection
+- Computer vision
+**Decision trees**
+- Classification & Regression: Multiple (~10) classes
+- Real valued and categorical
+features
+- Few (hundreds) of features
+- Usually dense features
+- Complicated decision boundaries: Overfitting! Early stopping
+
+Example applications
+
+- User profile classification
+- Landing page bounce
+prediction
+## MAP-REDUCE Algorithms
+
+MR 里面重点考虑两个方面
+
+- computation cost
+- communication cost
+
+而后者实际上更耗时，所以要尽量降低后者，比如让reduce 阶段的replications 更少。如此MR 的好坏就由如下两个方面进行衡量。
+
+- reducer size(q)，就是指一个reducer 能获取的最大inputs 数量
+- replication  rate，就是指每个mapper 输出的KV 数量。
+
+例如$n*n$ 的两个矩阵A 和矩阵B相乘，一般情况下的解决方法如后。假如单个reducer 输入为q，则实际只能拿到为q/n 这么多数量的行/列；假设其拿到最多q/2n 行，q/2n 列，那么这个reducer 最多产出\`q^2/(4n^2)\` 个数。因为产出$n^2$ 的数，则至少需要\`(4n^2)/q^2\` 个reduers，则输入所有reduers \`(4n^2)/q\`，则因为总的原输入为$2n^2$，则\`r=(2n^2)/q\`。故而communication cost 为$4n^4 * r$
+
+而如果把A 分解成多个\`g\*g/2\` 的小块儿，把B 分解成多个\`g/2*g\` 的小块儿。如此两个阶段的MR 也可以减少communication cost 为\`4n^2g=(4n^3)/sqrt(q)\`(参见最后week 6最后一讲末页)。
 
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
