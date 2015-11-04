@@ -55,6 +55,8 @@ share:
 - invCount 需要sort 数组a，b
 - invSplitCount 里额外进行mergeSort
 
+具体可参见[Julia 算法代码][CountingInvertions]
+
 **Closest Pair** 
 找数组中最相近的两个数（排序n log n，找相近 log n）。找平面中最接近的两个点等(D&C)。
 
@@ -63,7 +65,42 @@ Make copies of points sorted by x-coordinate (Px) and by y-coordinate (Py)[O(nl
 1. Let Q=le] half of P, R=right half of P. Form Qx, Qy, Rx, Ry [takes O(n) time]2. (p1,q1)=ClosestPair(Qx,Qy) 一部分最近点3. (p2,q2)=ClosestPair(Rx,Ry) 另一部分得到的最近点
 4. let $\delta = min ({d(p1,q1), d(p2,q2)})$5. (p3,q3)=$ClosestSplitPair(Px,Py, \delta)$ 如果最近点一个落在Q 内，一个落在R 内，通过均值的$\delta $ 范围内 $[\bar x-\delta, \bar x + \delta]$ 找最近点6. Return best of(p1,q1),(p2,q2),(p3,q3)  
 
+## Week 2
 
+### Master Method
+
+总结如MergeSort 形式的递归问题的复杂度一般形式：
+
+\`
+T(n) = a T(n/b) + O(n^d)
+\`
+
+其中 a 为子问题个数，b 为子问题相形与原问题缩小的比例，d 为combine 步骤的复杂度。
+考虑像MergeSort 这种算法，在第j 层时，有$a^j$ 个子问题，每个子问题大小为$n_j = \frac {n} {b^j}$ ，则单个子问题combine 复杂度为$n_j^d$ ,则单层总的算法复杂度就为：
+
+\`
+T(n_j) <= a^j * c * (n/(b^j))^d = c * n^d (a/b^d)^j
+\`
+
+而总的层数为$log_b n$。则：
+
+\`
+T(n) <= c * n^d sum_{j=0}^{log_b^n}(a/b^d)^j
+\`
+
+那这种问题的复杂度，就可以根据新的一层复杂度是否收敛（$\frac {a}{b^d}$ 与1 的大小关系，确定最复杂的是首层、还是最后一层、还是每层都一样），而归纳一般形式为：
+
+$$
+T(n)=
+\begin{cases}
+O(n^d log n),  & \text{if $a = b^d$}, \cr
+O(n^d), & \text{if $a < b^d$}, \cr
+O(a^{log_b^n}), & \text{if $a > b^d$} \cr
+\end{cases}
+$$
+
+
+[CountingInvertions]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week1/countingInvertions.jl
 
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
