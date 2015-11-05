@@ -100,7 +100,37 @@ O(a^{log_b^n}), & \text{if $a > b^d$} \cr
 $$
 
 
+### QuickSort
+
+基本思想：找到pivot，然后把小的放左面，大的放右面，从而迭代求解。
+
+如果使用O(n) 的额外空间，可以非常方便的，在迭代过程中小的从左面开始存，大的从右边开始存，然后pivot 肯定在中间。而如果不使用额外的空间。设数组为A，则可用如后的具体步骤：
+
+1. 把第一个数作为pivot
+2. 从第二个数往后扫描，设j表示扫描到的新元素的索引，设A[i-1]<pivot,而A[i]>pivot
+3. 若A[j]<pivot，则把A[i]、A[j] 两数交换
+4. 继续向后扫描，重复2-4，指导结束。
+5. 交换pivot 和 A[i-1] 两个数，再排左右两个子串
+
+具体代码实现可见[Julia 代码][QuickSort]
+
+快排，依赖选择的Pivot 的质量。所以通常随机选择pivot （然后再切换到第一个数，重复上面的步骤）效果会比一直选择首个、末尾数好。而选择首、尾、中间三数的median 会更好。
+
+## Probability
+
+- 设$\Omega$ 为可能的结果全集（Sample Space）
+- 某个事件S，就可以是$\Omega$ 的子集
+- Randome Variable $X$：就是将$\Omega $映射到实数空间的函数
+- 期望\`E[X] = sum_(i in Omega) X(i) * p(i)\`
+- Linearity of Expectation:
+    > Let $X_1,...,X_n$ be random variables defined on $\Omega$ Then: \`E[sum\_{j=1}^n X_j] =  sum_{j=1}^n E[X_j]\`
+- Conditional Probability: \`P[X|Y] = (P[X nn Y]) / (P[Y])\`
+- if A,B are independent, then $E[AB] = E[A]*E[B]$
+
+
+
 [CountingInvertions]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week1/countingInvertions.jl
+[QuickSort]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week2/quicksort.jl
 
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
