@@ -129,6 +129,46 @@ $$
 
 
 
+## Week 3
+
+### Randomised Selection
+假设一个算法，输入一个数组A，找出其第k 大的数。我们可以把该数组MergeSort 然后取第n 大就行。但是这$n log n$ 的算法不是最好。
+
+我们可以用QuickSort 里的partition 思想。每次partition 之后，知道pivot 的位置后，也就知道该数在pivot 的左边还是右边，然后依次迭代下去。
+
+当然pivot 的选择，依然是用median 比较好，不然最差的情况是$O(n^2)$ 的复杂度。假设随机选择，能达到median 的效果，如此便是
+
+\`T(n) = T(n/2) + O(n)\` 
+
+的问题，复杂度也就是$O(n)$
+
+### Deterministic Selection
+
+上面讲到的Media  的选择，可以使用 [median of medians] 算法选择pivot
+
+> 
+- logically break A into n/5 groups of size 5 each
+- sort each group (e.g., using Merge Sort)
+- copy n/5 medians (i.e., middle element of each sorted group)
+into new array C
+- recursively compute median of C (!) 
+- return this as pivot
+
+如此，pivot 选择的复杂度是\`T(n)<= T(n/5) + O(n)\`，而因为上面的MoM 算法选择median of medians后，那么C 的小于或大于median 的数至少有\`3*n/5 * 1/2\` 则新的算法的复杂度：
+
+\`T(n) <= T(n/5) + T((7n)/10) + O(n)\`
+
+### Sorting Lower Bound
+
+假设$n!$ 个数，我们需要k 次比较才能把他们排好，那么最多执行$2^k$ 次计算（比如MergeSort 形式的二叉树）。则
+
+> By _the Pigeonhole Principle_ : if $2^k < n!$, execute identically on two distinct inputs => must get one of them incorrect.
+> So, \`2^k >= n! >= (n/2)^(n/2)\`
+
+所以 \`k>= Omega(n log n)\`
+
+
+
 [CountingInvertions]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week1/countingInvertions.jl
 [QuickSort]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week2/quicksort.jl
 
