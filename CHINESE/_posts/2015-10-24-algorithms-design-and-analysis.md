@@ -154,7 +154,7 @@ into new array C
 - recursively compute median of C (!) 
 - return this as pivot
 
-如此，pivot 选择的复杂度是\`T(n)<= T(n/5) + O(n)\`，而因为上面的MoM 算法选择median of medians后，那么C 的小于或大于median 的数至少有\`3*n/5 * 1/2\` 则新的算法的复杂度：
+如此，pivot 选择的复杂度是\`T(n)<= T(n/5) + O(n)\`，而因为上面的MoM 算法选择[median of medians]后，那么C 的小于或大于median 的数至少有\`3*n/5 * 1/2\` 则新的算法的复杂度：
 
 \`T(n) <= T(n/5) + T((7n)/10) + O(n)\`
 
@@ -169,9 +169,42 @@ into new array C
 
 
 
+### Graphs
+
+#### Cuts of Graphs
+
+> a **cut** of a _graph (V, E)_ is a partition of V into two non-empty sets A and B.
+> 
+> the **crossing edges** of a **cut(A, B)** are those with: 
+>
+- the one endpoint in each of (A, B) [undirected]
+- tail in A, head in B [directed]
+
+> **min cut** Compute a cut with fewest number of crossing edges.
+
+**Adjacency Matrix** 使用矩阵A，用A[i][j] 表示\`i-j\` 这一条边:
+
+- 无向图用0/1 表示有无此边，或设置边的权重值
+- 有向图使用+1/-1 表示\`i->j\` 或 \`j->i\`
+
+### Random Contraction
+>
+While there are more than 2 vertices:
+>
+- pick a remaining edge (u,v) uniformly at random 
+- merge (or “contract” ) u and v into a single vertex
+- remove self-loops
+> return cut represented by final 2 vertices.
+
+设图G 有m 个边，n 个点，而MinCut 有k 个crossing edges（设为集合F ）。 而所在点的度的和\`sum_v degree(v) = 2m >=kn \`，那么F 被Radom contraction 选中的概率为\`k/m <= 2/n \`，
+
+所以每次选中非F 中的点的概率为\`1-2/n = (n-2)/n\`， 则RC 得到MinCut 的概率为 \` p >= prod_(k=3)^n  (k-2)/k = 2/(n*(n-1))\`
+
+
+
 [CountingInvertions]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week1/countingInvertions.jl
 [QuickSort]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week2/quicksort.jl
-
+[median of medians]: http://austinrochford.com/posts/2013-10-28-median-of-medians.html
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
