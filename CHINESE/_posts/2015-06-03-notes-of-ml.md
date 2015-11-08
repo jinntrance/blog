@@ -49,6 +49,9 @@ S(t) = 1/(1+e^-t)
         或者高相关的 \`DCG_p = sum_(i=1)^p (2^(rel_i) - 1)/log_2(i+1) \`， 其中\`rel_i in [0,1]\` 
         - NDCG： 假设 ideal ranking 的情况下DCG 为1，那么其他ranking 的DCG 除上ideal ranking 的DCG值即为该ranking 下的NDCG 值。
         
+排序模型：
+[LambdaMart] 就是把MART(GBDT) 的损失函数的梯度，替换成排序过程中pairwise 的梯度Lambda。也可参见[Visualizing LambdaMART] 了解
+
 分类效果评估：
 
 \`F1 = (2\*recall*pr\ecision)/(recall + pr\ecision)\`
@@ -78,7 +81,8 @@ $$
 [Sigmoid function]: http://en.wikipedia.org/wiki/Sigmoid_function
 [理解L-BFGS算法]: http://mlworks.cn/posts/introduction-to-l-bfgs/
 [Numerical Optimization: Understanding L-BFGS]: http://aria42.com/blog/2014/12/understanding-lbfgs/
-
+[LambdaMart]: http://blog.csdn.net/huagong_adu/article/details/40710305
+[Visualizing LambdaMART]: https://wellecks.wordpress.com/tag/lambdamart/
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}

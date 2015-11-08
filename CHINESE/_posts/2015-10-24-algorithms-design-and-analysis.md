@@ -116,7 +116,7 @@ $$
 
 快排，依赖选择的Pivot 的质量。所以通常随机选择pivot （然后再切换到第一个数，重复上面的步骤）效果会比一直选择首个、末尾数好。而选择首、尾、中间三数的median 会更好。
 
-## Probability
+### Probability
 
 - 设$\Omega$ 为可能的结果全集（Sample Space）
 - 某个事件S，就可以是$\Omega$ 的子集
