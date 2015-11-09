@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MMDS 笔记 week 5&6"
+title: "MMDS 笔记 week 5&6&7"
 modified: 2015-10-22 19:46:00 +0800
 tags: [MMDS,ML]
 image:
@@ -168,6 +168,40 @@ MR 里面重点考虑两个方面
 
 而如果把A 分解成多个\`g\*g/2\` 的小块儿，把B 分解成多个\`g/2*g\` 的小块儿。如此两个阶段的MR 也可以减少communication cost 为\`4n^2g=(4n^3)/sqrt(q)\`(参见最后week 6最后一讲末页)。
 
+## Topic-Specific PR
+
+之前的[Page Rank]({{ site.url }}{% post_url 2015-09-28-notes-of-mmds-week1 %}/#pagerank) 公式简略如后：
+
+\`
+vec r^(n+1) = (beta * M + (1-beta)/n vec e * vec e^T) * vec r ^n
+\`
+
+原始的PR，就是$1-\beta$ 的random teleports 是针对所有节点的。现在就像把random walk 仅仅限制在符合Topic 的S集合节点里面则：
+
+\`
+vec r^(n+1) = (beta * M + (1-beta)/|S| * E_s) * vec r ^n
+\`
+
+其中$E_s$ 中，$E_{ij} = 1, if\ i \in S$ ，其余为0，即所有指向S 中节点的对应矩阵位置才为1。其实就是把网络权重向S 中的节点倾斜。
+
+**Hubs and Authorities** 直观的理解是，出度比较多的可以叫Hubs，入度比较多的点可以叫Authorities。而且两者可以迭代相互贡献。即
+
+\`
+h_i = sum\_(i -> j) a\_j, 
+a_j = sum_(i -> j) h_i
+\`
+
+大家知道PR 是怎么运作的后，很多人甚至也就想到了通过spam 来优化排名。可以分析一下背后的原理。最简单的就是通过无数多的farm pages 来跟待优化的target page相互指向。
+
+设x，是原始的PR score， y 是通过spam 途径调整target 后的PR score，那么farm pages 的PR score 就是\`beta * y / M + (1-beta)/n\`，那么target page 的PR score 为：
+
+\`y = x + beta * M * (beta * y / M + (1-beta)/n) + (1-beta)/n\`
+
+则： \` y = x / (1-beta^2) + (beta\*M)/((1+beta)n) + 1/((1+beta)*n)\`
+
+所以，实际上，只需要提高M 中对target 起贡献的farm pages 的数量，就能提高y。
+
+避免上述spam，可以通过使用top PR值的URL 或权威域名（.edu .gov）的URL，先建立Topic-PR $r^+$ ；而通过全局计算$r$ ，如果\`r/ r^+\` 比1 大很多，则越可能是spam。
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
