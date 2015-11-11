@@ -168,6 +168,20 @@ MR 里面重点考虑两个方面
 
 而如果把A 分解成多个\`g\*g/2\` 的小块儿，把B 分解成多个\`g/2*g\` 的小块儿。如此两个阶段的MR 也可以减少communication cost 为\`4n^2g=(4n^3)/sqrt(q)\`(参见最后week 6最后一讲末页)。
 
+## LSH
+
+> A family **H** of hash functions is said to be $(d_1,d_2,p_1,p_2)$-sensitive if for any x and y in S:> 1. If $d(x,y) < d_1$, then the probability over all h in H, that h(x) = h(y) is at least $p_1$.2. If $d(x,y) > d_2$, then the probability over all h in H, that h(x) = h(y) is at most $p_2$.
+如此，我们也可以用AND 和OR 的形式分别定义 $(d_1,d_2,p_1^r,p_2^r)$-sensitive 和 $(d_1,d_2,1-(1-p_1)^b,1-(1-p_2)^b)$-sensitive
+ 同时，也可以组合AND-OR的使用得到新的形式。
+ 
+设两个串的Jacquard Distance为$J = E/(E+C)$，E、C 分别表示edit distance和共串的长度。而若一串长L，则另一串长M应：\`L*(1-J)<=M<=L/(1-J)\`
+ 
+所以，通常，我们就下取整取\`|\__ JL+1 __|\` 个prefix string来index。
+
+假设，字符串probe string $s$(长度L)和目标匹配t中，最先相等的是s[i]==t[j](索引从1 开始)，那么两者的edit distance 一定有\`E>=i+j-2\`，而最长子串LCS 长度$C<=L- i +1$
+
+所以\`J = E/(E+C) >= (i+j-2)/(L+J-1)\` 则 \`j<=(JL-J-i+2/(1-J))\`
+
 ## Topic-Specific PR
 
 之前的[Page Rank]({{ site.url }}{% post_url 2015-09-28-notes-of-mmds-week1 %}/#pagerank) 公式简略如后：
