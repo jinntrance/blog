@@ -50,7 +50,14 @@ S(t) = 1/(1+e^-t)
         - NDCG： 假设 ideal ranking 的情况下DCG 为1，那么其他ranking 的DCG 除上ideal ranking 的DCG值即为该ranking 下的NDCG 值。
         
 排序模型：
-[LambdaMart] 就是把MART(GBDT) 的损失函数的梯度，替换成排序过程中pairwise 的梯度Lambda。也可参见[Visualizing LambdaMART] 了解
+**[LambdaMart]** 就是把MART(GBDT) 的损失函数的梯度，替换成排序过程中pairwise 的梯度Lambda。也可参见[Visualizing LambdaMART] 了解
+
+**[RankSVM]** 使用pointwise的SVM 算法，如果$d_2$ 排在$d_1$ 前面，但相关性（点击情况）$d_1>d_2$，设$d_1,d_2$ 的特征分别为$x_1, x_2$。 则$x_1-x_2$  为正样本，$x_2- x_1$  为负样本。如此再用分类问题求解就行。
+
+推荐可使用的：
+**[RBM]** 就是一个隐藏层的DBM，Deep BM又源自BM。具体路线还是：Hopfield网络->玻尔兹曼机BM ->受限玻尔兹曼机RBM。Hopfield网络，是基于能量模型建立的，如此就需要通过一定方式达到最终的平衡稳定状态。更多可以参见Coursera 课程 [Neural Networks for Machine Learning][NNML]
+**[BPR]** 即使用pairwise 再用贝叶斯做极大似然求解。
+
 
 分类效果评估：
 
@@ -83,6 +90,10 @@ $$
 [Numerical Optimization: Understanding L-BFGS]: http://aria42.com/blog/2014/12/understanding-lbfgs/
 [LambdaMart]: http://blog.csdn.net/huagong_adu/article/details/40710305
 [Visualizing LambdaMART]: https://wellecks.wordpress.com/tag/lambdamart/
+[RankSVM]: http://www.cnblogs.com/kemaswill/p/3241963.html
+[RBM]: http://miibotree.com/2015/08/25/from-BM-to-RBM/
+[NNML]: https://www.coursera.org/course/neuralnets
+[BPR]: http://liuzhiqiangruc.iteye.com/blog/2073526
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}

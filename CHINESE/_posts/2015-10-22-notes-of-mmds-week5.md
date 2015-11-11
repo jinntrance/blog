@@ -176,7 +176,7 @@ MR 里面重点考虑两个方面
  
 设两个串的Jacquard Distance为$J = E/(E+C)$，E、C 分别表示edit distance和共串的长度。而若一串长L，则另一串长M应：\`L*(1-J)<=M<=L/(1-J)\`
  
-所以，通常，我们就下取整取\`|\__ JL+1 __|\` 个prefix string来index。
+所以，通常，我们对string就下取整取\`|\__ JL+1 __|\` 个prefix chars来index，放入对应的hash buckets 中，查找的时候就可以根据prefix 对应的buckets 进行查找。
 
 假设，字符串probe string $s$(长度L)和目标匹配t中，最先相等的是s[i]==t[j](索引从1 开始)，那么两者的edit distance 一定有\`E>=i+j-2\`，而最长子串LCS 长度$C<=L- i +1$
 
@@ -204,6 +204,13 @@ vec r^(n+1) = (beta * M + (1-beta)/|S| * E_s) * vec r ^n
 h_i = sum\_(i -> j) a\_j, 
 a_j = sum_(i -> j) h_i
 \`
+
+**HITS algorithm** 的步骤就是：
+
+1. \`a_i = h_i = 1/ sqrt(n)\`
+2. 设邻接矩阵A，其中\`A_(ij) = 1, if i->j\`
+3. \`a = A*h, h = A^T * a\`，归一化。
+4. 迭代3 直至收敛。
 
 大家知道PR 是怎么运作的后，很多人甚至也就想到了通过spam 来优化排名。可以分析一下背后的原理。最简单的就是通过无数多的farm pages 来跟待优化的target page相互指向。
 
