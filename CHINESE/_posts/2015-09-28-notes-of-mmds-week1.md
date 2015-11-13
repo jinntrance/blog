@@ -16,7 +16,7 @@ tags: [MMDS,ML]
 - 那么用矩阵$M$ 中的\`M\_(ij)\` 代表j 这条链接指向i 这个链接的贡献权重；如果j 的出度为d，则j 指向的链接的\`M\_(ij)\` 都为$1/d$ ；未指向的链接\`M_(ij)\`  为0；
 - 迭代过程中计算\`vec r^(n+1) = M * vec r^n\` 即可得到最好PageRank 权值；不难发现，收敛后$\vec r$ 就是$M$ 特征值为1 的特征向量
 
-但因为有dead ends 和 Spider Trap，对应需要优化的是：dead ends 出度假设就为$N$，列向量就一直为\`1/N\`；spider trap 下，还是以一定概率指向其他链接。优化后的算法: 
+但因为有dead ends（只进不出） 和 Spider Trap（小的community 里内部有相互的出度，对外没有出度），对应需要优化的是：dead ends 出度假设就为$N$，列向量就一直为\`1/N\`；spider trap 下，还是以一定概率指向其他链接。优化后的算法: 
 
 \`
 r\_i = sum\_( j ->i ) beta r\_j/d\_j + (1-beta) /n
@@ -44,7 +44,7 @@ K-shingle == K-gram ，也就是连续几个字/词当作一个元素，然后�
 
 其中，对于MinHashing，k次随机选择各行且不再选择之前选过的行，可以用不同的hash 函数来达到这个目的。具体流程类似，并如下：
 
-- 有K 个hash 函数；m 行元素$$；n 列doc；原始矩阵为M；最后产出的稠密矩阵为K 维的MH 矩阵。
+- 假设有K 个hash 函数；m 行元素；n 列doc；原始矩阵为M；最后产出的稠密矩阵为K 维的MH 矩阵。
 - 针对每个hash 函数，对于每一列，找出针对这一列为1 的每一行hash(row_number) 的最小值。
 - 优化算法，即在遍历m 行时，
 
@@ -92,7 +92,7 @@ s|p
 
 #### A-Prori Algorithm
 
-基于一个假设，一个pair 的集合为C，当 \`L in C\`，如果L 的频次小于s，那么C 的频次不可能 >= s。所以就是每轮找出并剔除support < threshold 的subset
+基于一个假设，一个pair(pair 的大小可以是任意自然数) 的集合为C，当 \`L sube C\`，如果L 这些元素一起出现的的频次小于s，那么C 的频次不可能 >= s。所以就是每轮找出并剔除support < threshold 的subset
 
 ```
 for k = 1:K
@@ -104,7 +104,7 @@ end
 
 #### PCY algorithm
 
-基于这样一个假设，如果\`l in B\` ，如果B 中每个元素的频次之和 <s，那么l 的频次也小于s。
+基于这样一个假设，如果\`L sube B\` ，如果B 中每个元素的频次之和 <s，那么L 的频次也小于s。
 
 具体实现：A-Prori 算法第k 次迭代时，可以用一个hash 函数将size 为k+1 的pair 映射到size 较小的buckets B_k，然后记录每个bucket 的频次；然后在k+1 次迭代前，用k 轮的threshold 把B_k 转化成一个0/1 的bitmap BM_k，接着迭代时，只统计满足如下条件的items：
 
