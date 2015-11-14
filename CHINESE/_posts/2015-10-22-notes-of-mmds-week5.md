@@ -24,7 +24,7 @@ share:
 - Euclidean distance 几何空间中的距离
 - Cosine distance 向量之间的距离
 - **Mahalanobis distance**: 表征一个点跟某centroid 的距离。
-  > 
+> 
   * Cluster C has centroid $(c_1,...,c_d)$ in d dimensions and standard deviations $(\sigma_1,...,\sigma_d)$. Point $P =(x_1,...,x_d)$.
   * Normalized distance in dimension i:$y_i = (x_i – c_i)/\sigma_i$
   * MD of point P from cluster C is $\sqrt{\sum\_{i=1}^d y_{i}^2}$
@@ -43,13 +43,13 @@ share:
 
 K-means 可参照[Clustering and PCA]({{site.url}}{% post_url 2015-08-09-ml-notes %}#clustering-and-pca) 
 
-但是当数据量很大而不能全部放在内存中计算时，而且用尽量少的迭代次数计算结果。我们就找到BFR(Bradley-Fayyard-Reina)。这个算法中，初始选中k 个centroids 后，遍历数据的过程中使用统计量（总数N、总和向量SUM、平方和向量SUMSQ）即可。那么在某一个维度i 上，$centroid_i = SUM_i / N$，而方差可以通过 $ variace_i = (SUMSQ_i / N) – (SUM_i / N)^2$。
+但是当数据量很大而不能全部放在内存中计算时，而且用尽量少的迭代次数计算结果。我们就找到BFR(Bradley-Fayyard-Reina)。这个算法中，初始选中k 个centroids 后，遍历数据的过程中使用统计量（总数N、总和向量SUM、平方和向量SUMSQ）即可。那么在某一个维度i 上，$centroid_i = SUM_i / N$，而方差可以通过$variace_i = (SUMSQ_i / N) – (SUM_i / N)^2$ 求得。
 
-我们需要维持三类集合：
+为了达到上面的愿景，我们需要维持三类集合：
 
-- Discard set 离某个centroid 特别近（使用Mahalanobis distance 判断）而被归并的点。每个cluster 维护一个DS。
-- Compression sets 多组点。每组内部点较近，但离任何一个centroid 都不近；这些点的小组（mini-cluster ）也被统计，但是这些小组不加入任何一个cluster。
-- Retained set 离任何一个centroid 和 CS 中的mini-clusters 都不近；离待加入CS；只有一个集合。
+- **Discard set** 离某个centroid 特别近（使用Mahalanobis distance 判断）而被归并的点。每个cluster 维护一个DS。
+- **Compression sets** 多组点。每组内部点较近，但离任何一个centroid 都不近；这些点的小组（mini-cluster ）也被统计，但是这些小组不加入任何一个cluster。
+- **Retained set** 离任何一个centroid 和 CS 中的mini-clusters 都不近；离待加入CS；只有一个集合。
 
 BFR 算法具体步骤如下：
 
@@ -63,7 +63,7 @@ BFR 算法具体步骤如下：
 
 CURE代表 Clustering Using REpresentatives
 
-BFR 的一个问题是，只使用centroid 作为某个cluster 的代表。而使用Mahal Distance 时，就仅仅适用于 规则（二维中圆形或椭圆形的cluster）。而CURE 就使用多个点代表某个cluster，然后也能适用于任意形状的cluster。
+BFR 的一个问题是，只使用centroid 作为某个cluster 的代表。而使用Mahal Distance 时，就仅仅适用于规则（二维中圆形或椭圆形的且不重叠的clusters ）分布的点，对于狭长状，或交叉的clusters 就无能为力了。而CURE 就使用多个点代表某个cluster，然后也能适用于任意形状的cluster。
 
 CURE 算法步骤：
 
@@ -91,7 +91,15 @@ CURE 算法步骤：
 
 计算广告中，早期使用CPM 收费，Overture 2000年首创使用CPC 收费，而AdWords 2002年首创使用eCPC(bid*CTR) 排序。但问题是，广告位有限，广告主预算也有限，每次query 都会竞价，而每次CTR 也不一样，如何来权衡这些呢？
 
-BALANCE Algorithm：每次选取预算最充足的广告主。其\`CR=1-1/e\` (the last lecture in week 5 TODO)
+BALANCE Algorithm：每次选取预算最充足的广告主。其\`CR=1-1/e\` 
+
+- 假设有N 个advertisers A（每个advertiser 有budget B>N ），N 轮竞价，每轮有B 个queries。且假设第i 轮时，只有$A_i ... A_N$ 这$N-i+1$ 个advertisers 可以参与竞价。那么Optimum revenue 就为 $N*B$
+- 那么第i 轮，$A_i$ 该轮分配到的queries 为\`B/(N-i+1)\`，总共分配到\`S_i = sum\_(i=1)^k B/(N-i+1) = B sum_(i=1)^k 1/(N-i+1)\` 最后耗尽budget 则应该有\`S_i >= B\`
+- 根据Euler 公式，对于足够大的N，\`sum\_(i=1)^N 1 / N = ln N\` ，则\`S_i = B*( ln N - ln(N-i)) >= B\` 
+- 解得Revenue  \`(1-1/e)\*B*N\`，从而\`CR = 1- 1/e\`
+
+
+
 
 ## SVM
 
@@ -100,12 +108,12 @@ SVM 也就是找到最佳的分隔线、面L。使得离L 最近的点离H 的�
 那么，数学化SVM 的基本思想表示可以为：
 
 \`
-max_(w,gamma) gamma = s.t. forall i,y_i (vec w * vec x_i + b) >= gamma
+argmax_(w) gamma = s.t. forall i,y_i (vec w * vec x_i + b) >= gamma
 \`
 
-上式中，不难发现如果直接把$\vec w$ 变大，$\gamma$ 也会随之增大；但实际上这个是不变的。所以应该归一化$\vec w$，可使用\`||w|| = sqrt (sum_(j=1)^d (vec w^j)^2)\`进行归一（其中d 代表维度数量）。 通过求解可得\`gamma = 1 / (||vec w||)\`，那么问题就转化为：
+上式中，不难发现如果直接把$\vec w$ 变大，$\gamma$ 也会随之增大；但实际上这个$\gamma$ 应该是不变的才对。所以应该归一化$\vec w$，可使用\`||w|| = sqrt (sum_(j=1)^d (vec w^j)^2)\`进行归一（其中d 代表维度数量）。 通过求解可得\`gamma = 1 / (||vec w||)\`，那么问题就转化为：
 
-\`min_w 1/2 ||w||^2 , s.t. forall i,y_i (vec w * vec x_i + b) >= 1 \`
+\`argmin_w 1/2 ||w||^2 , s.t. forall i,y_i (vec w * vec x_i + b) >= 1 \`
 
 上面这种情况，还是所有数据都是可分的。如果不是，就需要引入Regulization Term 了。
 
@@ -114,9 +122,9 @@ max_(w,gamma) gamma = s.t. forall i,y_i (vec w * vec x_i + b) >= gamma
 然后用[(B)GD 或 SGD](({{ site.url }}{% post_url 2015-08-09-ml-notes %}#large-scale-ml)) 即可求解$w,b$
 ## Decision Tree
 先说Information Gain的概念：
-> IG(Y | X) : We must transmit Y over a binary link. How many bits on average would it save us if both ends of the line knew X?
+> IG(Y \| X) : We must transmit Y over a binary link. How many bits on average would it save us if both ends of the line knew X?
 DT 建树时有两个问题需要考虑：- 如何最最佳的分裂节点？IG最大的
-- 何时停止分裂？IG小于某个阀值，或叶子节点数量达到下限数量了。
+- 何时停止分裂？IG小于某个阀值，或叶子节点上的数据点数量达到下限数量了，或者叶子节点总数达到一定值。
 - 叶子节点值怎么得？分类分题，就是多数的分类；回归问题：可求平均；或用线性回归再针对叶子上的样本拟合一下。
 
 Entropy, \`H(X) = - sum_(j=1)^m p_j log p_j\` 其实反映了X 中各元素相互转换所需要的信息量。
@@ -141,8 +149,7 @@ Example applications
 - Computer vision
 **Decision trees**
 - Classification & Regression: Multiple (~10) classes
-- Real valued and categorical
-features
+- Real valued and categorical features
 - Few (hundreds) of features
 - Usually dense features
 - Complicated decision boundaries: Overfitting! Early stopping
@@ -150,8 +157,7 @@ features
 Example applications
 
 - User profile classification
-- Landing page bounce
-prediction
+- Landing page bounce prediction
 ## MAP-REDUCE Algorithms
 
 MR 里面重点考虑两个方面
@@ -164,7 +170,7 @@ MR 里面重点考虑两个方面
 - reducer size(q)，就是指一个reducer 能获取的最大inputs 数量
 - replication  rate，就是指每个mapper 输出的KV 数量。
 
-例如$n*n$ 的两个矩阵A 和矩阵B相乘，一般情况下的解决方法如后。假如单个reducer 输入为q，则实际只能拿到为q/n 这么多数量的行/列；假设其拿到最多q/2n 行，q/2n 列，那么这个reducer 最多产出\`q^2/(4n^2)\` 个数。因为产出$n^2$ 的数，则至少需要\`(4n^2)/q^2\` 个reduers，则输入所有reduers \`(4n^2)/q\`，则因为总的原输入为$2n^2$，则\`r=(2n^2)/q\`。故而communication cost 为$4n^4 * r$
+例如$n*n$ 的两个矩阵A 和矩阵B相乘，一般情况下的解决方法如后。假如单个reducer 输入为q，则实际只能拿到为q/n 这么多数量的行/列；假设其拿到最多q/2n 行，q/2n 列，那么这个reducer 最多产出\`q^2/(4n^2)\` 个数。因为产出$n^2$ 的数，则至少需要\`(4n^2)/q^2\` 个reduers，则输入所有reduers 的inputs 数量为 \`(4n^2)/q\`，则因为总的原输入为$2n^2$，则\`r=(2n^2)/q\`。故而communication cost 为$4n^4 * r$
 
 而如果把A 分解成多个\`g\*g/2\` 的小块儿，把B 分解成多个\`g/2*g\` 的小块儿。如此两个阶段的MR 也可以减少communication cost 为\`4n^2g=(4n^3)/sqrt(q)\`(参见最后week 6最后一讲末页)。
 
@@ -178,7 +184,7 @@ MR 里面重点考虑两个方面
  
 所以，通常，我们对string就下取整取\`|\__ JL+1 __|\` 个prefix chars来index，放入对应的hash buckets 中，查找的时候就可以根据prefix 对应的buckets 进行查找。
 
-假设，字符串probe string $s$(长度L)和目标匹配t中，最先相等的是s[i]==t[j](索引从1 开始)，那么两者的edit distance 一定有\`E>=i+j-2\`，而最长子串LCS 长度$C<=L- i +1$
+假设，字符串probe string $s$(长度L)和目标匹配t中，最先相等的是$s[i] == t[j]$(索引从1 开始)，那么两者的edit distance 一定有\`E>=i+j-2\`，而最长子串LCS 长度$C<=L- i +1$
 
 所以\`J = E/(E+C) >= (i+j-2)/(L+J-1)\` 则 \`j<=(JL-J-i+2/(1-J))\`
 
