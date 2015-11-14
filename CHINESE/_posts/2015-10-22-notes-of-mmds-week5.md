@@ -24,6 +24,7 @@ share:
 - Euclidean distance 几何空间中的距离
 - Cosine distance 向量之间的距离
 - **Mahalanobis distance**: 表征一个点跟某centroid 的距离。
+
 > 
   * Cluster C has centroid $(c_1,...,c_d)$ in d dimensions and standard deviations $(\sigma_1,...,\sigma_d)$. Point $P =(x_1,...,x_d)$.
   * Normalized distance in dimension i:$y_i = (x_i – c_i)/\sigma_i$
@@ -202,7 +203,7 @@ vec r^(n+1) = (beta * M + (1-beta)/n vec e * vec e^T) * vec r ^n
 vec r^(n+1) = (beta * M + (1-beta)/|S| * E_s) * vec r ^n
 \`
 
-其中$E_s$ 中，$E_{ij} = 1, if\ i \in S$ ，其余为0，即所有指向S 中节点的对应矩阵位置才为1。其实就是把网络权重向S 中的节点倾斜。
+其中$E_s$ 中，$E_{ij} = 1, if\ i \in S$ （亦即teleport 到S 集合中的点才为1），其余为0，即所有指向S 中节点的对应矩阵位置才为1。其实就是把网络权重向S 中的节点倾斜。
 
 **Hubs and Authorities** 直观的理解是，出度比较多的可以叫Hubs，入度比较多的点可以叫Authorities。而且两者可以迭代相互贡献。即
 
