@@ -24,7 +24,6 @@ share:
 - Euclidean distance 几何空间中的距离
 - Cosine distance 向量之间的距离
 - **Mahalanobis distance**: 表征一个点跟某centroid 的距离。
-
 > 
   * Cluster C has centroid $(c_1,...,c_d)$ in d dimensions and standard deviations $(\sigma_1,...,\sigma_d)$. Point $P =(x_1,...,x_d)$.
   * Normalized distance in dimension i:$y_i = (x_i – c_i)/\sigma_i$
@@ -171,7 +170,7 @@ MR 里面重点考虑两个方面
 - reducer size(q)，就是指一个reducer 能获取的最大inputs 数量
 - replication  rate，就是指每个mapper 输出的KV 数量。
 
-例如$n*n$ 的两个矩阵A 和矩阵B相乘，一般情况下的解决方法如后。假如单个reducer 输入为q，则实际只能拿到为q/n 这么多数量的行/列；假设其拿到最多q/2n 行，q/2n 列，那么这个reducer 最多产出\`q^2/(4n^2)\` 个数。因为产出$n^2$ 的数，则至少需要\`(4n^2)/q^2\` 个reduers，则输入所有reduers 的inputs 数量为 \`(4n^2)/q\`，则因为总的原输入为$2n^2$，则\`r=(2n^2)/q\`。故而communication cost 为$4n^4 * r$
+例如$n*n$ 的两个矩阵A 和矩阵B相乘，一般情况下的解决方法如后。假如单个reducer 输入为q，则实际只能拿到为q/n 这么多数量的行/列；假设其拿到最多q/2n 行，q/2n 列，那么这个reducer 最多产出\`q^2/(4n^2)\` 个数。因为产出$n^2$ 的数，则至少需要\`(4n^4)/q^2\` 个reduers，则输入所有reduers 的inputs 数量为 \`(4n^4)/q\`，则因为总的原输入为$2n^2$，则\`r=(2n^2)/q\`。故而communication cost 为$4n^4 * r$
 
 而如果把A 分解成多个\`g\*g/2\` 的小块儿，把B 分解成多个\`g/2*g\` 的小块儿。如此两个阶段的MR 也可以减少communication cost 为\`4n^2g=(4n^3)/sqrt(q)\`(参见最后week 6最后一讲末页)。
 
@@ -212,10 +211,10 @@ h_i = sum\_(i -> j) a\_j,
 a_j = sum_(i -> j) h_i
 \`
 
-**HITS algorithm** 的步骤就是：
+**HITS algorithm** 计算Hubs & Authorities 的步骤就是：
 
 1. \`a_i = h_i = 1/ sqrt(n)\`
-2. 设邻接矩阵A，其中\`A_(ij) = 1, if i->j\`
+2. 设邻接矩阵A，其中\`A_(ij) = 1, if j->i\` （跟PR 中一致）
 3. \`a = A*h, h = A^T * a\`，归一化。
 4. 迭代3 直至收敛。
 

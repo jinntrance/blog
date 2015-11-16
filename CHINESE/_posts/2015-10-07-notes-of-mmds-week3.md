@@ -90,7 +90,7 @@ Spectral Clustering Algorithms 步骤
 
 如果使用滑动窗口计算整数平均时，可优化的点就是，之前长度为N 的滑动窗口平均为m，新来元素j，应该替换的元素为i ，则\`m = (j-i)/N + m\`
 
-### DMGI Algorithm
+### DGIM Algorithm
 
 0/1 数据流窗口计数，最优方案是使用Buckets，每个bucket 记录一段数据流：
 

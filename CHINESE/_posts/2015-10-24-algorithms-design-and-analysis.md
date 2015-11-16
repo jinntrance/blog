@@ -200,11 +200,36 @@ While there are more than 2 vertices:
 
 所以每次选中非F 中的点的概率为\`1-2/n = (n-2)/n\`， 则RC 得到MinCut 的概率为 \` p >= prod_(k=3)^n  (k-2)/k = 2/(n*(n-1))\`
 
+# Week 4
+
+介绍图的BFS 和 DFS 搜索。BFS再深入介绍的Dijkstra Algorithm 求最短路径，DFS 这是求强联通图。
+
+强联通图的计算步骤：
+
+- 有图G后， 计算每条边取反向得到的G_rev。
+- 在G_rev 上调用DFS-Loop 算法，然后每个节点的结束时间存入ft。
+- 在G 上，按照ft 中最晚结束的节点最先搜索的原则，调用DFS-Loop 算法。
+- SCCs 就是有相同leader 的所有节点。 
+
+DFS-Loop 算法：
+
+```julia
+for i = n:-1:1
+    l = i
+    DFS(Graph,i, l) 
+    # 然后从i DFS直到结束，这词DFS 节点的leader 都为l。
+end
+```
+
+强联通图的算法可参见[SCC.jl] 实现。
+
+
 
 
 [CountingInvertions]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week1/countingInvertions.jl
 [QuickSort]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week2/quicksort.jl
 [median of medians]: http://austinrochford.com/posts/2013-10-28-median-of-medians.html
+[SCC.jl]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week4/SCC.jl
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
