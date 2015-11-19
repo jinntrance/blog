@@ -200,7 +200,7 @@ While there are more than 2 vertices:
 
 所以每次选中非F 中的点的概率为\`1-2/n = (n-2)/n\`， 则RC 得到MinCut 的概率为 \` p >= prod_(k=3)^n  (k-2)/k = 2/(n*(n-1))\`
 
-# Week 4
+# Week 4&5
 
 介绍图的BFS 和 DFS 搜索。BFS再深入介绍的Dijkstra Algorithm 求最短路径，DFS 这是求强联通图。
 
@@ -223,6 +223,12 @@ end
 
 强联通图的算法可参见[SCC.jl] 实现。
 
+Dijkstra's Algorithm，BFS 的代表。假设需要计算s 到任意节点的最短路径。
+
+1. 用X 表示遍历过的节点，B、A分别记录每个节点的最短路径及其长度。初始化$X=[s], A[s]=0, B=[]$
+2. 对于如后集合\`{(v,w)|v in X, w !in X}\` 的每个节点 $(v,w)$ 使得 \`{(v^\*\*, w^**)} = arg min _ (v,w) A[w]= arg min _ (v,w) A[v]+l_(vw)\`
+3. 更新 \`A[w^\*\*] = A[v^\*\*] + l\_(v^\*\* w^\*\*)\` \`B[w^\*\*] = B[v^\*\*] + u_(v^\*\* w^\**)\`
+4. 所有节点都被遍历后结束
 
 
 
