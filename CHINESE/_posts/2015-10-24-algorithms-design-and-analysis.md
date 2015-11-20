@@ -223,7 +223,7 @@ end
 
 强联通图的算法可参见[SCC.jl] 实现。
 
-Dijkstra's Algorithm，BFS 的代表。假设需要计算s 到任意节点的最短路径。
+Dijkstra's Algorithm，BFS 的代表。假设需要计算s 到任意节点的最短路径。代码可参照[Dijkstra.scala],算法思想如后：
 
 1. 用X 表示遍历过的节点，B、A分别记录每个节点的最短路径及其长度。初始化$X=[s], A[s]=0, B=[]$
 2. 对于如后集合\`{(v,w)|v in X, w !in X}\` 的每个节点 $(v,w)$ 使得 \`{(v^\*\*, w^**)} = arg min _ (v,w) A[w]= arg min _ (v,w) A[v]+l_(vw)\`
@@ -232,10 +232,12 @@ Dijkstra's Algorithm，BFS 的代表。假设需要计算s 到任意节点的最
 
 
 
+
 [CountingInvertions]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week1/countingInvertions.jl
 [QuickSort]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week2/quicksort.jl
 [median of medians]: http://austinrochford.com/posts/2013-10-28-median-of-medians.html
 [SCC.jl]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week4/SCC.jl
+[Dijkstra.scala]: https://github.com/jinntrance/MOOC/blob/master/coursera/algo-009/week5/Djk.scala
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
