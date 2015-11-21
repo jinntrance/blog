@@ -135,8 +135,13 @@ end
 2. 找到L 的negative border NB。（假设有negative border 中的元素 N，那么\`N !in L\` ，且N 的所有直接子集属于L。比如{A,B,C} 的直接子集为：{A,B} {B,C} {A,C}） 
 3. 在pass 2中，L和NB 都当作频繁项来找全局频繁项。如果NB 中不存在频繁项，那最后结果很Okay，终止 。如果NB 还存在频繁项，那么从新采样直到终止。
 
+#### 其他算法
+
+其他用得比较多的如[FPG]、[PFP]等，也可参考。FPG，就是在A-Prori的第一步基础上，second pass 不是用可能pairs(candidate sets)，而是用后缀树来存储。PFP就是FPG 的并行版本。
 
 [LSH应用]: http://www.strongczq.com/2012/04/locality-sensitive-hashinglsh%E4%B9%8B%E9%9A%8F%E6%9C%BA%E6%8A%95%E5%BD%B1%E6%B3%95.html
+[FPG]: http://dl.acm.org/citation.cfm?doid=335191.335372
+[PFP]: http://dl.acm.org/citation.cfm?doid=1454008.1454027
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
