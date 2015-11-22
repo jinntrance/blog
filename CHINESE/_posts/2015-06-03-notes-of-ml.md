@@ -82,6 +82,8 @@ $$
 \mathbf{H}^{-1}\_{n+1} = (I - \rho_n y_n s_n^T) \mathbf{H}^{-1}_n (I - \rho_n s_n y_n^T) + \rho_n s_n s_n^T
 $$
 
+[Paxos]: 解决分布式更新数据后一致性的问题
+
 ## 
 
 [Softmax function]: http://en.wikipedia.org/wiki/Softmax_function
@@ -94,6 +96,7 @@ $$
 [RBM]: http://miibotree.com/2015/08/25/from-BM-to-RBM/
 [NNML]: https://www.coursera.org/course/neuralnets
 [BPR]: http://liuzhiqiangruc.iteye.com/blog/2073526
+[Paxos]: https://zh.wikipedia.org/wiki/Paxos%E7%AE%97%E6%B3%95
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
