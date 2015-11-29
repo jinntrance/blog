@@ -14,14 +14,13 @@ if( 0 <= window.location.href.indexOf('{{ site.apex_domain }}'.replace(/^\s+|\s+
 
 
   {% if site.cnzz_analytics %}
-  (function(document) {
+  (function() {
     /* <!-- Aysnchronous CNZZ Analytics  -->  */
-    var hm = document.createElement("script");
-    hm.id= "cnzz_stat_icon_{{site.cnzz_analytics}}";
-    hm.src = "//s95.cnzz.com/z_stat.php%3Fid%3D{{site.cnzz_analytics}}";
+    var za = document.createElement("script");
+    za.src = "//s95.cnzz.com/z_stat.php?id={{site.cnzz_analytics}}&web_id={{site.cnzz_analytics}}";
     var s = document.getElementsByTagName("script")[0]; 
-    s.parentNode.insertBefore(hm, s);
-  })(document);
+    s.parentNode.insertBefore(za, s);
+  })();
   {% endif %}
 
 
