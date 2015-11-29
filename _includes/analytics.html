@@ -5,10 +5,11 @@ if( 0 <= window.location.href.indexOf('{{ site.apex_domain }}'.replace(/^\s+|\s+
   /* Asynchronous Baidu Analytics snippet */
   var _hmt = _hmt || [];
   (function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?{{site.baidu_analytics}}";
-    var s = document.getElementsByTagName("script")[0]; 
-    s.parentNode.insertBefore(hm, s);
+   var hm = document.createElement("script");
+   hm.aysnc=1;
+   hm.src = "//hm.baidu.com/hm.js?{{site.baidu_analytics}}";
+   var s = document.getElementsByTagName("script")[0]; 
+   s.parentNode.insertBefore(hm, s);
   })();
   {% endif %}
 
@@ -16,10 +17,11 @@ if( 0 <= window.location.href.indexOf('{{ site.apex_domain }}'.replace(/^\s+|\s+
   {% if site.cnzz_analytics %}
   (function() {
     /* <!-- Aysnchronous CNZZ Analytics  -->  */
-    var za = document.createElement("script");
-    za.src = "//s95.cnzz.com/z_stat.php?id={{site.cnzz_analytics}}&web_id={{site.cnzz_analytics}}";
-    var s = document.getElementsByTagName("script")[0]; 
-    s.parentNode.insertBefore(za, s);
+   var za = document.createElement("script");
+   za.async=1;
+   za.src = "//s95.cnzz.com/z_stat.php?id={{site.cnzz_analytics}}&web_id={{site.cnzz_analytics}}";
+   var s = document.getElementsByTagName("script")[0]; 
+   s.parentNode.insertBefore(za, s);
   })();
   {% endif %}
 
