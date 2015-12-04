@@ -84,6 +84,21 @@ $$
 
 [Paxos]: 解决分布式更新数据后一致性的问题
 
+training error = bias + noise
+test error = noise + variance
+
+假设
+
+- label \`y^+ = f(x^+) + epsilon\`, 假设f 为true function，即最佳的拟合函数。
+- 通过训练学到的函数为\`h(x^+)\`
+
+则
+
+- variance = \`E[(h(x^+) - \bar (h(x^+)))^2]\`, describes how much \`h(x^+)\` varies from one training set S to another
+- bias = \`E[\bar (h(x^+)) -f(x^+)]\`, describes the average error of \`h(x^+)\`
+- noise = \`E[(y^+ - f(x^+))^2] = E[epsilon ^2] = sigma ^ 2\`, describes how much \`y^+\` varies from \`f(x^+)\`
+
+
 ## 
 
 [Softmax function]: http://en.wikipedia.org/wiki/Softmax_function
