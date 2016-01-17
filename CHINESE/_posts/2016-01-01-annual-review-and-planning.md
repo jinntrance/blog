@@ -3,12 +3,6 @@ layout: post
 title: "2015 记"
 modified: 2016-01-01 11:39:04 +0800
 tags: [Planning]
-image:
-  feature: 
-  credit: 
-  creditlink: 
-comments: 
-share: 
 
 ---
 
@@ -31,10 +25,11 @@ share:
     - 耐心變差了。對同時、朋友、親人都如是。
     - 專業能力基礎（算法、Programming、ML、論文積累）還待提高。
     - 讀書太少，攝取知識過少、不全面。
-    - 時間管理能力下降，浮於形式。
-    
+    - 雖然一直使用番茄鍾([Pomotodo 2015 Review][Pomotodo2015])和GTD，時間管理能力下降，浮於形式。 
 
+懷毛病就改掉，做得不好的也希望自己在新的一年漸漸改進。勉之礪之。
 
+[Pomotodo2015]: https://pomotodo.com/2015 
 [2015阅读统计]: http://readingtaste.com/user/38702920/stat/books
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
