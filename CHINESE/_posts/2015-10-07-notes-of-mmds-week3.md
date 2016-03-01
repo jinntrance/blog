@@ -17,6 +17,8 @@ share:
 
 ## Detecting communities
 
+针对social communities，除了使用betweenness 的[Girvan-Newman] 算法外，本课程主要讲了如后的方法。
+
 ### Affiliation Graph Model
 
 此方法是根据图模型，生成对应的network 。假设模型为
@@ -222,7 +224,9 @@ SVD 奇异值分解可得上式，而如果使用特征值分解则可得\`A = X
 
 如此 \`A ~~ CUR\` 即可求得
 
+[betweenness]: https://en.wikipedia.org/wiki/Betweenness_centrality
 
+[Girvan–Newman]: https://en.wikipedia.org/wiki/Girvan–Newman_algorithm
 
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
