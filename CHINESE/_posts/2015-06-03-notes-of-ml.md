@@ -101,6 +101,9 @@ test error = noise + variance
 
 ## 
 
+[Hinge loss] 
+
+[Hinge loss]:https://en.wikipedia.org/wiki/Hinge_loss 
 [Softmax function]: http://en.wikipedia.org/wiki/Softmax_function
 [Sigmoid function]: http://en.wikipedia.org/wiki/Sigmoid_function
 [理解L-BFGS算法]: http://mlworks.cn/posts/introduction-to-l-bfgs/
