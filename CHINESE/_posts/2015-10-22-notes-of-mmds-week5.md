@@ -38,6 +38,8 @@ share:
 
 最简单最直接的是Hierarchical Clustering，就是每次合并最临近的点，然后慢慢将clusters 的数量减少到k。
 
+非欧式距离空间下的聚类，可以考虑使用[GRGPF]
+
 
 ### BFR
 
@@ -71,6 +73,14 @@ CURE 算法步骤：
 2. 选取representative points(RP)：在一个cluster 中选取尽量分散的c（比如4） 个RPs（第一个离centroid 最远，然后后面的新RP离之前的RPs 最远）
 3. 把RPs 向centroid 移动固定的比例（比如移动把距离缩小为原来的80%）
 4. 重新扫描全部数据集，离新的点p 最近的RP 所在的cluster，就是p 需要分配过去的cluster 
+
+
+### GRGPF
+
+### BDMO
+
+
+
 
 ## Computational Advertising
 
@@ -229,6 +239,9 @@ a_j = sum_(i -> j) h_i
 所以，实际上，只需要提高M 中对target 起贡献的farm pages 的数量，就能提高y。
 
 避免上述spam，可以通过使用top PR值的URL 或权威域名（.edu .gov）的URL，先建立Topic-PR $r^+$ ；而通过全局计算$r$ ，如果\`r/ r^+\` 比1 大很多，则越可能是spam。
+
+[GRGPF]: http://120.52.72.35/infolab.stanford.edu/c3pr90ntcsf0/~ullman/mining/cluster2.pdf
+
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
