@@ -57,11 +57,13 @@ mathjax_alt_class: mathjax_alt
 google_analytics: "UA-39438576-1"
 google_verify:     
 google_fonts: 
+
 # add Baidu Analytics ID for tracking
 baidu_analytics: 11224c4b3c0923fa6de6e431325fe387
 #baidu_push to make Baidu notified
 baidu_push: "http://data.zz.baidu.com/urls?site=josephjctang.com&token=q75fN10vbLmfLVFg"
 
+# CNZZ Analytics ID
 cnzz_analytics: 1256833726
 
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
@@ -70,7 +72,7 @@ bing_verify:
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Beijing
-future:      true
+#future:      true
 highlighter: rouge 
 markdown:    kramdown
 gems: [jekyll-paginate]
@@ -94,17 +96,7 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  enable_coderay: true
   input: GFM
-  #syntax_highlighter: rouge
-  syntax_highlighter: coderay
-
-  coderay:
-    coderay_line_numbers: nil
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 2
-    coderay_bold_every: 10
-    coderay_css: class
 
 compress_html:
   clippings: all
