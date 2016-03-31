@@ -103,6 +103,33 @@ test error = noise + variance
 
 [Hinge loss] 
 
+
+## 置信区间估计
+设 \`X = (X_1, ..., X_n)\` 是总体 \`N(mu, sigma ^2)\` 的样本。
+
+\`mu\` 的一个良好点估计 \`bar X = 1/n sum_(i=1)^n X_i\` 其分布为 \`bar X ~ N (mu, sigma^2 / n)\` ，亦即 \` Z = (bar X  - mu) / (sigma/sqrt(n))  ~ N (0, 1)\`
+
+
+有\`P(|Z|<=u_{alpha/2}) = 1-alpha\`， 其中\`u\_{alpha/2}\` 为标准正太分布的上侧\`alpha/2\` 分位数（即标准正太分布\`>=alpha/2\` 的面积为\`alpha/2\`） 
+
+如后的Z 值表，有\`P(|Z|<=1.96) = 0.95\`
+
+Desired Confidence| Z score
+:----:|:----:
+90%|1.645
+95%|1.96
+99%|2.576
+
+则变换可得\`P(|mu| <= bar X + Z * sigma/sqrt(n)) = 1 - alpha\`
+
+假设样本X 和总体的均值(概率)为\`p\`，那么其标准差应为\`\S = sqrt((p*(1-p)))\`; 则\`1-alpha\` 的置信区间下，总体均值\`mu\` 的置信区间为：
+
+\`
+\bar x - Z\_(alpha/2) * S /sqrt(n) <= mu <= \bar x + Z_(alpha/2) * S /sqrt(n)
+\`
+
+Z 值表可参照 [Parameter Estimation], 基本概念及讲解 [区间估计] 
+
 [Hinge loss]:https://en.wikipedia.org/wiki/Hinge_loss 
 [Softmax function]: http://en.wikipedia.org/wiki/Softmax_function
 [Sigmoid function]: http://en.wikipedia.org/wiki/Sigmoid_function
@@ -115,6 +142,9 @@ test error = noise + variance
 [NNML]: https://www.coursera.org/course/neuralnets
 [BPR]: http://liuzhiqiangruc.iteye.com/blog/2073526
 [Paxos]: https://zh.wikipedia.org/wiki/Paxos%E7%AE%97%E6%B3%95
+[Parameter Estimation]: http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/BS704_Confidence_Intervals/BS704_Confidence_Intervals2.html
+[区间估计]: http://staff.ustc.edu.cn/~zwp/teach/Math-Stat/lec7.pdf
+
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
