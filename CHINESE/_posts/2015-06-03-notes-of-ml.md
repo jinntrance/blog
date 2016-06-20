@@ -130,6 +130,13 @@ Desired Confidence| Z score
 
 Z 值表可参照 [Parameter Estimation], 基本概念及讲解 [区间估计] 
 
+
+CoEC: Clicks Over Expected Clicks
+
+KLD: [Kullback–Leibler divergence][KLD] 用于计算两个概率分布之间距离（或称“差别”）
+
+[KLD]: https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence 
+
 [Hinge loss]:https://en.wikipedia.org/wiki/Hinge_loss 
 [Softmax function]: http://en.wikipedia.org/wiki/Softmax_function
 [Sigmoid function]: http://en.wikipedia.org/wiki/Sigmoid_function
