@@ -110,6 +110,7 @@ Tree Early stopping 注意
     - compute coefficients \`\hat w _t = 0.5 ln ((1-weightederro\r(f_t))/(weightederro\r(f_t)))\`
     - recompute weights \`\alpha _i *= e^( (-1)^(P(f_t(x_i) -= y_i)) hat w_t) \`, where \`P(f_t(x_i) -= y_i) = 0 or 1\`
     - 每一轮归一化保证\`sum alpha_i -= 1\`    
+其中weighted error 就是分类分错的比例。
 
 
 其实整个过程中，样本的权重变化就是这样的：
@@ -122,7 +123,12 @@ Tree Early stopping 注意
 
 SGD 过程中，权重一定要用过去T 份数据迭代的平均，而不是当轮当前这份数据迭代的结果。
 
+## Clustering for IR
 
+### nearest neighbour search
+
+- KD-tree 低纬度，精确度高。k-NN 时通常表现好，但维度超过2 就不太理想了。（KD-Tree 的每个节点会记录分裂的特征及数值，以及其子节点的值域范围）
+- LSH 高纬度，会损失一定精确度。
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
