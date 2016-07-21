@@ -1,5 +1,5 @@
  $(function(){
-  $('.entry-content a').attr('target','_blank'); 
+  $('.entry-content a,entry a,read-more a').attr('target','_blank'); 
   var headers = $('#post .entry-content :header').map(function (idx, h){
     var a = $('<a href="#">');
     a.attr('data-id',h.id);
