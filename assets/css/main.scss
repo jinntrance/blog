@@ -221,3 +221,11 @@ table {
     }
 }
 
+.vcard a {
+  color: rgba(34,34,34,0.8);
+  border-bottom: 1px dotted rgba(162,162,162,0.8);
+}
+
+.vcard a:hover {
+    border-bottom-style: solid;
+}
