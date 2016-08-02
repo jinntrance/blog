@@ -92,7 +92,7 @@ x 落在(a, b) 区间内的概率为：
 - 单一变量 \`cov[x, y] = bbb E_(x,y) [{x − bbb E[x]} {y − bbb E[y]}] = E\_(x,y) [xy] − E[x]E[y] \`
 - 向量 \`cov[vec x, vec y] = E\_(x,y){x − E[x]}{y^T − E[y^T]}= E\_(x,y)[xy^T] − E[x]E[y^T].\`
 
-### Bayesian probabilities
+### Bayesian probablities
 
 since \`p(w|D) = (p(D|w)p(w))/(p(D))\`
 
@@ -124,6 +124,27 @@ likelihood function for the Gaussian:
 \`
 p(bb x | mu, delta ^2) = prod _(n=1)^N cc N (x_n | mu, delta ^2)
 \`
+
+
+### Information Theory
+
+单个人获得的新的信息可以叫做degree of surprise：比如一个绝对会发生的事情，即使发生了，对你来说没有新的信息；相反如果一个不太可能的事情发生了，那么你当时获取到的信息就更多。
+
+而熵(entropy) 则是传输这个随机变量所需的平均信息的量(bits)：
+
+\`H[x] = - sum_x p(x) log p(x)\`
+
+> the average amount of information needed to specify the state of a random variable
+
+
+Kullback-Leibler divergence: 
+
+\` KL (p \|\| q) = - int p(x) ln ((q(x))/(p(x))) dx \`
+
+
+mutual information: 
+
+$$I[x, y] = H[x] − H[x|y] = H[y] − H[y|x]$$
 
 
 [^RMSE]: Root Mean Square Error
