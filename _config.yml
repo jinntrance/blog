@@ -9,7 +9,8 @@ words_per_minute: 200
 chars_per_minute: 600
 abstract_chars_num: 150  
 # When testing locally leave blank or use http://localhost:4000
-url: http://blog.josephjctang.com
+url: http://127.0.0.1:4000
+#url: http://blog.josephjctang.com
 apex_url: josephjctang.com/blog
 #url: 
 apex_domain: josephjctang.com
@@ -44,8 +45,8 @@ background:
 
 # enable mathjax by default
 mathjax: true
-mathjax_js: "http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML"
-#mathjax_js: "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+#mathjax_js: "http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+mathjax_js: "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"
 # if set true, mathjax will be loaded 
 # only when there are elements with class `mathjax_alt`
 mathjax_with_alt: true
