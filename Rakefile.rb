@@ -23,6 +23,7 @@ task :new_post, :title do |t, args|
     title = get_stdin("Enter a title for your post: ")
   end
   cat  = get_stdin("Enter a category for your post(CHINESE/ENGLISH): ")
+  cats  = get_stdin("Enter other categories for your post(comma separated): ")
   mathjax  = get_stdin("Whether to use mathjax in this post: ")
   filename = "#{cat}/#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
   if File.exist?(filename)
@@ -36,6 +37,7 @@ task :new_post, :title do |t, args|
     post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
     post.puts "modified: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %z')}"
     post.puts "tags: [#{tags}]"
+    post.puts "categories: [#{cats}]"
     post.puts "image:"
     post.puts "  feature: "
     post.puts "  credit: "
