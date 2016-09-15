@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "learning TF"
+title: "TensorFlow 论文学习"
 modified: 2016-08-03 20:17:15 +0800
 tags: [深度学习]
 categories: []
