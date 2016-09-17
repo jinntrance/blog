@@ -13,7 +13,7 @@ share:
 
 ---
 
-TensorFlow
+TensorFlow[^TF]
 
 tensors: 中间数据，常量不改变。
 
@@ -62,7 +62,7 @@ send&receive 保证单个设备只有一个receiver 并且其实多个users 发�
 
 实际上梯度计算，依赖当前输出及之前输入：
 
-比如 $y = a*x + b$，一致y 值，还需要知道x 的值，才能计算出梯度$a$
+比如 $y = a*x + b$，已知y 值，还需要知道x 的值，才能计算出梯度$a$
 
 所以梯度计算跟前面所说的，按照有向图执行的方向正好相反（并且会在对应位置加上求梯度的node），这也导致有梯度计算时，必须保留所有中间结果的tensors 从而占用很多的内存。
 
@@ -72,10 +72,7 @@ send&receive 保证单个设备只有一个receiver 并且其实多个users 发�
 Enqueue 只有空间空闲时方可用。
 Dequeue 当且仅当队列中元素达到一定数量后才操作。
 
+[^TF]: Abadi and, Ashish~Agarwal and, Paul~Barham and, Eugene~Brevdo and, Zhifeng~Chen and, Craig~Citro and, … Xiaoqiang~Zheng. (2015). [TensorFlow: Large-scale machine learning on heterogeneous systems](http://download.tensorflow.org/paper/whitepaper2015.pdf)
 
-**Mathjax was not loaded successfully**{:.mathjax_alt} 
-{% comment %}
-<script type='text/x-mathjax-config'> MathJax.Hub.Config({ asciimath2jax: { delimiters: [['`','`']] }, tex2jax: {inlineMath: [['$', '$']], displayMath: [['$$', '$$']], processEscapes: true}});  </script>
-<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML' async='async'></script>
-{% endcomment %}
+
 
