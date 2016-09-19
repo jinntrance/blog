@@ -22,9 +22,15 @@ task :new_post, :title do |t, args|
   else
     title = get_stdin("Enter a title for your post: ")
   end
-  cat  = get_stdin("Enter a category for your post(CHINESE/ENGLISH): ")
+  cat  = get_stdin("Enter a language for your post(CHINESE/ENGLISH, default to be CHINESE): ")
+
+  if cat != "CHINESE" and cat != "ENGLISH"
+    cat = "CHINESE"
+  end
+
   cats  = get_stdin("Enter other categories for your post(comma separated): ")
   mathjax  = get_stdin("Whether to use mathjax in this post: ")
+  mermaid = get_stdin("Whether to use mermaid in this post: ")
   filename = "#{cat}/#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
@@ -38,6 +44,8 @@ task :new_post, :title do |t, args|
     post.puts "modified: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %z')}"
     post.puts "tags: [#{tags}]"
     post.puts "categories: [#{cats}]"
+    post.puts "mathjax: #{mathjax}"
+    post.puts "mermaid: #{mermaid}"
     post.puts "image:"
     post.puts "  feature: "
     post.puts "  credit: "
@@ -46,7 +54,7 @@ task :new_post, :title do |t, args|
     post.puts "share: "
     post.puts ""
     post.puts "---\n\n"
-    if args.mathjax or mathjax
+    if args.mathjax == true or mathjax == true
       post.puts mathjax_footer
     end
     post.puts ""
