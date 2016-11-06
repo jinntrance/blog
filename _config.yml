@@ -45,8 +45,9 @@ background:
 
 # enable mathjax by default
 mathjax: true
-#mathjax_js: "http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML"
 mathjax_js: "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+#mermaid_js: "//cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.min.js"
+mermaid_js: "//cdn.staticfile.org/mermaid/6.0.0/mermaid.min.js"
 # if set true, mathjax will be loaded 
 # only when there are elements with class `mathjax_alt`
 mathjax_with_alt: true
