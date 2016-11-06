@@ -113,4 +113,7 @@ Boltzmann machines 中没有hidden units 的时候称为 **Hopfield nets**
 
 
 
+
+**Mathjax was not loaded successfully**{:.mathjax_alt}
+
 [NNML]: https://www.coursera.org/learn/neural-networks/home/welcome
