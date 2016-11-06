@@ -109,7 +109,7 @@ Boltzmann machines 中没有hidden units 的时候称为 **Hopfield nets**
    - output 正确，不修正权重。
    - output 出错，且输出0，修正权重 $\vec w = \vec w + \vec f$
    - output 出错，且输出1 ，修正权重 $\vec w = \vec w - \vec f$
-2. **McCulloch-Pitts** 总结前面总要有阀值，多不方便。直接把阀值当作一个权重岂不就可以了？ $\vec z = \vec x \cdot \vec w + bias = \begin{vmatrix} 1 \\ \vec x \end{vmatrix} \cdot \begin{vmatrix} bias \\ \vec w \end{vmatrix}$  （其实$bias = -threshold$ ），然后用z 值跟0 比较大小判断正负样本即可。
+2. **McCulloch-Pitts** 总结前面总要有阀值，多不方便。直接把阀值当作一个权重岂不就可以了？ $\vec z = \vec x \cdot \vec w + bias = \begin{vmatrix} 1 \\\\ \vec x \end{vmatrix} \cdot \begin{vmatrix} bias \\\\ \vec w \end{vmatrix}$  （其实$bias = -threshold$ ），然后用z 值跟0 比较大小判断正负样本即可。
 
 
 
