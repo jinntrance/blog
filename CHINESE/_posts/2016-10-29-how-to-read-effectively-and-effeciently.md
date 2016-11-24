@@ -164,4 +164,6 @@ $$
 
 平日得养成马上、枕上、厕上阅读的习惯，用任何可能空闲的时间阅读。也要让自己随时随地都能方便的接触到书，比如门口、枕边、桌上。要养成外出时也得把书或Kindle 带上，不然就会有失落感的习惯。
 
+**Mathjax was not loaded successfully**{:.mathjax_alt}
+
 [^SppedReading]: http://fourhourworkweek.com/2009/07/30/speed-reading-and-accelerated-learning/
