@@ -135,6 +135,40 @@ Boltzmann machines 中没有hidden units 的时候称为 **Hopfield nets**
 
 
 
+
+##  Week 4
+
+
+
+## Week 5
+
+## Week 6
+
+常见的优化方式的利弊
+- full gradient batch: 下降方向通常是对的，但是步长选择不好容易在最优点徘徊但不能达到最优点。优化方向如non-linear conjugate gradient，动态调整learning rate 等(迭代次数增多或error 不再降低时，学习率逐次降低)
+- stochastic gradient descent 不是全量samples 拿来计算梯度，而是单个样本计算并更新梯度。而如果样本就用线上的，则为 online learning 。
+- mini-batches 计算梯度使用部分数据。性能快，复杂神经网络也需要较大的mini-batches。
+
+对于神经网络权重及输入的处理：
+
+- 初始化权重时，需要随机。不然每次训练数据相同的情况下，很容易得到同样的梯度。可以想象每层神经网络都是$\vec W \times \vec z_i$  ，输出跟输入的个数很相关，所以初始化权重也需要正比于$\sqrt{fan- in}$。
+- 并且每层输入都做一些预处理（比如减去平均数，再归一化让每层输入方差都比较一致）
+- 对于输入，可以做PCA 分析，减少类似的冗余特征。
+
+让mini-batch 学习更快的方式：
+
+1. 使用momentum，保持一定的惯性，保有之前的方向的情况下，加入新的方向修正。修正方式就是 $ \Delta w(t) = v_t = \alpha v_{t-1} - \epsilon \frac{\partial E}{\partial w}(t)$ 其中$\alpha $ 就是之前的方向，新学的梯度就以$\epsilon$ 的方式修正加进来。
+2. 对不同的特征使用不同的自适应的学习速率。开始每个weight 的gain 都是1，如果对于某个特征的gradient 的正负号一直不变（亦即没有来回波动）则增加gain $ gain += \delta $，否则大幅减小gain $gain = gain \times (1-\delta) $。并且让gain 再一个还比较合理的范围内比如 $[0.01, 100]$
+3. rmsprop:  
+   1. 过去两次梯度符号相同时，step size 乘以大于1 的倍数
+   2. 符号不相同时，乘以小于1 的倍数
+   3. step size 应该<= 50 或大于100 万分之一。
+   4. 然后每次gradient 除以 $\sqrt{MeanSquare(w,t)} = \sqrt{0.9 MeanSquare(w,t-1) + 0.1 * gradient_{w,t}^2}$
+4. curvature informa
+
+其他相关方式可参考[An overview
+ of gradient descent optimization algorithms](http://sebastianruder.com/optimizing-gradient-descent/)
+
 **Mathjax was not loaded successfully**{:.mathjax_alt}
 
 [NNML]: https://www.coursera.org/learn/neural-networks/home/welcome
