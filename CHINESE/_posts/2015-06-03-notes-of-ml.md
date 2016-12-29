@@ -45,10 +45,10 @@ S(t) = 1/(1+e^-t)
     - Normalized Discounted Cumulative Gain 
         - 假设n 个documents 中单个文档的rating 是$r_i$ 则对于Cumulative Gain(CG) \`CG = sum_(i=1)^n r_i\`
         - 而Discounted CG 有 \`DCG = r_1 + sum\_ (i=2)^n r_i/log_2(i)\` ，
-        那么位置p 的 \`DCG_p = rel_1 + sum\_ (i=2)^p (rel)\_i/log_2(i) \` 。
-        或者高相关的 \`DCG_p = sum_(i=1)^p (2^(rel_i) - 1)/log_2(i+1) \`， 其中\`rel_i in [0,1]\` 
+          那么位置p 的 \`DCG_p = rel_1 + sum\_ (i=2)^p (rel)\_i/log_2(i) \` 。
+          或者高相关的 \`DCG_p = sum_(i=1)^p (2^(rel_i) - 1)/log_2(i+1) \`， 其中\`rel_i in [0,1]\` 
         - NDCG： 假设 ideal ranking 的情况下DCG 为1，那么其他ranking 的DCG 除上ideal ranking 的DCG值即为该ranking 下的NDCG 值。
-        
+
 排序模型：
 **[LambdaMart]** 就是把MART(GBDT) 的损失函数的梯度，替换成排序过程中pairwise 的梯度Lambda。也可参见[Visualizing LambdaMART] 了解
 
@@ -64,11 +64,11 @@ S(t) = 1/(1+e^-t)
 \`F1 = (2\*recall*pr\ecision)/(recall + pr\ecision)\`
 
 AUC(Area Under Curve): 就是recall 作为横座标，precision 作为纵坐标时曲线下的面积。
-        
+​        
 HMC:
 
 https://en.wikipedia.org/wiki/Hidden_Markov_model
-        
+​        
 MCMC: 
 
 https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo
@@ -114,11 +114,11 @@ test error = noise + variance
 
 如后的Z 值表，有\`P(|Z|<=1.96) = 0.95\`
 
-Desired Confidence| Z score
-:----:|:----:
-90%|1.645
-95%|1.96
-99%|2.576
+| Desired Confidence | Z score |
+| :----------------: | :-----: |
+|        90%         |  1.645  |
+|        95%         |  1.96   |
+|        99%         |  2.576  |
 
 则变换可得\`P(|mu| <= bar X + Z * sigma/sqrt(n)) = 1 - alpha\`
 
@@ -135,9 +135,27 @@ CoEC: Clicks Over Expected Clicks
 
 KLD: [Kullback–Leibler divergence][KLD] 用于计算两个概率分布之间距离（或称“差别”）
 
-[KLD]: https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence 
 
-[Hinge loss]:https://en.wikipedia.org/wiki/Hinge_loss 
+
+**拉格朗日乘子**
+
+要求 
+
+>  maimize $f(x, y) $
+>
+>  subject to $g(x, y) = 0$
+
+引入乘子 $\lambda$ 得Largrange function:
+
+
+$$
+\textbf L(x, y, \lambda) = f(x, y) - \lambda \cdot g(x, y)
+$$
+
+在 $\frac{\partial L}{\partial x} = 0, \frac{\partial L}{\partial y} = 0, \frac{\partial L}{\partial \lambda} = 0$  三者成立时 $\textbf L$取得极大值。
+
+[KLD]: https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
+[Hinge loss]:https://en.wikipedia.org/wiki/Hinge_loss
 [Softmax function]: http://en.wikipedia.org/wiki/Softmax_function
 [Sigmoid function]: http://en.wikipedia.org/wiki/Sigmoid_function
 [理解L-BFGS算法]: http://mlworks.cn/posts/introduction-to-l-bfgs/
