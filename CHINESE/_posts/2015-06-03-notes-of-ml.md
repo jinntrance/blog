@@ -25,6 +25,8 @@ P(y=j | vec x) = e^(vec x^T w_j)/ (sum_(k=1)^K e^(vec x^T vec w_k))
 S(t) = 1/(1+e^-t)
 \`
 
+## Learning to Rank
+
 排序中：
 
 - PointWise: 平常的二分类问题，学每一个query-document 的分值
@@ -49,7 +51,8 @@ S(t) = 1/(1+e^-t)
           或者高相关的 \`DCG_p = sum_(i=1)^p (2^(rel_i) - 1)/log_2(i+1) \`， 其中\`rel_i in [0,1]\` 
         - NDCG： 假设 ideal ranking 的情况下DCG 为1，那么其他ranking 的DCG 除上ideal ranking 的DCG值即为该ranking 下的NDCG 值。
 
-排序模型：
+## 排序模型
+
 **[LambdaMart]** 就是把MART(GBDT) 的损失函数的梯度，替换成排序过程中pairwise 的梯度Lambda。也可参见[Visualizing LambdaMART] 了解
 
 **[RankSVM]** 使用pointwise的SVM 算法，如果$d_2$ 排在$d_1$ 前面，但相关性（点击情况）$d_1>d_2$，设$d_1,d_2$ 的特征分别为$x_1, x_2$。 则$x_1-x_2$  为正样本，$x_2- x_1$  为负样本。如此再用分类问题求解就行。
@@ -73,8 +76,9 @@ MCMC:
 
 https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo
 
-**正定矩阵**       
-:设M是n阶方阵，如果对任何非零向量$\vec z$，都有$\vec z^T M \vecz> 0$，就称M 为正定矩阵。
+## 正定矩阵
+
+:设M是n阶方阵，如果对任何非零向量$\vec z$，都有$\vec z^T M \vec z> 0$，就称M 为正定矩阵。
 
 LBFGS: [理解L-BFGS算法] 和[Numerical Optimization: Understanding L-BFGS] 这两个介绍得很详细。但是[Weighted Frobenius Norm] 还需要去了解http://mathworld.wolfram.com/FrobeniusNorm.html
 
@@ -99,12 +103,12 @@ test error = noise + variance
 - noise = \`E[(y^+ - f(x^+))^2] = E[epsilon ^2] = sigma ^ 2\`, describes how much \`y^+\` varies from \`f(x^+)\`
 
 
-## 
+
 
 [Hinge loss] 
 
-
 ## 置信区间估计
+
 设 \`X = (X_1, ..., X_n)\` 是总体 \`N(mu, sigma ^2)\` 的样本。
 
 \`mu\` 的一个良好点估计 \`bar X = 1/n sum_(i=1)^n X_i\` 其分布为 \`bar X ~ N (mu, sigma^2 / n)\` ，亦即 \` Z = (bar X  - mu) / (sigma/sqrt(n))  ~ N (0, 1)\`
@@ -137,11 +141,11 @@ KLD: [Kullback–Leibler divergence][KLD] 用于计算两个概率分布之间�
 
 
 
-**拉格朗日乘子**
+## 拉格朗日乘子
 
 要求 
 
->  maimize $f(x, y) $
+>  maxmize $f(x, y) $
 >
 >  subject to $g(x, y) = 0$
 
@@ -153,6 +157,32 @@ $$
 $$
 
 在 $\frac{\partial L}{\partial x} = 0, \frac{\partial L}{\partial y} = 0, \frac{\partial L}{\partial \lambda} = 0$  三者成立时 $\textbf L$取得极大值。
+
+
+
+## Word Embedding
+
+[t-SNE][[t-SNE] 用于降纬，相似则在高纬空间中相近，不相似则较远。相关信息可见[此处](https://lvdmaaten.github.io/tsne/) 
+
+
+
+## CTR Prediciton
+**FTRL**
+
+迭代优化公式如后，加入最后一项L1 正则项，使得最后能获取到稀疏解。
+$$
+\begin{equation}
+\mathbf{w}_{t+1} = 
+\underset{\rm \mathbf{w}}{\rm arg\ min}
+\left(
+\displaystyle\sum_{s=1}^t {\mathbf{g}_s \cdot \mathbf{w}} +
+\frac 12 \displaystyle\sum_{s=1}^t {\sigma_s||\mathbf{w} - \mathbf{w}_s||_2^2} + 
+\lambda_1||\mathbf{w}||_1\right)
+\end{equation}
+$$
+参加[理解 FTRL 算法](http://vividfree.github.io/机器学习/2015/12/05/understanding-FTRL-algorithm) 推导。
+
+**FFM** [FFM 介绍](http://tech.meituan.com/deep-understanding-of-ffm-principles-and-practices.html) 
 
 [KLD]: https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
 [Hinge loss]:https://en.wikipedia.org/wiki/Hinge_loss
@@ -169,6 +199,7 @@ $$
 [Paxos]: https://zh.wikipedia.org/wiki/Paxos%E7%AE%97%E6%B3%95
 [Parameter Estimation]: http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/BS704_Confidence_Intervals/BS704_Confidence_Intervals2.html
 [区间估计]: http://staff.ustc.edu.cn/~zwp/teach/Math-Stat/lec7.pdf
+[t-SNE]: https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding
 
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
