@@ -164,10 +164,18 @@ Boltzmann machines 中没有hidden units 的时候称为 **Hopfield nets**
    2. 符号不相同时，乘以小于1 的倍数
    3. step size 应该<= 50 或大于100 万分之一。
    4. 然后每次gradient 除以 $\sqrt{MeanSquare(w,t)} = \sqrt{0.9 MeanSquare(w,t-1) + 0.1 * gradient_{w,t}^2}$
-4. curvature informa
+4. curvature information
 
 其他相关方式可参考[An overview
  of gradient descent optimization algorithms](http://sebastianruder.com/optimizing-gradient-descent/)
+
+
+
+## Week 7
+
+
+
+
 
 **Mathjax was not loaded successfully**{:.mathjax_alt}
 
