@@ -51,3 +51,5 @@ share:
 - 社交 ![60%](http://progressed.io/bar/60)  
 - 健康 ![20%](http://progressed.io/bar/20)  
 - 旅行 ![10%](http://progressed.io/bar/10)  
+
+自己过去一年时间管理的记录 [Todoist Review](https://todoist.com/review/2016/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkU0p6Smh3cSIsInVpZCI6MTk2OTcwLCJ5ZWFyIjoyMDE2fQ.z_WhBb4bZMPssWYv2qIi7vBwYcunEKgM8UzTLU3PWew) 
