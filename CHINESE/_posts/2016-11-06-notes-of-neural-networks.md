@@ -175,7 +175,77 @@ Boltzmann machines 中没有hidden units 的时候称为 **Hopfield nets**
 
 
 
+## Week 8
 
+
+
+## Week 9
+
+增加泛化能力，防止过拟合：
+
+1. 使用更多训练样本。
+
+2. 使用合适的模型：能学到真正的规律，但不至于学到不规律的噪音。
+
+   - ​ Architecture: 限制隐层层数和单层节点数。
+   - Early Stopping 且初始化较小的权重
+   - Weight-decay: 用L1/L2，用Cross -validation 
+   - Noise: 权重或activities(X 输入用Gausian 加入噪音；上一层输出为0/1 时按概率增加噪音随机输出相反的1或者0) 增加噪音。
+
+   ​
+
+3. 使用不同类型的模型然后ensemble；抑或同类型的模型在不同训练子集上训练然后bagging
+
+4. Bayesian 法，使用同一个神经网络结构，然后使用不同的权重向量预估，最后对预估求平均。
+
+
+
+
+| Weight penalties                         | Weight constraints                      |
+| ---------------------------------------- | --------------------------------------- |
+| 对单个特征的Squared Value 进行惩罚                 | 限制weights vector的Squared length，即限制权重数量 |
+| 对于最后ERROR 影响较大的weight(对应较大gradient) ，可以较快的进行惩罚，而不是把无关的权重至0 | 防止weights exploding，防止隐层在0 左右徘徊，        |
+
+
+
+输入增加高斯噪音，效果等同于L2。假设$y^{noisy} = \sum w_i x_i + \sum w_i \epsilon_i$ 其中$\epsilon_i$ 是 $N(0, \delta_i^2)$ 这个搞死分布中采样而来。则：
+$$
+\begin{equation} \label{eq1}
+\begin{split}
+E[(y^{noisy} - t)^2] &= E[((y-t) + \sum w_i\epsilon_i)^2] \\
+&= (y-t)^2 + E[(\sum w_i\epsilon_i)^2] + 2(y-t)*\sum w_i E(\epsilon_i) \\
+&= (y-t)^2 + E[\sum w_i^2 \epsilon_i^2] \\
+&= (y-t)^2 + \sum w_i^2 \delta_i^2
+\end{split}
+\end{equation}
+$$
+其中$\epsilon_i$ 与 $\epsilon_j$ 相互独立，且 $\epsilon_i$  与$y-t$ 相互独立，则中间为0 项约掉。
+
+
+
+Bayes Theorem: 
+
+$$p(D)p(W|D) = p(W, D) = p(W)p(D|W)$$ 
+
+$$p(W|D) = \frac{p(W)p(D|W)}{p(D)}$$
+
+其中 $p(W,D)$ 为联合概率。$p(W)$ 为权重的先验概率
+
+maximize likelihood 等价于 minimize netative log probs，则有
+
+$p(w) = \frac{1}{\sqrt{2\pi\delta}} e^{-\frac{w^2}{2\delta_w^2}}$ ==> $-\text{log} p(w) =\frac{w^2}{2\delta_w^2} + k $
+其中k 未常数，则Bayesian 下的loss 
+$$
+\begin{equation} \label{eq2}
+\begin{split}
+-log\ p(W|D) &= -log\ p (D|W) -log\ p(W) + log\ p(D) \\
+&= \frac{\sum_c{(y_c-t_c)^2}}{2\delta_D^2} + k1 + \frac{\sum_i{w_i^2}}{2\delta_W^2} + k2 + k_D \\
+&= 2\delta_D^2 * (RSS + \frac{\delta_D^2}{\delta_W^2} \sum w_i^2) + K\\
+\end{split}
+\end{equation}
+$$
+
+实际上跟一般的loss function 也等价，后面项也就L2
 
 **Mathjax was not loaded successfully**{:.mathjax_alt}
 
