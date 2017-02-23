@@ -84,9 +84,9 @@ partial derivative ?
 ###  Tree 
 Tree Early stopping 注意
 
-- 树深度多大；
-- 叶子的节点数量太小；
-- 每次split 带来的增益得有一个阀值；
+-   树深度多大；
+-   叶子的节点数量太小；
+-   每次split 带来的增益得有一个阀值；
     > do not consider any split that does not cause a sufficient decrease in classification error
 
 如果有missing value，处理重点还是看覆盖度:
@@ -110,7 +110,7 @@ Tree Early stopping 注意
     - compute coefficients \`\hat w _t = 0.5 ln ((1-weightederro\r(f_t))/(weightederro\r(f_t)))\`
     - recompute weights \`\alpha _i *= e^( (-1)^(P(f_t(x_i) -= y_i)) hat w_t) \`, where \`P(f_t(x_i) -= y_i) = 0 or 1\`
     - 每一轮归一化保证\`sum alpha_i -= 1\`    
-其中weighted error 就是分类分错的比例。
+      其中weighted error 就是分类分错的比例。
 
 
 其实整个过程中，样本的权重变化就是这样的：
@@ -129,6 +129,29 @@ SGD 过程中，权重一定要用过去T 份数据迭代的平均，而不是�
 
 - KD-tree 低纬度，精确度高。k-NN 时通常表现好，但维度超过2 就不太理想了。（KD-Tree 的每个节点会记录分裂的特征及数值，以及其子节点的值域范围）
 - LSH 高纬度，会损失一定精确度。
+
+**K-means 思路**
+
+1. 初始化各类centroids
+2. 把每个新的点放到最近的centroid
+3. 完成所有点的分配后，重新计算centroid
+4. 重复迭代
+
+**LDA** 中，每个word 都会在其topic 得到一个score；每个topic 在document 上也有不同分布。
+
+- 输入：corpus 中每个doc 对应的words 集合。
+
+
+- 输出：corpus-wide 的topic 分布；每个word 的topic；每个doc 的topic 占比。
+
+
+
+**EM 算法**
+
+- E-step: estimate cluster responsibilities $$\hat r_{ik} = \frac{\hat \pi_k N(x_i | \hat \mu_k, \hat \Sigma _k)}{\sum _{j=1}^K\hat \pi_j N(x_i | \hat \mu_j, \hat \Sigma _j}$$
+- M-step: maximize likelihood over parameters $$  \hat \pi_k , \hat \mu_k, \hat \Sigma _k | {\hat r_{ik}, x_i} $$
+
+
 
 **Mathjax was not loaded successfully**{:.mathjax_alt} 
 {% comment %}
