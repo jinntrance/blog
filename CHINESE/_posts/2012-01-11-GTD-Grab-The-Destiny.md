@@ -1,7 +1,8 @@
 ---
 layout: post
 title: GTD:Grab The Destiny
-tags: [LIFE, GTD, MANAGEMENT]
+tags: [GTD]
+categories: [时间管理]
 date: 2012-01-11T10:41:21+0800
 
 ---
@@ -12,9 +13,9 @@ date: 2012-01-11T10:41:21+0800
 
 曾经一度使用纸质版notebook来做GTD和Calendar，后来也曾热血的想买个Moleskine本本来做，不过这。若用纸质的GTD，可以参照如下资料：
 
- *  [Moleskine的GTD应用][Moleskine_GTD]，[设计自用的GTD笔记本][GTD]；
- *  [时间堂][Link 1]里都是做GTD的公子自己做的本子。  
-    
+*  [Moleskine的GTD应用][Moleskine_GTD]，[设计自用的GTD笔记本][GTD]；
+*  [时间堂][Link 1]里都是做GTD的公子自己做的本子。  
+
 
 做纸质版的GTD优点是成本低、不易遗漏、而且受干扰小，一年下来看着自己把做GTD的notebook和日历本写得满满的还是有那么些许卑微的成就感的；缺点便是及时调整Tasks不方便。后面，我主要讲讲自己现在用着比较顺的[doit.im][]和Google Calendar吧。
 
@@ -26,22 +27,22 @@ GTD，主要还是帮自己更有效的做事情，而这事情当然也包括�
 
 ![gtd2] 
 
-1.  Collect 尽最大可能收集要做的事情,放到Inbox里。具体的事儿如：查火车票余票、给家里面打电话、1h后开会、新年想读上50本好书等；突生的想法比如抽风的想学藏语。
-2.  Process&Organize 先把任务分类并处理成不能再细分的Tasks，把不放在文件夹Today、Scheduled、Someday、Waiting的Tasks都放Next文件夹：查余票（Tasks，Less than 2 minutes，Context: Computer,Priority:middle）、打电话（Tasks，Priority:High）、开会（Scheduled，一般我放Google Calendar上）、读书（Project）、学藏语（Someday）。
-3.  Do 一般少于2min的立刻就做掉，这样事情不会堆积。其实只要5min内能搞定的我都立即处理了。
-    
+1.   Collect 尽最大可能收集要做的事情,放到Inbox里。具体的事儿如：查火车票余票、给家里面打电话、1h后开会、新年想读上50本好书等；突生的想法比如抽风的想学藏语。
+2.   Process&Organize 先把任务分类并处理成不能再细分的Tasks，把不放在文件夹Today、Scheduled、Someday、Waiting的Tasks都放Next文件夹：查余票（Tasks，Less than 2 minutes，Context: Computer,Priority:middle）、打电话（Tasks，Priority:High）、开会（Scheduled，一般我放Google Calendar上）、读书（Project）、学藏语（Someday）。
+3.   Do 一般少于2min的立刻就做掉，这样事情不会堆积。其实只要5min内能搞定的我都立即处理了。
+
      *  Context，主要是把一些条件约制而把事情分类，比如有些要用电脑、有些要在办公室完成、有些要在住的地方完成；这样批处理事情更有效率。                
      *  Priority，分
          - High(urgent&important)
          - Middle(not urgent,but important)
          - Low(urgent,but not important)。
          - 其实严格说来还有 not urgent and not important，这类事情警惕着不要做的好。
-         
+
         比如给家里面人电话，it's urgent and important；读书，it's not urgent but important；开会，it's urgent but not important。我们大多数被urgent之事牵着鼻子走，而且urgent but not important之事比not urgent but important之事做得多得多。长远看来，应多做important之事而非urgent之事，这也是这样排Priority的原因，因按照优先级来做事更合理。                
      *  Project，读书就算一个Project，还需要详细计划比如读哪些书、每月争取读多少、作读书笔记的Tasks等。             
      *  Someday，是放这今后某一天做的。这个也需要及时回顾，说不定那天你就有精力把它变成一个Project并实行下去。                
-    
-4.  Review 通过查看Completed文件夹可以回顾这周、这一个月做GTD的情况，总结并提高。
+
+4.   Review 通过查看Completed文件夹可以回顾这周、这一个月做GTD的情况，总结并提高。
 
 此外，doit.im能和Google Calendar同步的，挺方便，毕竟自己在doit.im里设定，用Google Calendar来做提醒。
 

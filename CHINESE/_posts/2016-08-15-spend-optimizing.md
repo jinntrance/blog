@@ -2,8 +2,8 @@
 layout: post
 title: "广告预算优化"
 modified: 2016-08-15 17:12:52 +0800
-tags: [广告系统,Ads System, Pacing]
-categories: []
+tags: [竞价机制,Auction]
+categories: [计算广告]
 image:
   feature: 
   credit: 

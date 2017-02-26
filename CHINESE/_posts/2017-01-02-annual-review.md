@@ -2,8 +2,8 @@
 layout: post
 title: "2016 記"
 modified: 2017-01-02 17:21:20 +0800
-tags: [Planning]
-categories: []
+tags: [总结规划]
+categories: [日有微进]
 mathjax: 
 mermaid: 
 image:

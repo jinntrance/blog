@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 從惡如崩
-tags: [LIFE, PLAN]
+tags: [总结规划]
+categories: [日有微进]
 date: 2014-01-04T02:34:51+0800
 
 ---

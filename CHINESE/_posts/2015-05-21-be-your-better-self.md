@@ -2,7 +2,8 @@
 layout: post
 title: "Be Your Better Self"
 modified: 2015-05-21 22:43:00 +0800
-tags: [LIFE]
+tags: [若有所思]
+categories: [日有微进]
 image:
   feature: 
   credit: 

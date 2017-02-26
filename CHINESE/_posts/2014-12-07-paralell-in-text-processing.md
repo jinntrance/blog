@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Linux或Mac下的并行(parallel)文本处理
-tags: [MAC, LINUX, PARALLEL, TECHNICAL]
+tags: [并发处理]
+categories: [奇技淫巧]
 date: 2014-12-07T23:19:10+0800
 
 ---
@@ -20,13 +21,13 @@ date: 2014-12-07T23:19:10+0800
 Mac装起来比较简单
 
     brew install parallel
-    
+
 就可以了，其他系统可以参照上面的链接的`Downloading GNU Parallel`部分。
 
 ### 使用
 
 使用可参照`parallel --help`，下面讲几个常用的。
-    
+​    
 `./parallel -k --no-notice -j 16 --pipe -q`
 
 其中参数：
@@ -35,7 +36,7 @@ Mac装起来比较简单
     `-q`表示-quote，就是后面跟的命令中如果包含特殊字符，不必用转义符`\`，
     `--pipe`就是丛stdin里读取并分割处理，
     `--no-notice`就是为了让parallel不唠叨。
-    
+
 ### 例子
 
 现在给一个word count的例子吧

@@ -2,7 +2,8 @@
 layout: post
 title: "倾听的重要性"
 modified: 2016-03-26 23:07:33 +0800
-tags: [THOUGHT]
+tags: [若有所思]
+categories: [日有微进]
 image:
   feature: 
   credit: 

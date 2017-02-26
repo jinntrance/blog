@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 讀書訪友
-tags: [LIFE]
+tags: [若有所思]
+categories: [读书不倦]
 date: 2012-01-25T23:27:08+0800
 
 ---

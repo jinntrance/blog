@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 时间碎片管理
-tags: [MANAGEMENT, LIFE]
+tags: [时间碎片]
+categories: [时间管理]
 date: 2010-08-13T23:15:00+0800
 
 ---

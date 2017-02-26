@@ -1,7 +1,8 @@
 ---
 layout: post
 title: bachelor will-be or anything else
-tags: [LIFE]
+tags: [若有所思]
+categories: [生活点滴]
 date: 2009-01-05T22:02:00+0800
 
 ---

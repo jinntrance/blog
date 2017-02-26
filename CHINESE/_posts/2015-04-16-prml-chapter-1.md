@@ -2,7 +2,8 @@
 layout: post
 title: "PRML Chapter 1"
 modified: 2015-04-16 19:50:34 +0800
-tags: [DM, ML, MACHINE LEARNING, 机器学习, TECHNICAL]
+tags: [勤学札记]
+categories: [机器学习]
 
 ---
 
@@ -71,8 +72,8 @@ x 落在(a, b) 区间内的概率为：
 
 > product rule: \` p(x, y) = p(y|x)p(x) \`
 
-> The probability that x lies in the interval \`(− oo,z) \` is given by the *cumulative distribution function* defined by\` P (z) = int_(- oo)^z p(x) dx \` which satisfies P′(x) = p(x).
-> If x is a discrete variable, then p(x) is sometimes called a *probability mass function* because it can be regarded as a set of ‘probability masses’ concentrated at the allowed values of x.
+> The probability that x lies in the interval \`(− oo,z) \` is given by the *cumulative distribution function* defined by\` P (z) = int_(- oo)^z p(x) dx \` which satisfies P′(x) = p(x).
+> If x is a discrete variable, then p(x) is sometimes called a *probability mass function* because it can be regarded as a set of ‘probability masses’ concentrated at the allowed values of x.
 
 
 ### Expectations and covariances
@@ -83,14 +84,14 @@ x 落在(a, b) 区间内的概率为：
 
 >  \`bbb E [f]= int p(x)f(x)dx. \`
 
-*conditional expectation* \` bbb E_x[f|y] = sum_x p(x|y)f(x) \`The *variance* of f(x) is defined by
- \` var[f] = bbb E[(f(x)− bbb E[f(x)])^2] = bbb E[f(x)^2] − bbb E[f(x)]^2\`
- 
-> covariance expresses the extent to which *x* and *y* vary together
+*conditional expectation* \` bbb E_x[f|y] = sum_x p(x|y)f(x) \`The *variance* of f(x) is defined by
+ \` var[f] = bbb E[(f(x)− bbb E[f(x)])^2] = bbb E[f(x)^2] − bbb E[f(x)]^2\`
+
+> covariance expresses the extent to which *x* and *y* vary together
 
 
 - 单一变量 \`cov[x, y] = bbb E_(x,y) [{x − bbb E[x]} {y − bbb E[y]}] = E\_(x,y) [xy] − E[x]E[y] \`
-- 向量 \`cov[vec x, vec y] = E\_(x,y){x − E[x]}{y^T − E[y^T]}= E\_(x,y)[xy^T] − E[x]E[y^T].\`
+- 向量 \`cov[vec x, vec y] = E\_(x,y){x − E[x]}{y^T − E[y^T]}= E\_(x,y)[xy^T] − E[x]E[y^T].\`
 
 ### Bayesian probablities
 

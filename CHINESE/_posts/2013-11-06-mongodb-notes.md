@@ -1,7 +1,8 @@
 ---
 layout: post
 title: group by hour in mongodb按小时聚集
-tags: [TECHNICAL]
+tags: [困而知之]
+categories: [日有微进]
 date: 2013-11-06T22:17:49+0800
 
 ---

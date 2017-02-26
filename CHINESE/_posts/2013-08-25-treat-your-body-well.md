@@ -2,7 +2,8 @@
 layout: post
 title: "善待自己的身體，而後竭力去追求"
 modified: 2013-08-25 20:05:21 +0800
-tags: [REVIEW]
+tags: [书评]
+categories: [读书不倦]
 
 ---
 

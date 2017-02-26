@@ -2,7 +2,8 @@
 layout: post
 title: "Intro to NLP 笔记"
 modified: 2015-10-23 20:46:22 +0800
-tags: [NLP,ML,Coursera]
+tags: [NLP,勤学札记]
+categories: [机器学习]
 image:
   feature: 
   credit: 
@@ -15,9 +16,9 @@ share:
 之前接触的NLP 知识都不系统借着学习《[Introduction to Natural Language Processing](https://class.coursera.org/nlpintro-001/)》 的机会，系统的了解了解。另外可参考的课程包括：
 
 - [Natural Language Processing
-by Dan Jurafsky, Christopher Manning](https://class.coursera.org/nlp/lecture) 
+  by Dan Jurafsky, Christopher Manning](https://class.coursera.org/nlp/lecture) 
 - [Natural Language Processing
-by Michael Collins](https://www.coursera.org/course/nlangp) 高级的版本
+  by Michael Collins](https://www.coursera.org/course/nlangp) 高级的版本
 
 ## Intro
 
@@ -26,8 +27,14 @@ by Michael Collins](https://www.coursera.org/course/nlangp) 高级的版本
 NLP 的难点，除了理解语法语义，歧义是其另一大难点，而歧义种类分如下几种：
 
 > 
-- Morphological: Joe is quite impossible. Joe is quite important.- Phonetic: Joe’s finger got number.- Part of speech: Joe won the first round.- Syntactic: Call Joe a taxi.- Pp attachment: Joe ate pizza with a fork / with meatballs / with Samantha / with pleasure.- Sense: Joe took the bar exam.- Modality: Joe may win the lottery.- Subjectivity: believes that stocks will rise.
-- Cc attachment: likes ripe apples and pears.
+- Morphological: Joe is quite impossible. Joe is quite important.
+- Phonetic: Joe’s finger got number.
+- Part of speech: Joe won the first round.
+- Syntactic: Call Joe a taxi.
+- Pp attachment: Joe ate pizza with a fork / with meatballs / with Samantha / with pleasure.
+- Sense: Joe took the bar exam.
+- Modality: Joe may win the lottery.
+- Subjectivity: believes that stocks will rise.
 - Negation: likes his pizza with no cheese and tomatoes.
 - Referential: yelled at Mike. He had broken the bike. yelled at Mike. He was angry at him.
 - Reflexive: John bought him a present. John bought himself a present.
@@ -50,8 +57,13 @@ NLP 的难点，除了理解语法语义，歧义是其另一大难点，而歧�
 还有比较重要的是语音演变规则：
 > **Grimm’sLaw**
 >
-- Voiceless stops turn into voiceless fricatives- Voiced stops become voiceless stops- Voiced aspirated stops change to voiced stops or fricatives
-> **Examples**> - Ancient Greek: πούς, Latin: pēs, Sanskrit: pāda –  English: foot, German: Fuß, Swedish: fot- Ancient Greek: κύων, Latin: canis, Welsh: ci –  English: hound, Dutch: hond, German: Hund
+- Voiceless stops turn into voiceless fricatives
+- Voiced stops become voiceless stops
+- Voiced aspirated stops change to voiced stops or fricatives
+> **Examples**
+>
+> - Ancient Greek: πούς, Latin: pēs, Sanskrit: pāda –  English: foot, German: Fuß, Swedish: fot
+> - Ancient Greek: κύων, Latin: canis, Welsh: ci –  English: hound, Dutch: hond, German: Hund
 
 接着介绍了世界语言的几个链接：
 

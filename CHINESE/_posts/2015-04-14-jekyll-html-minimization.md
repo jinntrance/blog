@@ -2,7 +2,8 @@
 layout: post
 title: "Jekyll 页面加载优化"
 modified: 2015-04-14 20:41:16 +0800
-tags: [JEKYLL, OPTIMISATION]
+tags: [写作]
+categories: [生活点滴]
 
 ---
 

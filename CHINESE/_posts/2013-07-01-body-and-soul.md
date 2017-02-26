@@ -1,7 +1,8 @@
 ---
 layout: post
 title: body and soul
-tags: [LIFE, PERSERVERANCE, THOUGHT]
+tags: [若有所思]
+categories: [读书不倦]
 date: 2013-07-01T20:15:00+0800
 
 ---

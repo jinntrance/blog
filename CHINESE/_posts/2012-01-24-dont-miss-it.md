@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 既往不念
-tags: [LIFE, LOVE]
+tags: [逝者如斯]
+categories: [生活点滴]
 date: 2012-01-24T23:26:30+0800
 
 ---

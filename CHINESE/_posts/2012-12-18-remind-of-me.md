@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 闲谈几句
-tags: [THOUGHT, LIFE]
+tags: [若有所思]
+categories: [日有微进,生活点滴]
 date: 2012-12-18T00:54:22+0800
 
 ---

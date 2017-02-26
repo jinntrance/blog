@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Notes of ML"
+title: "机器学习零碎笔记"
 modified: 2015-06-03 11:23:16 +0800
-tags: [机器学习]
+tags: [勤学札记]
+categories: [机器学习]
 
 ---
 

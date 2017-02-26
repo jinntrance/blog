@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 在世
-tags: [LIFE, THOUGHT]
+tags: [若有所思]
+categories: [日有微进,生活点滴]
 date: 2012-07-25T02:14:56+0800
 
 ---

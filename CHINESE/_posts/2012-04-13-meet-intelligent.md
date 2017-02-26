@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 见贤思齐
-tags: [LIFE, THOUGHT]
+tags: [若有所思]
+categories: [生活点滴]
 date: 2012-04-13T18:52:55+0800
 
 ---

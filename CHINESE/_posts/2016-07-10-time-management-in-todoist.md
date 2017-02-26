@@ -2,7 +2,8 @@
 layout: post
 title: "使用Todoist 进行时间/任务管理"
 modified: 2016-07-10 11:56:53 +0800
-tags: [Time Management, 时间管理, Todoist, GTD, ZTD]
+tags: [GTD,番茄钟,Todoist]
+categories: [时间管理]
 image:
   feature: 
   credit: 
@@ -33,11 +34,11 @@ share:
 ## 目标设定
 
 更长期的计划和回顾此处就不再赘述了。这里主要着眼于短期及当日计划安排，且主要使用四象限确定工作优先级： P1 > P2 > P3 > P4 == 0。而这高优先级当然是你最想要的产出，保证了这个完成才能保证effectiveness。
- 
-Priority|Urgent|not Urgent
- :--: | :--: | :--: 
-Important| **P1** | *P2* |
-not important| P3 | ~~P4~~ |
+
+|   Priority    | Urgent | not Urgent |
+| :-----------: | :----: | :--------: |
+|   Important   | **P1** |    *P2*    |
+| not important |   P3   |   ~~P4~~   |
 
 实际上，目标设定阶段也许要关注[SMART]: Specific, Measurable, Achievable, Relevant, Time-bound。
 
@@ -58,7 +59,7 @@ not important| P3 | ~~P4~~ |
 **TIPS**
 
 > 其实个人觉着Todoist 最好的一点是可以做语言解析从而设定对应的时间，只需要在添加任务是一并写入任务中即可。
-> 
+>
 > - 比如设定具体的时间：`tomorrow after noon` 或 `7/11 at 12` 即可。
 > - 或者是固定时间重复的事情比如`read a book every three workdays`
 

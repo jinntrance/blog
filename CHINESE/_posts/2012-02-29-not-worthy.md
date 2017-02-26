@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 鸡肋，弃之。
-tags: [LIFE]
+tags: [若有所思]
+categories: [日有微进]
 date: 2012-02-29T23:35:30+0800
 
 ---

@@ -2,7 +2,8 @@
 layout: post
 title: "感受那迟到的真实"
 modified: 2012-08-15 11:21:21 +0800
-tags: [REVIEW]
+tags: [书评]
+categories: [读书不倦]
 
 ---
 

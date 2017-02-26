@@ -2,7 +2,8 @@
 layout: post
 title: "拯救手机瘾患者"
 modified: 2016-07-24 22:41:48 +0800
-tags: [手机]
+tags: [时间日志]
+categories: [时间管理]
 image:
   feature: 
   credit: 

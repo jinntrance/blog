@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Spark笔记
-tags: [TECHNICAL, 数据挖掘, SPARK, SCALA]
+tags: [分布式计算]
+categories: [机器学习]
 date: 2014-06-18T17:30:34+0800
 
 ---

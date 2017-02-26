@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Willpower
-tags: [LIFE, WILLPOWER]
+tags: [若有所思]
+categories: [读书不倦]
 date: 2013-03-19T01:39:56+0800
 
 ---

@@ -2,7 +2,8 @@
 layout: post
 title: "Algorithms: Design and Analysis, Part 1"
 modified: 2015-10-24 17:58:40 +0800
-tags: [Algorithms]
+tags: [勤学札记]
+categories: [日有微进]
 image:
   feature: 
   credit: 
@@ -60,10 +61,14 @@ share:
 **Closest Pair** 
 找数组中最相近的两个数（排序n log n，找相近 log n）。找平面中最接近的两个点等(D&C)。
 
-Make copies of points sorted by x-coordinate (Px) and by y-coordinate (Py)[O(nlog(n)) Time]
+Make copies of points sorted by x-coordinate (Px) and by y-coordinate (Py)[O(nlog(n)) Time]
 
-1. Let Q=le] half of P, R=right half of P. Form Qx, Qy, Rx, Ry [takes O(n) time]2. (p1,q1)=ClosestPair(Qx,Qy) 一部分最近点3. (p2,q2)=ClosestPair(Rx,Ry) 另一部分得到的最近点
-4. let $\delta = min ({d(p1,q1), d(p2,q2)})$5. (p3,q3)=$ClosestSplitPair(Px,Py, \delta)$ 如果最近点一个落在Q 内，一个落在R 内，通过均值的$\delta $ 范围内 $[\bar x-\delta, \bar x + \delta]$ 找最近点6. Return best of(p1,q1),(p2,q2),(p3,q3)  
+1. Let Q=le] half of P, R=right half of P. Form Qx, Qy, Rx, Ry [takes O(n) time]
+2. (p1,q1)=ClosestPair(Qx,Qy) 一部分最近点
+3. (p2,q2)=ClosestPair(Rx,Ry) 另一部分得到的最近点
+4. let $\delta = min ({d(p1,q1), d(p2,q2)})$
+5. (p3,q3)=$ClosestSplitPair(Px,Py, \delta)$ 如果最近点一个落在Q 内，一个落在R 内，通过均值的$\delta $ 范围内 $[\bar x-\delta, \bar x + \delta]$ 找最近点
+6. Return best of(p1,q1),(p2,q2),(p3,q3)  
 
 ## Week 2
 
@@ -118,14 +123,14 @@ $$
 
 ### Probability
 
-- 设$\Omega$ 为可能的结果全集（Sample Space）
-- 某个事件S，就可以是$\Omega$ 的子集
-- Randome Variable $X$：就是将$\Omega $映射到实数空间的函数
-- 期望\`E[X] = sum_(i in Omega) X(i) * p(i)\`
-- Linearity of Expectation:
+-   设$\Omega$ 为可能的结果全集（Sample Space）
+-   某个事件S，就可以是$\Omega$ 的子集
+-   Randome Variable $X$：就是将$\Omega $映射到实数空间的函数
+-   期望\`E[X] = sum_(i in Omega) X(i) * p(i)\`
+-   Linearity of Expectation:
     > Let $X_1,...,X_n$ be random variables defined on $\Omega$ Then: \`E[sum\_{j=1}^n X_j] =  sum_{j=1}^n E[X_j]\`
-- Conditional Probability: \`P[X|Y] = (P[X nn Y]) / (P[Y])\`
-- if A,B are independent, then $E[AB] = E[A]*E[B]$
+-   Conditional Probability: \`P[X|Y] = (P[X nn Y]) / (P[Y])\`
+-   if A,B are independent, then $E[AB] = E[A]*E[B]$
 
 
 
@@ -150,7 +155,7 @@ $$
 - logically break A into n/5 groups of size 5 each
 - sort each group (e.g., using Merge Sort)
 - copy n/5 medians (i.e., middle element of each sorted group)
-into new array C
+  into new array C
 - recursively compute median of C (!) 
 - return this as pivot
 
@@ -174,7 +179,7 @@ into new array C
 #### Cuts of Graphs
 
 > a **cut** of a _graph (V, E)_ is a partition of V into two non-empty sets A and B.
-> 
+>
 > the **crossing edges** of a **cut(A, B)** are those with: 
 >
 - the one endpoint in each of (A, B) [undirected]
@@ -189,7 +194,7 @@ into new array C
 
 ### Random Contraction
 >
-While there are more than 2 vertices:
+>While there are more than 2 vertices:
 >
 - pick a remaining edge (u,v) uniformly at random 
 - merge (or “contract” ) u and v into a single vertex

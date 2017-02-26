@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 执手偕老..
-tags: [LIFE]
+tags: [若有所思]
+categories: [生活点滴]
 date: 2010-04-05T22:25:00+0800
 
 ---

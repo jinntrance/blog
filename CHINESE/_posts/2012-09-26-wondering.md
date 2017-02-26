@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 近日閒緒
-tags: [LIFE, 自省]
+tags: [若有所思]
+categories: [日有微进]
 date: 2012-09-26T02:39:55+0800
 
 ---

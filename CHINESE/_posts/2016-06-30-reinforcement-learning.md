@@ -2,7 +2,8 @@
 layout: post
 title: "Reinforcement Learning"
 modified: 2016-06-30 11:23:57 +0800
-tags: [Reinforcement Learning, Deep Learning]
+tags: [深度学习]
+categories: [机器学习]
 image:
   feature: 
   credit: 

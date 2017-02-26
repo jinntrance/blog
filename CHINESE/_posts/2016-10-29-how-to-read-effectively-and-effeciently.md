@@ -3,7 +3,7 @@ layout: post
 title: "如何有效阅读一本书"
 modified: 2016-10-29 23:52:38 +0800
 tags: [阅读]
-categories: []
+categories: [读书不倦]
 mathjax: true
 mermaid: true
 image:

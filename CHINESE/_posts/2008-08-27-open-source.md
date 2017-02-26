@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 支持国软，支持开源！
-tags: [LIFE, TECHNICAL]
+tags: [笔耕不辍]
+categories: [生活点滴]
 date: 2008-08-27T21:54:00+0800
 
 ---

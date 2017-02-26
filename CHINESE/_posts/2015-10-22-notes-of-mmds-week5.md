@@ -2,7 +2,8 @@
 layout: post
 title: "MMDS 笔记 week 5&6&7"
 modified: 2015-10-22 19:46:00 +0800
-tags: [MMDS,ML]
+tags: [勤学札记]
+categories: [机器学习]
 image:
   feature: 
   credit: 
@@ -25,9 +26,9 @@ share:
 - Cosine distance 向量之间的距离
 - **Mahalanobis distance**: 表征一个点跟某centroid 的距离。
 > 
-  * Cluster C has centroid $(c_1,...,c_d)$ in d dimensions and standard deviations $(\sigma_1,...,\sigma_d)$. Point $P =(x_1,...,x_d)$.
-  * Normalized distance in dimension i:$y_i = (x_i – c_i)/\sigma_i$
-  * MD of point P from cluster C is $\sqrt{\sum\_{i=1}^d y_{i}^2}$
+* Cluster C has centroid $(c_1,...,c_d)$ in d dimensions and standard deviations $(\sigma_1,...,\sigma_d)$. Point $P =(x_1,...,x_d)$.
+* Normalized distance in dimension i:$y_i = (x_i – c_i)/\sigma_i$
+    * MD of point P from cluster C is $\sqrt{\sum\_{i=1}^d y_{i}^2}$
 
 聚类Cluster 中的一些概念：
 
@@ -127,13 +128,17 @@ argmax_(w) gamma = s.t. forall i,y_i (vec w * vec x_i + b) >= gamma
 
 上面这种情况，还是所有数据都是可分的。如果不是，就需要引入Regulization Term 了。
 
-\`min\_(w,b) 1/2 ||w||^2 + C sum_(i=1)^n       xi_i, s.t. forall i,y_i  (w x_i + b) >= 1- xi_i\`其中$\xi_i$ 惩罚项，如果i 被分对，则$\xi_i = 0$ 否则$\xi_i=\gamma + distance(x_i, L)$ 。其中上式为Hinge Loss，跟Android Ng 的ML课程讲的[SVM]({{ site.url }}{% post_url 2015-08-09-ml-notes %}#svm) 提到的也就比较一致了。 更确切的SVM 的目标函数应为：
-\`f(w,b) = 1/2 sum\_(j=1)^d (vec w^j)2 +  C sum\_(i=1)^n max{0,1 - y\_i(sum_(j=1)^d vec w^j vec x_i^j +b)\`
-然后用[(B)GD 或 SGD](({{ site.url }}{% post_url 2015-08-09-ml-notes %}#large-scale-ml)) 即可求解$w,b$
-## Decision Tree
-先说Information Gain的概念：
-> IG(Y \| X) : We must transmit Y over a binary link. How many bits on average would it save us if both ends of the line knew X?
-DT 建树时有两个问题需要考虑：- 如何最最佳的分裂节点？IG最大的
+\`min\_(w,b) 1/2 ||w||^2 + C sum_(i=1)^n      
+xi_i, s.t. forall i,y_i  (w x_i + b) >= 1- xi_i\`
+
+其中$\xi_i$ 惩罚项，如果i 被分对，则$\xi_i = 0$ 否则$\xi_i=\gamma + distance(x_i, L)$ 。其中上式为Hinge Loss，跟Android Ng 的ML课程讲的[SVM]({{ site.url }}{% post_url 2015-08-09-ml-notes %}#svm) 提到的也就比较一致了。 更确切的SVM 的目标函数应为：
+\`f(w,b) = 1/2 sum\_(j=1)^d (vec w^j)2 +  C sum\_(i=1)^n max{0,1 - y\_i(sum_(j=1)^d vec w^j vec x_i^j +b)\`
+然后用[(B)GD 或 SGD](({{ site.url }}{% post_url 2015-08-09-ml-notes %}#large-scale-ml)) 即可求解$w,b$
+
+## Decision Tree
+先说Information Gain的概念：
+> IG(Y \| X) : We must transmit Y over a binary link. How many bits on average would it save us if both ends of the line knew X?
+> DT 建树时有两个问题需要考虑：- 如何最最佳的分裂节点？IG最大的
 - 何时停止分裂？IG小于某个阀值，或叶子节点上的数据点数量达到下限数量了，或者叶子节点总数达到一定值。
 - 叶子节点值怎么得？分类分题，就是多数的分类；回归问题：可求平均；或用线性回归再针对叶子上的样本拟合一下。
 
@@ -146,19 +151,19 @@ Entropy, \`H(X) = - sum_(j=1)^m p_j log p_j\` 其实反映了X 中各元素相�
 SVM 和DT 对比
 
 **SVM**
-- Classification: Usually only 2 classes
+- Classification: Usually only 2 classes
 - Real valued features: (no categorical ones)
 - Tens/hundreds of thousands of features
 - Very sparse features
 - Simple decision boundary. No issues with overfitting
-  
+
 Example applications
 
 - Text classification
 - Spam detection
 - Computer vision
-**Decision trees**
-- Classification & Regression: Multiple (~10) classes
+  **Decision trees**
+- Classification & Regression: Multiple (~10) classes
 - Real valued and categorical features
 - Few (hundreds) of features
 - Usually dense features
@@ -167,7 +172,7 @@ Example applications
 Example applications
 
 - User profile classification
-- Landing page bounce prediction
+- Landing page bounce prediction
 ## MAP-REDUCE Algorithms
 
 MR 里面重点考虑两个方面
@@ -186,12 +191,16 @@ MR 里面重点考虑两个方面
 
 ## LSH
 
-> A family **H** of hash functions is said to be $(d_1,d_2,p_1,p_2)$-sensitive if for any x and y in S:> 1. If $d(x,y) < d_1$, then the probability over all h in H, that h(x) = h(y) is at least $p_1$.2. If $d(x,y) > d_2$, then the probability over all h in H, that h(x) = h(y) is at most $p_2$.
-如此，我们也可以用AND 和OR 的形式分别定义 $(d_1,d_2,p_1^r,p_2^r)$-sensitive 和 $(d_1,d_2,1-(1-p_1)^b,1-(1-p_2)^b)$-sensitive
- 同时，也可以组合AND-OR的使用得到新的形式。
- 
+> A family **H** of hash functions is said to be $(d_1,d_2,p_1,p_2)$-sensitive if for any x and y in S:
+>
+>  1. If $d(x,y) < d_1$, then the probability over all h in H, that h(x) = h(y) is at least $p_1$.
+>  2. If $d(x,y) > d_2$, then the probability over all h in H, that h(x) = h(y) is at most $p_2$.
+>
+> 如此，我们也可以用AND 和OR 的形式分别定义 $(d_1,d_2,p_1^r,p_2^r)$-sensitive 和 $(d_1,d_2,1-(1-p_1)^b,1-(1-p_2)^b)$-sensitive
+>  同时，也可以组合AND-OR的使用得到新的形式。
+
 设两个串的Jacquard Distance为$J = E/(E+C)$，E、C 分别表示edit distance和共串的长度。而若一串长L，则另一串长M应：\`L*(1-J)<=M<=L/(1-J)\`
- 
+
 所以，通常，我们对string就下取整取\`|\__ JL+1 __|\` 个prefix chars来index，放入对应的hash buckets 中，查找的时候就可以根据prefix 对应的buckets 进行查找。
 
 假设，字符串probe string $s$(长度L)和目标匹配t中，最先相等的是$s[i] == t[j]$(索引从1 开始)，那么两者的edit distance 一定有\`E>=i+j-2\`，而最长子串LCS 长度$C<=L- i +1$

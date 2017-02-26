@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 给自己多一点“暗”时间
-tags: [TIME, 时间管理, LIFE, MANAGEMENT]
+tags: [书评]
+categories: [时间管理]
 date: 2012-11-20T02:26:45+0800
 
 ---

@@ -2,7 +2,8 @@
 layout: post
 title: "2015 记"
 modified: 2016-01-01 11:39:04 +0800
-tags: [Planning]
+tags: [规划总结]
+categories: [日有微进]
 
 ---
 

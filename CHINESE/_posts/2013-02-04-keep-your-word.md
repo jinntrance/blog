@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 說好的呢
-tags: [LIFE, THOUGHT]
+tags: [若有所思]
+categories: [日有微进,生活点滴]
 date: 2013-02-04T01:04:55+0800
 
 ---

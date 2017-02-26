@@ -2,7 +2,8 @@
 layout: post
 title: "中国社会的未来"
 modified: 2014-03-07 01:49:00 +0800
-tags: [REVIEW, ECONOMICS]
+tags: [书评]
+categories: [读书不倦]
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "CSS竖排及显示小语种蒙满"
-tags: [FONT, FONT-FACE, CSS, MONGOLIAN]
+tags: [小语种, FONT-FACE, 蒙语]
+categories: [语言学习]
 date: 2015-04-05T00:32:30+08:00
 
 ---
@@ -83,9 +84,9 @@ TODO change the css href to support cross-domain fonts
 {% endcomment %}
 
 - 在HTML的header中加入如下代码：
-{% highlight html %}
-<link href="http://www.josephjctang.com/blog/assets/css/lang.css" rel="stylesheet" type="text/css">
-{% endhighlight %}
+  {% highlight html %}
+  <link href="http://www.josephjctang.com/blog/assets/css/lang.css" rel="stylesheet" type="text/css">
+  {% endhighlight %}
 - 在你需要支持的字体段落加入对应字体的class。蒙文为`.lang-mn`，满语为`.lang-mnc`，藏语为`.lang-bo`。横排只需再加上class`.wm-hlr`[^wm]。比如上文中的蒙文：`<em class="lang-mn"> ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ᠌ </em>`{: .lang-mn .wm-hlr .lang-en}
 
 

@@ -2,7 +2,8 @@
 layout: post
 title: "计算广告行业深耕读物"
 modified: 2016-03-20 21:30:13 +0800
-tags: [CA, Data Mining, 计算广告]
+tags: [书评]
+categories: [计算广告,读书不倦]
 image:
   feature: 
   credit: 

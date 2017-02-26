@@ -2,7 +2,8 @@
 layout: post
 title: "Notes of Machine Learning Specialization"
 modified: 2016-01-11 18:36:26 +0800
-tags: [Machine Learning, Coursera]
+tags: [勤学札记, Coursera]
+categories: [机器学习]
 
 ---
 

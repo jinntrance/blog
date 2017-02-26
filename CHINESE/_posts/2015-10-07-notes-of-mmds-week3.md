@@ -2,7 +2,8 @@
 layout: post
 title: "MMDS 笔记 week 3&4"
 modified: 2015-10-07 10:46:29 +0800
-tags: [MMDS,ML]
+tags: [MMDS,勤学札记]
+categories: [机器学习]
 image:
   feature: 
   credit: 
@@ -58,8 +59,8 @@ BigClam 就是通过包含现有点V 和边E 的网络图$G(V,E)$，来找出上
 
 用对角矩阵D($a_{ii}=d_i$) 表示每个节点的度；邻接矩阵（Adjacency Matrix）用A  表示：
 
-- n* n matrix- $A=[a\_{ij}]$, $a_{ij}=1$ if edge between node i and j
-如果一个图G 里面所有节点的度都为$d$ 那么我们叫他d-regular graph；则这种图的特征值和特征向量为$d, \vec e$，因为$A * \vec e = d * \vec e$
+- n* n matrix- $A=[a\_{ij}]$, $a_{ij}=1$ if edge between node i and j
+  如果一个图G 里面所有节点的度都为$d$ 那么我们叫他d-regular graph；则这种图的特征值和特征向量为$d, \vec e$，因为$A * \vec e = d * \vec e$
 
 那么\`L = D-A\` 就是Laplacian Matrix；则LM 的一个特征值和特征向量为$\lambda_1 = 0, \vec e$, 对于对称矩阵M， 定义
 

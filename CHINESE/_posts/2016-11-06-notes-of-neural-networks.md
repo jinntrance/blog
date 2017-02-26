@@ -2,7 +2,7 @@
 layout: post
 title: "《神经网络》课程笔记"
 modified: 2016-11-06 20:43:28 +0800
-tags: [神经网络]
+tags: [深度学习]
 categories: [机器学习]
 mathjax: true
 mermaid: true
