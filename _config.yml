@@ -35,8 +35,6 @@ owner:
   douban: jinntrance
   weibo_name: "癡人憐我半瘋癲"
 index_fullpost: false
-# disable duoshuo share by default  
-duoshuo_share: false  
 
 # Background image to be tiled on all pages
 background: 
