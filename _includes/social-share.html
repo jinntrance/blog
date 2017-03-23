@@ -7,12 +7,3 @@
     <li class="googleplus"><a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google Plus" target="_blank"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
   </ul>
 </div><!-- /.social-share -->
-{% if site.duoshuo_share %}
-<div class="ds-share" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-images="{{'favicon.png' | prepend: site.url }}" data-content="{{ page.content | truncate: 100 | strip_html }}" data-url="{{page.url | prepend: site.url}}">
-    <div class="ds-share-aside-right">
-      <div class="ds-share-aside-inner">
-      </div>
-      <div class="ds-share-aside-toggle">分享到</div>
-    </div>
-</div>
-{% endif %}

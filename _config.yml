@@ -2,8 +2,6 @@ title:            Joseph's Blog
 description:      "Le livre est l'ami de la solitude et moi."
 #to enaable disqus comments, add your username
 disqus_shortname:  jinntrance
-#to enaable duoshuo comments, add your username here
-duoshuo_shortname: 
 reading_time:     true
 words_per_minute: 200
 chars_per_minute: 600
