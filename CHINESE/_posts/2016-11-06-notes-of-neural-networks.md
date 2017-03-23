@@ -240,12 +240,26 @@ $$
 \begin{split}
 -log\ p(W|D) &= -log\ p (D|W) -log\ p(W) + log\ p(D) \\
 &= \frac{\sum_c{(y_c-t_c)^2}}{2\delta_D^2} + k1 + \frac{\sum_i{w_i^2}}{2\delta_W^2} + k2 + k_D \\
-&= 2\delta_D^2 * (RSS + \frac{\delta_D^2}{\delta_W^2} \sum w_i^2) + K\\
+&= \frac{1}{2\delta_D^2 }* (RSS + \frac{\delta_D^2}{\delta_W^2} \sum w_i^2) + K\\
 \end{split}
 \end{equation}
 $$
 
 实际上跟一般的loss function 也等价，后面项也就L2
+
+## Week 10
+
+两个模型整合：
+
+- 使用不同的模型：如神经网络和GBDT/SVM 等。
+- 都用神经网络，但用不同的网络结构(变)
+
+
+
+
+## Week 11
+
+Hopfield Network: 单个神经元只取0/1 值
 
 **Mathjax was not loaded successfully**{:.mathjax_alt}
 
