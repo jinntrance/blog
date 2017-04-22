@@ -66,7 +66,6 @@ graph LR
 - **Sigmoid Neurons** 使用sigmoid输出一个 $[0,1]$ 之间的值。
 
 
-
 ## Week 2
 
 ### Main Types of NN architecture
@@ -138,9 +137,30 @@ Boltzmann machines 中没有hidden units 的时候称为 **Hopfield nets**
 
 ##  Week 4
 
+Cognitive science 里的两个概念：
 
+> **The feature theory**: A concept is a set of semantic features.
+> –  This is good for explaining similarities between concepts.
+> **The structuralist theory**: The meaning of a concept lies in its relationshipsto other concepts.
+> –   So conceptual knowledge is best expressed as a relational graph.
+
+对于softmax $y_i = \frac{e^{z_i}}{\sum_{j \in group} e^{z_j}}$ 其梯度为 $\frac{\partial y_i}{\partial z_i} = y_i (1-y_i) $ 其中$z_i$ 为softmax group 输入
+
+而cross entropy 为 $C = - \sum_j t_j log\  y_j$  其中$t_j$ 为target value; 而梯度为 $\frac{\partial C}{\partial z_i} = \sum_j \frac{\partial C}{\partial y_i} \frac{\partial y_i}{\partial z_i} = y_i - t_i$ 
+
+对于多分类问题，如果类别太多，整个网络ouput 太多，对于softmax 非常难学。所以用binary tree 做一个hierarchical softmax，然后每次预测一层的单个节点，最后达到叶子节点上正确的值。
 
 ## Week 5
+
+object recongnition 难点：
+
+- Segmentation 物体各部分的割裂，哪些部分组合起来才是一个完整的物体？
+- Lighting 亮度的强弱影响
+- Deformation 物体的变形导致的不规则
+- Affordances 预设用途的定义。比如给人坐的就是凳子或椅子，但形态各异。
+- Viewpoint 不同视角的影响（这个问题可以用1. 冗余不变的特征；2.框出object 然后如旋转缩放等变换；3. 像CNN 的pooling；4. 不同层次使用像相机一样不同的视角？ ）
+
+Dropout, Pooling, ReLU, 输入变换等都是为了让模型泛化能力更强。
 
 ## Week 6
 
@@ -173,11 +193,34 @@ Boltzmann machines 中没有hidden units 的时候称为 **Hopfield nets**
 
 ## Week 7
 
+Language Model 中，给sequence 建模，简单得讲可以用前n 个词作为输入，输出最近的一个词，从而转化为有监督学习。
 
+Hidden Markove Models，就是不同确切状态（比如One-hot的）间的转换。
+
+RNN 的好处就是，利用了过去信息（状态），且在NN 中非线性的变化中可改变状态。
+
+NN 的初始化非常重要，最好使用学到的参数初始化NN 。
+
+RNN 非常难学，因为：
+
+- 前后向传播差别比较大：前向传播会有squashing(比如logistic )；后向传播则完全是线性的。 
+- 长序列中，梯度很容易explode or vanish，所以初始化权重得慎重。
+- RNN 层次太深了，非常早之前的信息，也就不一定能保留下来。
+
+所以比较好的几个RNN 实现：
+
+1. LSTM 能把memory 记得更长。
+2. Hessian Free Optimization 巧妙地使用optimizer 防止gradients vanishing
+3. Echo State Networks 谨慎的依次初始化 Input—> hidden —> output ，而且只学hidden —> output 这一层。
+4. Good initilization with momentum，像上面ESN 一样初始化，不过使用momentum 学习。
 
 ## Week 8
 
+Week7 中提到 Hessian Free Optimizaiton：如何调整到optimal point 的步伐非常重要。
 
+Newton's method: 使用能量降低最快的方向下降。 $\Delta w = - \epsilon H(w)^{-1} \frac{dE}{dw} $ 其中H 为Curature Matrices(记录每个每个权重对应的下降最快的方向) 的逆。求这个逆，常见的LBFGS 就是其中一个解法。
+
+Echo State Network: 让前向传播考前的层固定，学习后面的层。优点是训练速度快，缺点比RNN 需要更多的隐层。使用ESN 初始化RNN 效果会比较明显。
 
 ## Week 9
 
@@ -210,7 +253,7 @@ Boltzmann machines 中没有hidden units 的时候称为 **Hopfield nets**
 
 输入增加高斯噪音，效果等同于L2。假设$y^{noisy} = \sum w_i x_i + \sum w_i \epsilon_i$ 其中$\epsilon_i$ 是 $N(0, \delta_i^2)$ 这个搞死分布中采样而来。则：
 $$
-\begin{equation} \label{eq1}
+\begin{equation} \label{eq0}
 \begin{split}
 E[(y^{noisy} - t)^2] &= E[((y-t) + \sum w_i\epsilon_i)^2] \\
 &= (y-t)^2 + E[(\sum w_i\epsilon_i)^2] + 2(y-t)*\sum w_i E(\epsilon_i) \\
@@ -236,7 +279,7 @@ maximize likelihood 等价于 minimize netative log probs，则有
 $p(w) = \frac{1}{\sqrt{2\pi\delta}} e^{-\frac{w^2}{2\delta_w^2}}$ ==> $-\text{log} p(w) =\frac{w^2}{2\delta_w^2} + k $
 其中k 未常数，则Bayesian 下的loss 
 $$
-\begin{equation} \label{eq2}
+\begin{equation} \label{eq3}
 \begin{split}
 -log\ p(W|D) &= -log\ p (D|W) -log\ p(W) + log\ p(D) \\
 &= \frac{\sum_c{(y_c-t_c)^2}}{2\delta_D^2} + k1 + \frac{\sum_i{w_i^2}}{2\delta_W^2} + k2 + k_D \\
@@ -259,7 +302,78 @@ $$
 
 ## Week 11
 
-Hopfield Network: 单个神经元只取0/1 值
+Hopfield Network: 单个神经元只取0/1 值，总能量 
+$$
+E = - \sum_i s_i b_i - \sum_{i<j} s_i s_j w_{ij}
+$$
+所以单个神经元能量变化对整体的影响
+$$
+\Delta E_i = E(s_i = 0) - E(s_i = 1) = b_i + \sum_j s_j w_{ij}
+$$
+且 
+$$
+p(v_i, h_j) = \frac{e^{-E(v, h)}}{e^{-E(\vec v, \vec h)}} \propto e^{-E(v_i, h_j)}
+$$
+
+
+## Week 12
+
+$$
+\frac{\partial log \   p(\vec v)} {\partial w_{ij}} = \langle s_is_j \rangle _{\vec v} - \langle s_is_j \rangle _{model}
+$$
+
+所以CD-1 算法就是如后流程
+
+- Positive phase 让显示层v 在网络中传播，得到隐层h
+- Negative phase 让h 传播回显示层得v' ，再传播到隐层得h'
+- 更新 $\Delta w = learningRate * (\vec v \vec h^T - \vec v'  \vec h'^T) $
+
+每次更新， $p(s_i = 1) = \sigma (b_i + \sum_j s_j w_{ij})$ 
+
+
+
+## Week 13
+
+Belief Nets 主要解决两个问题
+
+- The **inference** problem: Infer thestates of the unobserved variables.
+- The **learning** problem: Adjust theinteractions between variables tomake the network more likely togenerate the training data.
+
+对于simoid belief nets， $p_i = p(s_i =1) = sigmoid(\vec \sum_j w_{ji} s_j + b_i)$ 且 $\Delta w_{ji} = \epsilon s_j(s_i - p_i)$
+
+
+
+## Week 14
+
+unsupervised pre-trainning: 使用RBM 先依次训练pre-train 靠近visible 层的前几层，这种初始化比random 形式的初始化效果好很多。如后：
+
+```mermaid
+graph LR
+    
+    d[input] --> h1
+    h1 --> h2
+    h2 ==> h3
+    h3 ==W3==> h2
+    h2 ==W2==> h1
+    h1 ==W1==> d
+```
+
+
+
+
+RBMs 等价于 infinitely deep sigmoid belief net。
+
+
+
+## Week 15
+
+PCA 也有Autoencoder - Autodecoder 的意思。
+
+encode 阶段，主要用一层接一层的 unsupervised pre-trainning 来， RMBs 也就可以拿来encode。decoder 最后使用softmax 输出。
+
+encoder 也可以当作一个hash function，相似的输入能映射到临近的高纬空间中，也就达到了semantic hashing 的目的。
+
+Denoising autoencoders 是在input 中加入噪音，从而让encoder 的泛化能力更强。也可使用惩罚项来做。
 
 **Mathjax was not loaded successfully**{:.mathjax_alt}
 
