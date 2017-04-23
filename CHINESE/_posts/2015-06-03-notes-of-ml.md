@@ -185,6 +185,24 @@ $$
 
 **FFM** [FFM 介绍](http://tech.meituan.com/deep-understanding-of-ffm-principles-and-practices.html) 
 
+
+
+# 假设检验
+
+
+
+[T-test](https://en.wikipedia.org/wiki/Student%27s_t-test) 对于两个实验的均值效果差异，求
+
+$$
+t = \frac{\mu_1 - \mu_2}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}
+$$
+
+其中 $s_i = \mu_i -\mu_i^2$ ，若 $t>1.959$ 则是显著的差异，即95% 的概率两者是有差异的。
+
+
+
+
+
 [KLD]: https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
 [Hinge loss]:https://en.wikipedia.org/wiki/Hinge_loss
 [Softmax function]: http://en.wikipedia.org/wiki/Softmax_function
