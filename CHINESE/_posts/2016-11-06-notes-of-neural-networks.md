@@ -375,6 +375,10 @@ encoder 也可以当作一个hash function，相似的输入能映射到临近�
 
 Denoising autoencoders 是在input 中加入噪音，从而让encoder 的泛化能力更强。也可使用惩罚项来做。
 
+
+
+另一个同学的笔记也很值得看： [Notes for Geoff Hinton's Coursera ML course](https://github.com/fcrimins/fcrimins.github.io/wiki/Notes-for-Geoff-Hinton%27s-Coursera-ML-course)
+
 **Mathjax was not loaded successfully**{:.mathjax_alt}
 
 [NNML]: https://www.coursera.org/learn/neural-networks/home/welcome
