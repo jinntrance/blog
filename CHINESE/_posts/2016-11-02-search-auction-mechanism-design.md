@@ -4,8 +4,8 @@ title: "搜索广告机制设计"
 modified: 2016-11-02 14:15:38 +0800
 tags: [竞价机制,Auction]
 categories: [计算广告]
-mathjax: 
-mermaid: true
+mathjax: true
+mermaid: false
 image:
   feature: 
   credit: 
