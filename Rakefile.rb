@@ -8,7 +8,7 @@ public_dir      = "public"    # compiled site directory
 posts_dir       = "_posts"    # directory for blog files
 new_post_ext    = "md"  # default new post file extension when using the new_post task
 new_page_ext    = "md"  # default new page file extension when using the new_page task
-mathjax_footer  = "**Mathjax was not loaded successfully**{:.mathjax_alt} \n{% comment %}\n<script type='text/x-mathjax-config'> MathJax.Hub.Config({ asciimath2jax: { delimiters: [['`','`']] }, tex2jax: {inlineMath: [['$', '$']], displayMath: [['$$', '$$']], processEscapes: true}});  </script>\n<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML' async='async'></script>\n{% endcomment %}"
+mathjax_footer  = "**Mathjax was not loaded successfully**{:.mathjax_alt} \n{% comment %}\n<script type='text/x-mathjax-config'> MathJax.Hub.Config({ asciimath2jax: { delimiters: [['`','`']] }, tex2jax: {inlineMath: [['$', '$']], displayMath: [['$$', '$$']], processEscapes: true}});  </script>\n<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML' async='async'></script>\n{% endcomment %}"
 
 #############################
 # Create a new Post or Page #

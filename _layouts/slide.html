@@ -36,10 +36,10 @@ layout: compress
     {{content }}
   </div>
   <div id="slides" class="slides">
-    
+
   </div>
 </div><!-- /#main -->
- 
+
 <script type="text/javascript" src="{{ site.url }}/assets/js/vendor/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/lib/js/head.min.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/reveal.js"></script>
@@ -76,7 +76,7 @@ layout: compress
 
         math: {
           config: 'TeX-MML-AM_HTMLorMML',
-          mathjax: '//cdn.mathjax.org/mathjax/latest/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
           asciimath2jax: { delimiters: [ ['`','`'], ['$', '$'] ] }
         },
         /* Optional reveal.js plugins */
@@ -88,7 +88,7 @@ layout: compress
           { src: '{{ site.url }}/assets/plugin/zoom-js/zoom.js', async: true },
           { src: '{{ site.url }}/assets/plugin/notes/notes.js', async: true },
           /* MathJax */
-          { src: '{{ site.url }}/assets/plugin/math/math.js', async: true } 
+          { src: '{{ site.url }}/assets/plugin/math/math.js', async: true }
         ]
       });
 
