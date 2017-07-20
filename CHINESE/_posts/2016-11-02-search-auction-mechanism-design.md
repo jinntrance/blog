@@ -71,13 +71,20 @@ share:
 
 #### 排序模型
 
-GSP 中广告排序有几种模型参数：
+GSP 中广告排序有几种模型参数[^1][^2][^3][^4]：
 
 1. s = q * bid 这又叫 Vanilla GSP
 2. 在1 的基础上，bid 超过 reserve 才参与竞价，用1 的排序公式，这叫 GSP with unweighted reserves
 3. s = q * (bid -reserve) 这叫 GSP with quality-weighted reserves
 4. s = $q^\alpha * bid$ 这叫 GSP with quashing; 这也可以跟2或3 结合起来。当 q 值不稳定是，可以使用以提高 effeciency；但 q 值稳定时，则是以 effeciency 换 revenue。
 5. s = $q * (bid - reserve)$  这叫 anchoring，简单场景中通常最优。
+
+
+
+[^1]: Feldman, M., Meir, R., & Tennenholtz, M. (2011). Revenue Enhancement in Ad Auctions. In *Proceedings of the 7th international conference on Internet and Network Economics* (pp. 391–398). Springer-Verlag. https://doi.org/10.1007/978-3-642-25510-6_34
+[^2]: Lahaie, S., & McAfee, R. P. (2011). Efficient ranking in sponsored search. In *Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)* (Vol. 7090 LNCS, pp. 254–265). https://doi.org/10.1007/978-3-642-25510-6-22
+[^3]: Roberts, B., & Gunawardena, D. (2013). Ranking and tradeoffs in sponsored search auctions. *Proceedings of the …*, *1*(212), 751–766. https://doi.org/10.1145/2492002.2482568
+[^4]: Thompson, D. R. M., & Leyton-Brown, K. (2013). Revenue optimization in the generalized second-price auction. *Proceedings of the ACM Conference on Electronic Commerce*, *X*(X), 837–852. Retrieved from http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.363.4962&rep=rep1&type=pdf
 
 
 
