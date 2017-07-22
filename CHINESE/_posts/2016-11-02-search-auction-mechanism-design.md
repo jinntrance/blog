@@ -81,6 +81,11 @@ GSP 中广告排序有几种模型参数[^1][^2][^3][^4]：
 
 
 
+
+网上这篇内容也写了不好相关内容：[互联网广告拍卖机制设计]
+
+[互联网广告拍卖机制设计]: http://xinsong.github.io/2013/08/16/ad_auction_theory/
+
 [^1]: Feldman, M., Meir, R., & Tennenholtz, M. (2011). Revenue Enhancement in Ad Auctions. In *Proceedings of the 7th international conference on Internet and Network Economics* (pp. 391–398). Springer-Verlag. https://doi.org/10.1007/978-3-642-25510-6_34
 [^2]: Lahaie, S., & McAfee, R. P. (2011). Efficient ranking in sponsored search. In *Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)* (Vol. 7090 LNCS, pp. 254–265). https://doi.org/10.1007/978-3-642-25510-6-22
 [^3]: Roberts, B., & Gunawardena, D. (2013). Ranking and tradeoffs in sponsored search auctions. *Proceedings of the …*, *1*(212), 751–766. https://doi.org/10.1145/2492002.2482568
