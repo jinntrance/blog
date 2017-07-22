@@ -21,6 +21,7 @@ categories: [生活点滴]
 
 - [10 Ways to Speed Up Your Website] 
 - [15 Tips to Speed Up Your Website]
+- [Best WordPress Hosting]
 - [PageSpeed Insights (by Google)] 这个很好用的Chrome Extension，也可以快速给我们优化建议。
 
 针对前面列的几个方面，SPDY本来可以将HTML 里面所有的资源打包传给客户端，也就没有很多合并的优化了。不过如今Nginx上的SPDY 还是beta阶段，而且放在GitHub/GitCafe Pages上，也没办法要求他们加了。后面可先作如下优化。
@@ -119,6 +120,7 @@ HTML tag 的结束符endings配置需要慎用`all`，比如`<p></p><a></a>`去�
 [async&defer]: http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html
 [10 Ways to Speed Up Your Website]: http://blog.crazyegg.com/2013/12/11/speed-up-your-website/
 [15 Tips to Speed Up Your Website]: http://moz.com/blog/15-tips-to-speed-up-your-website
+[Best WordPress Hosting]: https://websitesetup.org/wordpress-hosting-review/
 [PageSpeed Insights (by Google)]: https://chrome.google.com/webstore/detail/pagespeed-insights-by-goo/gplegfbjlmmehdoakndmohflojccocli
 [GitCafe Pages添加http gzip 支持]: https://gitcafe.com/GitCafe/Help/tickets/820
 [YUI Compressor]: http://yui.github.io/yuicompressor/
