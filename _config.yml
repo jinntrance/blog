@@ -1,5 +1,6 @@
 title:            Joseph's Blog
 description:      "Le livre est l'ami de la solitude et moi."
+hosted_by: GitHub
 #to enaable disqus comments, add your username
 disqus_shortname:  jinntrance
 reading_time:     true
