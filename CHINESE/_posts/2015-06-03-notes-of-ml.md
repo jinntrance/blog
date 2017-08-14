@@ -148,16 +148,18 @@ KLD: [Kullback–Leibler divergence][KLD] 用于计算两个概率分布之间�
 
 >  maxmize $f(x, y) $
 >
->  subject to $g(x, y) = 0$
+>  subject to $g(x, y) \ge 0$
 
 引入乘子 $\lambda$ 得Largrange function:
 
 
 $$
-\textbf L(x, y, \lambda) = f(x, y) - \lambda \cdot g(x, y)
+\textbf L(x, y, \lambda) = f(x, y) + \lambda \cdot g(x, y)
 $$
 
 在 $\frac{\partial L}{\partial x} = 0, \frac{\partial L}{\partial y} = 0, \frac{\partial L}{\partial \lambda} = 0$  三者成立时 $\textbf L$取得极大值。
+
+如果是因为相加的$g(x, y)$ 是非负数，且求极小值的$f(x, y)$ 时，也需要转化为求极大值。
 
 
 
