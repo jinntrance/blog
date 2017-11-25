@@ -40,7 +40,7 @@ $lang-font-path: '../fonts'  !default;
 
 /* vertical layout from left to right. For Traditional Mongolian, Manchu. */
 .lang-mn, .lang-mnc, .lang-sjo, [lang="mn-Mong"], [lang="mnc"], [lang="sjo"] {
-  font-family: 'Mongolian Baiti', 'Mongolian White', 'MongolianBaiti', 'MongolianScript', 'MongolianWhite', sans-serif;
+  font-family: 'Mongolian Baiti', 'Mongolian White', 'MongolianBaiti', 'MongolianScript', 'MongolianWhite', 'Noto Sans Mongolian', sans-serif;
   font-size: 1.5em;
   @include vertical-writing('lr'); 
 }
