@@ -1,6 +1,6 @@
 require "rubygems"
 require "bundler/setup"
-require "stringex"
+require "babosa"
 
 ## -- Config -- ##
 
@@ -31,7 +31,7 @@ task :new_post, :title do |t, args|
   cats  = get_stdin("Enter other categories for your post(comma separated): ")
   mathjax  = get_stdin("Whether to use mathjax in this post: ")
   mermaid = get_stdin("Whether to use mermaid in this post: ")
-  filename = "#{cat}/#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
+  filename = "#{cat}/#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_slug.normalize.to_s}.#{new_post_ext}"
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
