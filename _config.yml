@@ -77,11 +77,11 @@ timezone:    Asia/Beijing
 #future:      true
 highlighter: rouge 
 markdown:    kramdown
-plugins: 
-  - jekyll-sitemap
+#plugins: 
+#  - jekyll-sitemap
 #  - jekyll-mentions
 #  - jemoji
-  - jekyll-paginate
+#  - jekyll-paginate
 #  - jekyll-redirect-from
 
 sass:
