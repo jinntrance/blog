@@ -57,7 +57,7 @@ Bandwagon 上安装非常简单，只需要在刚刚的控制台选择 `KiwiVM E
 
 对于 PC/MAC 客户端，自动代理是通过域名列表选择哪些流量走本地代理客户端的，所以时常还是会出现有些网站打不开的方式。
 
-更好的方式是使用 [Proxifier](https://www.proxifier.com/)， 国外 IP 都走代理。参照 https://github.com/jinntrance/ChinaDNS#install 安装`Mac` 一节。 同时也可使用 Proxifier 屏蔽广告，可使用[广告域名列表](https://github.com/jinntrance/hosts_to_block/blob/master/full_hosts)。
+更好的方式是使用 [Proxifier](https://www.proxifier.com/)， 国外 IP 都走代理。参照 [Proxifier 安装](https://github.com/jinntrance/ChinaDNS#install) `Mac` 一节。 同时也可使用 Proxifier 屏蔽广告，可使用[广告域名列表](https://github.com/jinntrance/hosts_to_block/blob/master/full_hosts)。
 
 [^Encrypt Method]: https://github.com/shadowsocks/luci-app-shadowsocks/wiki/Bandwidth-of-encrypt-method
 
