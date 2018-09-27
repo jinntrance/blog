@@ -51,8 +51,18 @@ Bandwagon 上安装非常简单，只需要在刚刚的控制台选择 `KiwiVM E
 ## 客戶端配置
 主要客户端：
 - [Windows 客户端](https://github.com/shadowsocks/shadowsocks-windows/releases)
+
 - iOS 搜索`Wingy`; Android 下载 [Shadowsocks](https://github.com/shadowsocks/shadowsocks-android/releases) 。
-- Mac 使用 [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG/releases) 
+
+- Mac 使用 [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG/releases) ，可使用如后方式打开 fast-open 加速：
+
+  - ```bash 
+    brew install shadowsocks-libev
+    file=~/Library/Application\ Support/ShadowsocksX-NG/ss-local-latest/ss-local
+    echo '#!/bin/bash
+    ss-local --fast-open "$@"' > "$file"
+    chmod a+x "$file"
+    ```
 - 路由器使用 [LEDE/OpwnWRT](https://openwrt.org/downloads) + ChinaDNS+ Shadowsocks ,参考[Lede 17.01 设置](http://phyer.click/zh/2017/08/28/lede-shadowsocks/)。
 
 对于 PC/MAC 客户端，自动代理是通过域名列表选择哪些流量走本地代理客户端的，所以时常还是会出现有些网站打不开的方式。
