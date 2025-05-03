@@ -35,17 +35,14 @@ html body *{
 ```
 
 ## Userscripts css 文件
-头部注释：
-```
-\/* ==UserStyle==
+头部添加注释，css 主要内容同上
+```css
+/ * ==UserStyle==
 @name        CJK Fonts
 @description show all CJK characters
 @match       <all_urls>
 ==/UserStyle== */
-```
 
-css 主要内容同上
-```css
 @import url("https://fontsapi.zeoseven.com/150/main/result.css");
 @import url("https://fontsapi.zeoseven.com/152/main/result.css");
 
