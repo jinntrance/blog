@@ -34,6 +34,22 @@ html body *{
 }
 ```
 
+## Userscripts css 文件
+```css
+/* ==UserStyle==
+@name        CJK Fonts
+@description show all CJK characters
+@match       <all_urls>
+==/UserStyle== */
+
+@import url("https://fontsapi.zeoseven.com/150/main/result.css");
+@import url("https://fontsapi.zeoseven.com/152/main/result.css");
+
+html body *{
+  font-family: system-ui, sans-serif, 'Plangothic P1', 'Plangothic P2';
+}
+```
+
 ## 测试汉字集
 
 
