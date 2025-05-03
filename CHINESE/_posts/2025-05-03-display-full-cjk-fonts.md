@@ -35,7 +35,7 @@ html body *{
 ```
 
 ## Userscripts css 文件
-```css
+````
 /* ==UserStyle==
 @name        CJK Fonts
 @description show all CJK characters
@@ -48,7 +48,7 @@ html body *{
 html body *{
   font-family: system-ui, sans-serif, 'Plangothic P1', 'Plangothic P2';
 }
-```
+````
 
 ## 测试汉字集
 
