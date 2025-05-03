@@ -30,7 +30,7 @@ share:
 @import url("https://fontsapi.zeoseven.com/152/main/result.css");
 
 html body *{
-  font-family: system-ui, 'PingFang SC', 'Microsoft Yahei', 'Plangothic P1', 'Plangothic P2', sans-serif;
+  font-family: system-ui, sans-serif, 'Plangothic P1', 'Plangothic P2';
 }
 ```
 
