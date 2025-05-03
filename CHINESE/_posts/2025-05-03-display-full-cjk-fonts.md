@@ -39,6 +39,6 @@ html body *{
 
 | 规范 | 典型汉字 | 样例汉字集 |
 |-----|-----|-----|
-| GB18030-2022，包含 8 万多汉字   | [biangbiang 面](https://baike.baidu.com/item/biangbiang%E9%9D%A2/2502712)的：𰻝、𰻞   |  [四川方言字](https://zh.wikipedia.org/wiki/%E5%9B%9B%E5%B7%9D%E6%96%B9%E8%A8%80%E5%AD%97)  |
-| Unicode 16，包含 14 多万汉字   | 川渝地区的[贼](https://zh.wikipedia.org/wiki/%F0%B1%9F%9B)：𱟛   | [所有汉字](http://yedict.com/zsts.htm) , [CJK I 区](https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%97%A5%E9%9F%A9%E7%BB%9F%E4%B8%80%E8%A1%A8%E6%84%8F%E6%96%87%E5%AD%97%E6%89%A9%E5%B1%95%E5%8C%BAI)  |
+| GB18030-2022，包含 8 万多汉字   | [biangbiang 面的：𰻝、𰻞](https://baike.baidu.com/item/biangbiang%E9%9D%A2/2502712)   |  [四川方言字](https://zh.wikipedia.org/wiki/%E5%9B%9B%E5%B7%9D%E6%96%B9%E8%A8%80%E5%AD%97)  |
+| Unicode 16，包含 14 多万汉字   | [川渝地区的贼：𱟛](https://zh.wikipedia.org/wiki/%F0%B1%9F%9B)   | [所有汉字](http://yedict.com/zsts.htm) , [CJK I 区](https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%97%A5%E9%9F%A9%E7%BB%9F%E4%B8%80%E8%A1%A8%E6%84%8F%E6%96%87%E5%AD%97%E6%89%A9%E5%B1%95%E5%8C%BAI)  |
 
